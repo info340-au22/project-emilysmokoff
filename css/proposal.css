@@ -1,3 +1,24 @@
 section header {
     color: green;
 }
+
+h3{
+    color:olivedrab;
+}
+
+body{
+    width: 50%;
+}
+
+p{
+    padding-left: 7mm;
+
+}
+
+body{
+    background-color: lightgray;
+}
+
+h1{
+    color:darkolivegreen;
+}
