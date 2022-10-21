@@ -1,0 +1,13 @@
+h1, form {
+    text-align: center;
+}
+
+.large {
+    width: 300px;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    top: 20%
+}

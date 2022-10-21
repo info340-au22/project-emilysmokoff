@@ -1,0 +1,46 @@
+h1 {
+    top: 20%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    top: 40%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.footprint {
+    height: 100px;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 75%;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .footprint {
+        left: 80%;
+        top: 60%;
+        transform: none;
+    }
+    p {
+        width: auto;
+        left: 76%;
+        top: 55%;
+    } 
+}
