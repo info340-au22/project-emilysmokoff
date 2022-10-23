@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+/*For logo*/ 
+h1{
+    font-family: 'Raleway';
+    color:white;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+nav img{
+    width: .8em;
+    margin-bottom: .15em;
+}
+
+.material-icons {
+    position: relative;
+    top: 4px;
+    right: 4px;
+    font-size: 2rem;
+    color:white;
+}
+
+/*page minus nav margins*/
+main{
+    margin:0 4em;
+}
+
+/*Main page section header*/
+h2{
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color:rgb(26, 81, 56);
+    font-weight:580;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+/*Bookmarked products page-only plus to bookmark*/
+.plus-icon{
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color:black;
+    font-weight:400;
+    font-size: 1em;
+    float:right;
+}
+
+/*Bookmarked products page-"add items" hide in small screen*/
+.add{
+    display: none;
+}
+
+/*style all cards on bookmarked page*/
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*style individual card*/
+.card-container .card{
+    max-width:12em;
+    background-color: rgb(247, 247, 247);
+    margin:1em 1em;
+    margin-left: 0;
+    text-align: center;
+}
+
+/*Hide card images in small screen*/
+.product-img{
+    display:none;
+}
+
+.product-name{
+    font-weight:370;
+    padding: 10px;
+    margin-bottom: 0;
+    height:8em;
+}
+
+.company{
+    font-size: .85em;
+    padding: 10px;
+    font-weight:300;
+    margin-bottom: 3px;
+}
+
+.price{
+    float:inline-end;
+    font-weight: 370;
+}
+
+.shop-now{
+    background-color: white;
+    padding-top:16px;
+    padding-bottom:16px;
+    margin-bottom: 0;
+}
+
+.shop-now:hover{
+    background-color:black;
+    color:white;
+}
+
+.rating{
+    width:130px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:768px){
+    .plus-icon{
+        display:none;
+    }
+
+    .add{
+        display:block;
+        font-family: 'Montserrat', 'Open Sans', sans-serif;
+        color:black;
+        font-weight:400;
+        font-size: .6em;
+        float:right;
+        margin-top: 9px;
+        margin-right: 2em;
+    }
+}
+@media (min-width: 992px) {
+    .card img{
+        display: block;
+    }
+
+    .card-container .card{
+        max-width:255px;
+    }
+
+    .product-name{
+        height:5em;
+    }
+}
+
+
+footer {
+    background-color:rgb(78, 117, 100);
+    color: white;
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+footer li {
+    display: block;
+    text-align: center;
+}
+
+footer a, footer p {
+    color: white;
+    text-decoration: none;
+    line-height: 3;
+}

@@ -1,0 +1,74 @@
+h2, form {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+.large {
+    width: 300px;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    top: 20%
+}
+
+.txt {
+    font-weight:370;
+    margin-bottom: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*For logo*/ 
+h1{
+    font-family: 'Raleway';
+    color:white;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+nav img{
+    width: .8em;
+    margin-bottom: .15em;
+}
+
+.material-icons {
+    position: relative;
+    top: 4px;
+    right: 4px;
+    font-size: 2rem;
+    color:white;
+}
+
+/*page minus nav margins*/
+main{
+    margin:0 4em;
+}
+
+
+footer {
+    background-color:rgb(78, 117, 100);
+    color: white;
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+footer li {
+    display: block;
+    text-align: center;
+}
+
+footer a, footer p {
+    color: white;
+    text-decoration: none;
+    line-height: 3;
+}
