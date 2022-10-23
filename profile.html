@@ -3,11 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>Personal Profile</title>
-    <link rel="stylesheet" href="css/profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-    <h1 class="text-center">Personal Profile</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(26, 81, 56);">
+        
+        <div class="container-fluid">
+            <h1>EC<img src="photos/logo.png" alt="logo representing letter o">-LIFE</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bookmarks</a>
+                    </li>
+                </ul>
+                <a href="#"><span class="material-icons" aria-label="Personal Profile">account_circle</span></a>
+            </div>
+        </div>   
+    </nav>
+    <h2 class="text-center profile-header">Personal Profile</h1>
     <form>
         <label for="username">Username:</label><br>
         <input type="text" name="username"><br>
@@ -16,5 +46,11 @@
         <input type="submit" value="Sign In" class="btn btn-primary">
     </form>
     <span class="footprint"></span> 
-    <p>Your Ecological Footprint Score</p>
+    <p class="score-label">Your Ecological Footprint Score</p>
+    <footer class="fixed-bottom">
+        <ul>
+            <li><a href="mailto:esmokoff@uw.edu"><span class="material-icons">email</span>esmokoff@uw.edu</a></li>
+            <li>&copy; Eco-Life 2022</li>
+        </ul>
+    </footer>
 </body>

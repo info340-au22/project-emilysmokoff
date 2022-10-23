@@ -1,4 +1,4 @@
-h1 {
+.profile-header {
     top: 20%;
     position: absolute;
     width: 100%;
@@ -24,7 +24,7 @@ form {
     transform: translate(-50%);
 }
 
-p {
+.score-label {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -38,9 +38,61 @@ p {
         top: 60%;
         transform: none;
     }
-    p {
+    .score-label {
         width: auto;
         left: 76%;
         top: 55%;
     } 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*For logo*/ 
+h1{
+    font-family: 'Raleway';
+    color:white;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+nav img{
+    width: .8em;
+    margin-bottom: .15em;
+}
+
+.material-icons {
+    position: relative;
+    top: 4px;
+    right: 4px;
+    font-size: 2rem;
+    color:white;
+}
+
+/*page minus nav margins*/
+main{
+    margin:0 4em;
+}
+
+
+footer {
+    background-color:rgb(78, 117, 100);
+    color: white;
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+footer li {
+    display: block;
+    text-align: center;
+}
+
+footer a, footer p {
+    color: white;
+    text-decoration: none;
+    line-height: 3;
 }
