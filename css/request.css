@@ -2,6 +2,10 @@ h2, form {
     text-align: center;
 }
 
+h2 {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
 .large {
     width: 300px;
 }
@@ -12,6 +16,10 @@ body {
     top: 20%
 }
 
+.txt {
+    font-weight:370;
+    margin-bottom: 0;
+}
 
 * {
     box-sizing: border-box;
