@@ -2,6 +2,38 @@
     box-sizing: border-box;
 }
 
+/*Allow content to go across the whole page*/
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+/*Header as seen on the index.html page*/
+header {
+    color: rgb(26, 81, 56);
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    background-image: url('../img/background-photo.jpg');
+    background-size: cover;
+    width: 100%;
+}
+
+/*Defining font family for body*/
+body {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-size: 18px;
+    flex: 1;
+}
+
+/*Home screens top level header */
+.home h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
 /*For logo*/ 
 h1{
     font-family: 'Raleway';
@@ -47,6 +79,12 @@ h3{
     font-size: 1em;
 }
 
+/*defines styling for under the website title in the header home page*/
+header p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+}
+
 /*Bookmarked products page-only plus to bookmark*/
 .plus-icon{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -65,6 +103,33 @@ h3{
     width:50%;
     margin-top:3em;
     margin-bottom: 1em;
+}
+
+/*Defines styling for the flex box in the home page that contains title and search bar*/
+.second-heading ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+/* defines some of the flex box for the list on the second heading in the home page*/
+.second-heading li {
+    display: flex;
+    padding: 1rem;
+}
+
+/*Doesn't display Search bar in mobile first approach for styling*/
+.second-heading .search-bar {
+    display: none;
+}
+
+/* defines search bar for home page*/
+.search-bar {
+    height: 2rem;
+    width: 14rem;
+    border-radius: 2rem;
+    border-color:rgb(26, 81, 56);
 }
 
 #search-icon{
@@ -92,6 +157,41 @@ h3{
 .card-body{
     background-color: rgb(247, 247, 247);
     text-align: center;
+}
+
+/* defines the main card container on the home page */
+.home-card-container {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+/* defines the home pages card layout*/
+.home-card {
+    background-color: rgb(78, 117, 100);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+    border: none;
+    border-radius: 0;
+}
+
+/*defines picture size for home imgs*/
+.home-card img {
+    width: 500px;
+    height: 330px;
+}
+
+/*defines heading for home cards*/
+.home-card h3 {
+    padding: 1rem;
+    align-items: center;
 }
 
 .product-img{
@@ -135,6 +235,18 @@ h3{
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
+}
+
+/*Defines the alignment of the about us section on home page*/
+.about-us {
+    text-align: center;
+    padding: 1rem;
+}
+
+/*Defines Size of the image on home page about us section*/
+.about-us img {
+    height: 50px;
+    width: 50px;
 }
 
 footer {

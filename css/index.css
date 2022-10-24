@@ -2,6 +2,7 @@
     box-sizing: border-box; 
 }
 
+/*Allow content to go across the whole page*/
 html, body {
     padding: 0;
     margin: 0;
@@ -68,7 +69,7 @@ header p {
     display: none;
 }
 
-.card-container {
+.home-card-container {
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
@@ -88,7 +89,7 @@ header p {
     padding-bottom: 4px;
 }
 
-.card {
+.home-card {
     background-color: rgb(78, 117, 100);
     color: white;
     display: flex;
@@ -99,12 +100,12 @@ header p {
     border-radius: 0;
 }
 
-.card img {
+.home-card img {
     width: 500px;
     height: 330px;
 }
 
-.card h3 {
+.home-card h3 {
     padding: 1rem;
     align-items: center;
 }
