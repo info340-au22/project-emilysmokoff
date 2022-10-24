@@ -2,6 +2,39 @@
     box-sizing: border-box;
 }
 
+/*Allow content to go across the whole page*/
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+/*Header as seen on the index.html page*/
+header .home {
+    color: rgb(26, 81, 56);
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    background-image: url('../img/background-photo.jpg');
+    background-size: cover;
+    width: 100%;
+}
+
+/*Defining font family for body*/
+body {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-size: 18px;
+    flex: 1;
+}
+
+/*Home screens top level header */
+.home h1 {
+    color: rgb(26, 81, 56);
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
 /*For logo*/ 
 h1{
     font-family: 'Raleway';
@@ -27,7 +60,7 @@ nav img{
 }
 
 /*page minus nav margins*/
-main{
+.bookmarked main, .search main{
     margin:0 4em;
 }
 
@@ -45,6 +78,12 @@ h3{
     color:black;
     font-weight:580;
     font-size: 1em;
+}
+
+/*defines styling for under the website title in the header home page*/
+header .home p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
 }
 
 /*Bookmarked products page-only plus to bookmark*/
@@ -65,6 +104,33 @@ h3{
     width:50%;
     margin-top:3em;
     margin-bottom: 1em;
+}
+
+/*Defines styling for the flex box in the home page that contains title and search bar*/
+.second-heading ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+/* defines some of the flex box for the list on the second heading in the home page*/
+.second-heading li {
+    display: flex;
+    padding: 1rem;
+}
+
+/*Doesn't display Search bar in mobile first approach for styling*/
+.second-heading .search-bar {
+    display: none;
+}
+
+/* defines search bar for home page*/
+.search-bar {
+    height: 2rem;
+    width: 14rem;
+    border-radius: 2rem;
+    border-color:rgb(26, 81, 56);
 }
 
 #search-icon{
@@ -92,6 +158,43 @@ h3{
 .card-body{
     background-color: rgb(247, 247, 247);
     text-align: center;
+}
+
+/* defines the main card container on the home page */
+.home-card-container {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+/* defines the home pages card layout*/
+.home-card {
+    background-color: rgb(78, 117, 100);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+    border: none;
+    border-radius: 0;
+}
+
+/*defines picture size for home imgs*/
+.home-card img {
+    width: 500px;
+    height: 330px;
+}
+
+/*defines heading for home cards*/
+.home-card h3 {
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    align-items: center;
 }
 
 .product-img{
@@ -137,8 +240,45 @@ h3{
     margin-right: auto;
 }
 
+/*Defines the alignment of the about us section on home page*/
+.about-us {
+    text-align: center;
+}
+
+/*Defines Size of the image on home page about us section*/
+.about-us img {
+    height: 50px;
+    width: 50px;
+}
+
+/* Footer styling colors */
 footer {
-    display: none;  
+    background-color:rgb(78, 117, 100);
+    color: white;
+}
+
+/*Defining Margin for footer*/
+footer ul {
+    margin-bottom: 0;
+}
+
+/*Defines how to show the citing elements for footer*/
+footer .citing-links {
+    padding: 1rem;
+    text-align: center;
+}
+
+/*Display of the list items i.e contact info and copyright*/
+footer li {
+    display: block;
+    text-align: center;
+}
+
+/*Defines text styling for footer elements*/
+footer a, footer p {
+    color: white;
+    text-decoration: none;
+    line-height: 3;
 }
 
 @media (min-width:598px){
@@ -170,30 +310,23 @@ footer {
         margin-right: 2em;
     }
 
-    footer {
-        display:block;
-        background-color:rgb(78, 117, 100);
-        color: white;
-        position:absolute;
-        bottom: 0;
-        width: 100%;  
+    .second-heading .search-bar {
+        display: flex;
     }
-    
-    footer ul {
-        margin-bottom: 0;
+
+    .about-us {
+        padding-top: 3rem;
+        background-color: lightgray;
+        font-weight: 800;
     }
-    
-    footer li {
-        display: block;
-        text-align: center;
+
+    .about-us h2 {
+        margin: 0;
+        padding-bottom: 1rem;
     }
-    
-    footer a, footer p {
-        color: white;
-        text-decoration: none;
-        line-height: 3;
-    }
+
 }
+
 @media (min-width: 992px) {
     .card-container .card{
         max-width:255px;
