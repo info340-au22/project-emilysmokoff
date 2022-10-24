@@ -9,7 +9,7 @@ html, body {
 }
 
 /*Header as seen on the index.html page*/
-header {
+header .home {
     color: rgb(26, 81, 56);
     text-align: center;
     padding-top: 5rem;
@@ -28,6 +28,7 @@ body {
 
 /*Home screens top level header */
 .home h1 {
+    color: rgb(26, 81, 56);
     font-family: 'Kanit', sans-serif;
     font-size: 4rem;
     margin-top: 0;
@@ -59,7 +60,7 @@ nav img{
 }
 
 /*page minus nav margins*/
-main{
+.bookmarked main, .search main{
     margin:0 4em;
 }
 
@@ -80,7 +81,7 @@ h3{
 }
 
 /*defines styling for under the website title in the header home page*/
-header p {
+header .home p {
     font-family: 'Kanit', sans-serif;
     font-size: 2rem;
 }
@@ -190,6 +191,8 @@ header p {
 
 /*defines heading for home cards*/
 .home-card h3 {
+    color: white;
+    font-size: 1.5rem;
     padding: 1rem;
     align-items: center;
 }
@@ -240,7 +243,6 @@ header p {
 /*Defines the alignment of the about us section on home page*/
 .about-us {
     text-align: center;
-    padding: 1rem;
 }
 
 /*Defines Size of the image on home page about us section*/
@@ -249,8 +251,34 @@ header p {
     width: 50px;
 }
 
+/* Footer styling colors */
 footer {
-    display: none;  
+    background-color:rgb(78, 117, 100);
+    color: white;
+}
+
+/*Defining Margin for footer*/
+footer ul {
+    margin-bottom: 0;
+}
+
+/*Defines how to show the citing elements for footer*/
+footer .citing-links {
+    padding: 1rem;
+    text-align: center;
+}
+
+/*Display of the list items i.e contact info and copyright*/
+footer li {
+    display: block;
+    text-align: center;
+}
+
+/*Defines text styling for footer elements*/
+footer a, footer p {
+    color: white;
+    text-decoration: none;
+    line-height: 3;
 }
 
 @media (min-width:598px){
@@ -282,30 +310,23 @@ footer {
         margin-right: 2em;
     }
 
-    footer {
-        display:block;
-        background-color:rgb(78, 117, 100);
-        color: white;
-        position:absolute;
-        bottom: 0;
-        width: 100%;  
+    .second-heading .search-bar {
+        display: flex;
     }
-    
-    footer ul {
-        margin-bottom: 0;
+
+    .about-us {
+        padding-top: 3rem;
+        background-color: lightgray;
+        font-weight: 800;
     }
-    
-    footer li {
-        display: block;
-        text-align: center;
+
+    .about-us h2 {
+        margin: 0;
+        padding-bottom: 1rem;
     }
-    
-    footer a, footer p {
-        color: white;
-        text-decoration: none;
-        line-height: 3;
-    }
+
 }
+
 @media (min-width: 992px) {
     .card-container .card{
         max-width:255px;
