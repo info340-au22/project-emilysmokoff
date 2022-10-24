@@ -12,7 +12,7 @@ header {
     text-align: center;
     padding-top: 5rem;
     padding-bottom: 1rem;
-    background-image: url('../photos/background-photo.jpg');
+    background-image: url('../img/background-photo.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -79,6 +79,8 @@ header p {
     top: 4px;
     right: 4px;
     font-size: 2rem;
+    margin-left:10px;
+    padding-bottom: 4px;
 }
 
 .card {
