@@ -6,7 +6,7 @@
     font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
-form {
+.login-info {
     top: 40%;
     position: absolute;
     width: 100%;
@@ -75,6 +75,8 @@ nav img{
     right: 4px;
     font-size: 2rem;
     color:white;
+    margin-left:10px;
+    padding-bottom: 4px;
 }
 
 /*page minus nav margins*/

@@ -1,4 +1,4 @@
-h2, form {
+.profile-header, form {
     text-align: center;
 }
 
@@ -45,6 +45,8 @@ nav img{
     right: 4px;
     font-size: 2rem;
     color:white;
+    margin-left:10px;
+    padding-bottom: 4px;
 }
 
 /*page minus nav margins*/
