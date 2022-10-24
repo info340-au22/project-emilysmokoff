@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 html, body {
@@ -35,16 +35,18 @@ h2 {
     color: rgb(26, 81, 56);
 }
 
-nav {
-    background-color:rgb(78, 117, 100);
-    color: white;
-    font-size: 1rem;
-    padding-bottom: 1rem;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
+nav img{
+    width: .8em;
+    margin-bottom: .15em;
 }
+
+nav h1{
+    font-family: 'Raleway';
+    color:white;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 2rem;
+} 
 
 .second-heading ul {
     display: flex;
@@ -72,8 +74,10 @@ header p {
 }
 
 .material-icons {
+    color: white;
     position: relative;
-    top: 10px;
+    top: 4px;
+    right: 4px;
     font-size: 2rem;
 }
 
@@ -91,18 +95,9 @@ header p {
     height: 330px;
 }
 
-nav ul {
-    text-align: center;
-}
-
-nav li {
-    display: inline;
-    margin: 0 .5rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
+.card h3 {
+    padding-top: .25rem;
+    align-items: center;
 }
 
 .search-bar {
@@ -137,11 +132,6 @@ footer a, footer p {
 }
 
 nav .home {
-    color: #f0f0f0;
-    border-bottom: .2rem solid #f0f0f0;
-}
-
-nav a:hover, nav a:focus, nav a:active {
     color: #f0f0f0;
     border-bottom: .2rem solid #f0f0f0;
 }
