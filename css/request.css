@@ -1,22 +1,18 @@
-.profile-header, form {
+.request-header, form {
     text-align: center;
 }
 
-h2 {
+.request-header {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
-.large {
-    width: 300px;
-}
-
-body {
+.request-body {
     position: absolute;
     width: 100%;
     top: 20%
 }
 
-.txt {
+.label-text {
     font-weight:370;
     margin-bottom: 0;
 }

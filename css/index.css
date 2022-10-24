@@ -14,7 +14,6 @@ header {
     padding-bottom: 1rem;
     background-image: url('../img/background-photo.jpg');
     background-size: cover;
-    background-position: center;
     width: 100%;
 }
 
@@ -76,6 +75,7 @@ header p {
     justify-content: space-around;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 .material-icons {
@@ -133,6 +133,12 @@ footer {
 
 footer ul {
     margin-bottom: 0;
+}
+
+footer .citing-links {
+    padding: 1rem;
+    line-height: 1;
+    text-align: center;
 }
 
 footer li {
