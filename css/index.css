@@ -57,11 +57,16 @@ header p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 2rem;
 }
 
 .second-heading li {
     display: flex;
     padding: 1rem;
+}
+
+.second-heading .search-bar {
+    display: none;
 }
 
 .card-container {
@@ -113,6 +118,12 @@ header p {
 
 .about-us {
     text-align: center;
+    padding: 1rem;
+}
+
+.about-us img {
+    height: 50px;
+    width: 50px;
 }
 
 footer {
@@ -135,3 +146,14 @@ footer a, footer p {
     line-height: 3;
 }
 
+@media (min-width: 768px) {
+    .second-heading .search-bar {
+        display: flex;
+    }
+
+    .about-us {
+        padding-top: 3rem;
+        background-color: lightgray;
+        font-weight: 800;
+    }
+}
