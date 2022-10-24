@@ -38,6 +38,7 @@ h2{
     font-weight:580;
     font-size: 2em;
     margin-top: 1em;
+    margin-left: 2em;
 }
 
 h3{
@@ -139,6 +140,10 @@ h3{
 
 footer {
     display: none;  
+}
+
+.citation-links{
+    text-align: left;
 }
 
 @media (min-width:598px){
