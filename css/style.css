@@ -2,13 +2,14 @@
     box-sizing: border-box;
 }
 
-/*Style header*/
-.profile-header {
+/*Style profile header*/
+h2 .profile-header {
     top: 20%;
     position: absolute;
     width: 100%;
     text-align: center;
     font-family: 'Montserrat', 'Open Sans', sans-serif;
+    margin: none;
 }
 
 /*Style title*/
@@ -73,10 +74,11 @@
 }
 
 /*Position of the form*/
-.request-body {
+.request-body{
     position: absolute;
     width: 100%;
-    top: 20%
+    top: 10%;
+    display: block;
 }
 
 /*Form labels*/
@@ -85,7 +87,11 @@
     margin-bottom: 0;
 }
 
-
+.footer-bottom {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
 
 /*Allow content to go across the whole page*/
 html, body {
