@@ -37,7 +37,14 @@ h2{
     color:rgb(26, 81, 56);
     font-weight:580;
     font-size: 2em;
-    margin-top: 1em;
+    margin: 1em;
+}
+
+h3{
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color:black;
+    font-weight:580;
+    font-size: 1em;
 }
 
 /*Bookmarked products page-only plus to bookmark*/
@@ -54,6 +61,19 @@ h2{
     display: none;
 }
 
+.search-page-bar{
+    width:50%;
+    margin-top:3em;
+    margin-bottom: 1em;
+}
+
+#search-icon{
+    color:rgb(26, 81, 56);
+    margin: 10px;
+    padding-top:5px;
+    
+}
+
 /*style all cards on bookmarked page*/
 .card-container{
     display: flex;
@@ -62,14 +82,18 @@ h2{
 
 /*style individual card*/
 .card-container .card{
-    max-width:12em;
+    width: 100%;
     background-color: rgb(247, 247, 247);
     margin:1em 1em;
     margin-left: 0;
     text-align: center;
 }
 
-/*Hide card images in small screen*/
+.card-body{
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+}
+
 .product-img{
     display:none;
 }
@@ -78,7 +102,6 @@ h2{
     font-weight:370;
     padding: 10px;
     margin-bottom: 0;
-    height:8em;
 }
 
 .company{
@@ -98,6 +121,7 @@ h2{
     padding-top:16px;
     padding-bottom:16px;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .shop-now:hover{
@@ -111,6 +135,28 @@ h2{
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
+}
+
+footer {
+    display: none;  
+}
+
+@media (min-width:598px){
+    .card-container .card{
+        max-width:12em;
+    }
+
+    .product-img{
+        display: block;
+        width: 100%;
+        margin:0;
+        padding:0;
+    }
+
+    .product-name{
+        height:8em;
+    }
+
 }
 
 @media (min-width:768px){
@@ -128,38 +174,37 @@ h2{
         margin-top: 9px;
         margin-right: 2em;
     }
+
+    footer {
+        display:block;
+        background-color:rgb(78, 117, 100);
+        color: white;
+        position:absolute;
+        bottom: 0;
+        width: 100%;  
+    }
+    
+    footer ul {
+        margin-bottom: 0;
+    }
+    
+    footer li {
+        display: block;
+        text-align: center;
+    }
+    
+    footer a, footer p {
+        color: white;
+        text-decoration: none;
+        line-height: 3;
+    }
 }
 @media (min-width: 992px) {
-    .card img{
-        display: block;
-    }
-
     .card-container .card{
         max-width:255px;
     }
 
     .product-name{
-        height:5em;
+        height:6em;
     }
-}
-
-
-footer {
-    background-color:rgb(78, 117, 100);
-    color: white;
-}
-
-footer ul {
-    margin-bottom: 0;
-}
-
-footer li {
-    display: block;
-    text-align: center;
-}
-
-footer a, footer p {
-    color: white;
-    text-decoration: none;
-    line-height: 3;
 }
