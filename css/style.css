@@ -164,6 +164,11 @@ h2{
     margin: 1em;
 }
 
+/*remove space under h2 on search page*/
+.search-header{
+    margin-bottom:0;
+}
+
 h3{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color:black;
@@ -191,10 +196,15 @@ header .home p {
     display: none;
 }
 
+/*Search page bar*/
 .search-page-bar{
     width:50%;
-    margin-top:3em;
     margin-bottom: 1em;
+}
+
+/*Search page form, area including bar*/
+.search-page-form{
+    text-align: left;
 }
 
 /*Defines styling for the flex box in the home page that contains title and search bar*/
@@ -224,6 +234,7 @@ header .home p {
     border-color:rgb(26, 81, 56);
 }
 
+/*changes search icon on all pages*/
 #search-icon{
     color:rgb(26, 81, 56);
     margin: 10px;
@@ -237,7 +248,7 @@ header .home p {
     flex-wrap: wrap;
 }
 
-/*style individual card*/
+/*style individual card on bookmarked page*/
 .card-container .card{
     width: 100%;
     background-color: rgb(247, 247, 247);
@@ -288,16 +299,19 @@ header .home p {
     align-items: center;
 }
 
+/*hides images on search and bookmark page in small screen*/
 .product-img{
     display:none;
 }
 
+/*styles product names on search and bookmark page*/
 .product-name{
     font-weight:370;
     padding: 10px;
     margin-bottom: 0;
 }
 
+/*styles company name on search and bookmark page*/
 .company{
     font-size: .85em;
     padding: 10px;
@@ -305,11 +319,13 @@ header .home p {
     margin-bottom: 3px;
 }
 
+/*styles price next to company on search and bookmark page*/
 .price{
     float:inline-end;
     font-weight: 370;
 }
 
+/*styles shop now button on search and bookmark page*/
 .shop-now{
     background-color: white;
     padding-top:16px;
@@ -318,11 +334,13 @@ header .home p {
     text-align: center;
 }
 
+/*shop now highlights black on search and bookmark page*/
 .shop-now:hover{
     background-color:black;
     color:white;
 }
 
+/*styles rating on search and bookmark page*/
 .rating{
     width:130px;
     margin-bottom: 10px;
@@ -373,10 +391,12 @@ footer a, footer p {
 }
 
 @media (min-width:598px){
+    /*larger flex box on bookmark and search page*/
     .card-container .card{
         max-width:12em;
     }
 
+    /*display product image on bookmark and search page*/
     .product-img{
         display: block;
         width: 100%;
@@ -386,10 +406,12 @@ footer a, footer p {
 }
 
 @media (min-width:768px){
+    /*hide plus icon on bookmark*/
     .plus-icon{
         display:none;
     }
 
+    /*start displaying add items on bookmark*/
     .add{
         display:block;
         font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -419,6 +441,7 @@ footer a, footer p {
 }
 
 @media (min-width: 992px) {
+    /*larger flex box on bookmark and search page*/
     .card-container .card{
         max-width:255px;
     }

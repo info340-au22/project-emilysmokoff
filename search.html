@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="search">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(26, 81, 56);">
 
         <div class="container-fluid">
@@ -55,15 +55,13 @@
     </nav>
 
     <header>
-        <h2>Search</h2>
+        <h2 class="search-header">Search</h2>
     </header>
-    <main class="search">
-        <form>
-            <div>
-                <input class="search-page-bar" id="search-input" type="text" name="search"
-                    placeholder=" Search for products, categories, ...">
-                <span id="search-icon" class="material-icons" aria-label="search icon">search</span>
-            </div>
+    <main>
+        <form class="search-page-form">
+            <input class="search-page-bar" id="search-input" type="text" name="search"
+                placeholder=" Search for products, categories, ...">
+            <span id="search-icon" class="material-icons" aria-label="search icon">search</span>
         </form>
         <h3>Showing results for "hair care"</h3>
 
