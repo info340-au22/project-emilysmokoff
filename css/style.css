@@ -48,18 +48,6 @@ h2 .profile-header {
     white-space: nowrap;
 }
 
-@media (min-width: 768px) {
-    .footprint {
-        left: 80%;
-        top: 60%;
-        transform: none;
-    }
-    .score-label {
-        width: auto;
-        left: 76%;
-        top: 55%;
-    } 
-}
 
 /*Request page*/
 
@@ -348,6 +336,11 @@ header .home p {
     align-items: center;
 }
 
+.home-card a {
+    text-decoration: none;
+    text-align: center;
+}
+
 /*hides images on search and bookmark page in small screen*/
 .product-img{
     display:none;
@@ -486,6 +479,17 @@ footer a, footer p {
         margin: 0;
         padding-bottom: 1rem;
     }
+
+    .footprint {
+        left: 80%;
+        top: 60%;
+        transform: none;
+    }
+    .score-label {
+        width: auto;
+        left: 76%;
+        top: 55%;
+    } 
 
 }
 
