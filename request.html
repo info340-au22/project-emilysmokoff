@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" 
       type="image/png" 
-      href="img/myicon.png" />
+      href="img/myicon.png">
 </head>
 <body>
     <div class="request-body">
@@ -32,7 +32,8 @@
                         <a class="nav-link" href="search.html">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:white; text-decoration: underline;" aria-current="upload-products" href="#">Upload Products</a>
+                        <a class="nav-link active" style="color:white; text-decoration: underline;" 
+                        aria-current="page" aria-label="Request a Product" href="#">Upload Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="bookmarked.html">Bookmarks</a>
@@ -51,24 +52,24 @@
     <h2 class="text-center request-header">Request a Product</h2>
     <form>
         <label class="label-text" for="product-name">Product Name:</label><br>
-        <input type="text" name="product-name"><br>
-        <label class="label-text" for="company name">Company Name:</label><br>
-        <input type="text" name="company name"><br>
+        <input id="product-name" type="text" name="product-name"><br>
+        <label class="label-text" for="company-name">Company Name:</label><br>
+        <input id="company-name" type="text" name="company-name"><br>
         <label class="label-text" for="ingredients">Ingredient Information:</label><br>
-        <textarea name="ingredients" rows="4" cols="50"></textarea><br>
+        <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br>
         <label class="label-text" for="filename">Upload Product Photo:</label><br>
-        <input type="file" id="myFile" name="filename" class="btn btn-primary label-text"><br><br>
-        <input type="submit" value="Submit" class="btn btn-primary label-text">
+        <input type="file" id="filename" name="filename" class="btn btn-primary label-text"><br><br>
+        <input id="submit" type="submit" value="Submit" class="btn btn-primary label-text">
     </form>
     <footer class="mt-4">
-        <ul>
-            <li><a href="mailto:esmokoff@uw.edu"><span class="material-icons">email</span>esmokoff@uw.edu</a></li>
-            <li>&copy; Eco-Life 2022</li>
-        </ul>
         <div class="citing-links">
             <cite><a href="https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon">Icon Citation</a></cite> :
             <cite><a class ="citation" href="https://www.freepik.com/free-vector/big-green-hand-drawn-tree-life_10502868.htm#query=tree%20icon&position=26&from_view=search&track=sph"><span>logo citation</span></a></cite>
         </div>
+        <ul>
+            <li><a href="mailto:esmokoff@uw.edu"><span class="material-icons">email</span>esmokoff@uw.edu</a></li>
+            <li>&copy; Eco-Life 2022</li>
+        </ul>
     </footer>
     </div>
 </body>
