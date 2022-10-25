@@ -68,6 +68,11 @@ h2 .profile-header {
     text-align: center;
 }
 
+/* Space header better*/
+.product-header {
+    padding: 1rem;
+}
+
 /*Style title*/
 .request-header {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -233,6 +238,15 @@ header .home p {
     border-radius: 2rem;
     border-color:rgb(26, 81, 56);
 }
+/* styles search bar on product page*/
+.product-search-bar {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    height: 2rem;
+    width: 14rem;
+    border-radius: 2rem;
+    border-color: rgb(26, 81, 56);
+}
 
 /*changes search icon on all pages*/
 #search-icon{
@@ -240,6 +254,41 @@ header .home p {
     margin: 10px;
     padding-top:5px;
     
+}
+
+/* styling cards on product page*/
+.product-card-container {
+    display: flex;
+    flex-direction: col;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.product-card img, .map-card img, .rating-card .chart{
+    height: 450px;
+    width: 450px;
+}
+
+.product-card .price{
+    color: grey;
+    font-size: 22px;
+}
+
+.rating-card, .map-card, .product-card{
+    flex-basis: 0;
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
+.rating-card img{
+    padding: 1rem;
+}
+
+.map-card{
+    padding:1rem;
 }
 
 /*style all cards on bookmarked page*/
