@@ -299,6 +299,11 @@ header .home p {
     text-align: center;
 }
 
+.card-container a{
+    color:black;
+    text-decoration: none;
+}
+
 /* defines the main card container on the home page */
 .home-card-container {
     display: inline-flex;
