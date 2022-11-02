@@ -5,77 +5,108 @@
     <meta charset="utf-8">
     <meta name="author" content="Akshita">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" 
-      type="image/png" 
-      href="img/myicon.png" />
+    <link rel="icon" type="image/png" href="img/myicon.png" />
     <title>Eco-Life Product Page</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Montserrat&family=Open+Sans&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/product_page.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(78, 117, 100)">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(26, 81, 56);">
+        
         <div class="container-fluid">
             <h1>EC<img src="img/logo.png" alt="logo representing letter o">-LIFE</h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+              </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link active" style="color:white; text-decoration: underline;" aria-current="home page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:white; text-decoration: underline;"
-                            aria-current="Search" href="#">Search</a>
+                        <a class="nav-link" href="search.html">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Upload Products</a>
+                        <a class="nav-link" href="request.html">Upload Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bookmarks</a>
+                        <a class="nav-link" href="bookmarked.html">Bookmarks</a>
                     </li>
                 </ul>
-                <a href="#"><span class="material-icons" aria-label="Personal Profile">account_circle</span></a>
+                <form>
+                    <span>
+                        <input id="search-input" type="text" name="search" placeholder=" Search for products">
+                    </span>
+                </form>
+                <span class="material-icons" aria-label="search icon">search</span>
+                <a href="profile.html"><span class="material-icons" aria-label="Personal Profile">account_circle</span></a>
             </div>
-        </div>
+        </div>   
     </nav>
-    <header>
+    <header class="product-header">
         <h1> Products</h1>
     </header>
     <main>
-        <input class="search-bar" type="search" name="searchinput" placeholder="   Search..."></li>
-        <div class="card-container">
+        <input class="product-search-bar" type="search" name="searchinput" placeholder="   Search..."></li>
+        <div class="product-card-container">
             <!--Product image-->
             <div class="product-card">
                 <h2>Sustainable makeup wipes</h2>
-                <img src="img/product-image.jpg" alt="reuseable make up wipes">
+                <img src="img/product.jpeg" alt="reuseable make up wipes">
                 <p class="price">$19.99</p>
-                <p class="content">These are very gentle and, as I have been pleasantly surprised to find, they still remove all my Nars Stylo eyeliner. They are made with argan oil and smell slightly like citrus, and if the baby-pink packaging were not enough to do it for me, the fact that Josie pledges a percentage of sales to help endangered polar bears really seals the deal.</p>
+                <p class="content">These are very gentle and, as I have been pleasantly surprised to find, they still
+                    remove all my Nars Stylo eyeliner. They are made with argan oil and smell slightly like citrus, and
+                    if the baby-pink packaging were not enough to do it for me, the fact that Josie pledges a percentage
+                    of sales to help endangered polar bears really seals the deal.</p>
                 <p><button>Add to Cart</button></p>
             </div>
             <!--Rating image-->
             <div class="rating-card">
                 <h3>Rating</h3>
                 <img src="img/4.5rating.png" alt="rating">
-                <img src="img/chart.png" alt="carbon footprint chart">
+                <img class="chart" src="img/chart.jpeg" alt="carbon footprint chart">
             </div>
             <!--Map image-->
             <div class="map-card">
                 <h3>Availability near me</h3>
+                <p><button>Show availibility on maps</button></p>
                 <img src="img/map.jpeg" alt="product availability map">
             </div>
         </div>
     </main>
     <footer>
-        <ul>
+        <div class="citing-links">
+            <p>
+                <cite><a href="https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon">Icon
+                        Citation</a></cite> :
+                <cite><a class="citation"
+                        href="https://www.freepik.com/free-vector/big-green-hand-drawn-tree-life_10502868.htm#query=tree%20icon&position=26&from_view=search&track=sph"><span>logo
+                            citation</span></a></cite>
+                <cite>Photo by <a
+                        href="https://depositphotos.com/portfolio-8509220.html?content=photo">
+                        galitskaya</a> on <a
+                        href="https://depositphotos.com/home.html">
+                        depositphotos</a>
+                </cite> :
+                <cite>Photo by <a
+                        href="https://depositphotos.com/portfolio-7442846.html?content=photo">
+                        stas11</a> on <a
+                        href="https://depositphotos.com/home.html">
+                        depositphotos</a>
+                </cite> :
+                <cite>Photo by <a
+                        href="https://depositphotos.com/portfolio-1010613.html?content=photo">AndreyPopov</a>
+                    on <a
+                        href="https://depositphotos.com/home.html">
+                        depositphotos</a>
+            </p>
+        </div>
+        <ul class="contact-info">
             <li><a href="mailto:esmokoff@uw.edu"><span class="material-icons">email</span>esmokoff@uw.edu</a></li>
-            <li><cite><a href="https://unsplash.com/photos/VxAwTeiqDao">Product Image</cite></li>
-            <cite><a href="https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon">Icon Citation</a></cite>
             <li>&copy; Eco-Life 2022</li>
         </ul>
     </footer>
