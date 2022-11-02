@@ -2,94 +2,19 @@
     box-sizing: border-box;
 }
 
-/*Style profile header*/
-h2 .profile-header {
-    top: 20%;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
-    margin: none;
-}
-
-/*Style title*/
-.login-info {
-    top: 40%;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-}
-
-/*Style the footprint circle icon*/
-.footprint {
-    height: 100px;
-    width: 100px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-/*Style the form labels*/
-.label-text {
-    font-weight:370;
-    margin-bottom: 0;
-}
-
-/*Ecological footprint label*/
-.score-label {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 75%;
-    white-space: nowrap;
-}
-
-
-/*Request page*/
-
-/*Center the title and form*/
-.request-header, form {
-    text-align: center;
-}
-
-/* Space header better*/
-.product-header {
-    padding: 1rem;
-}
-
-/*Style title*/
-.request-header {
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
-}
-
-/*Position of the form*/
-.request-body{
-    position: absolute;
-    width: 100%;
-    top: 10%;
-    display: block;
-}
-
-/*Form labels*/
-.label-text {
-    font-weight:370;
-    margin-bottom: 0;
-}
-
-.footer-bottom {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-}
-
 /*Allow content to go across the whole page*/
 html, body {
     padding: 0;
     margin: 0;
+}
+
+nav {
+    background-color: rgb(26, 81, 56);
+}
+
+.active {
+    color: white;
+    text-decoration: underline;
 }
 
 /*Header as seen on the index.html page*/
@@ -169,6 +94,89 @@ h3{
     font-size: 1em;
 }
 
+/*Style profile header*/
+h2 .profile-header {
+    top: 20%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+/*Style title*/
+.login-info {
+    top: 40%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+/*Style the footprint circle icon*/
+.footprint {
+    height: 100px;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/*Style the form labels*/
+.label-text {
+    font-weight:370;
+    margin-bottom: 0;
+}
+
+/*Ecological footprint label*/
+.score-label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 75%;
+    white-space: nowrap;
+}
+
+/*Request page*/
+
+/*Center the title and form*/
+.request-header, form {
+    text-align: center;
+}
+
+/* Space header better*/
+.product-header {
+    padding: 1rem;
+}
+
+/*Style title*/
+.request-header {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+/*Position of the form*/
+.request-body{
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    display: block;
+}
+
+/*Form labels*/
+.label-text {
+    font-weight:370;
+    margin-bottom: 0;
+}
+
+.footer-bottom {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
 /*defines styling for under the website title in the header home page*/
 header .home p {
     font-family: 'Kanit', sans-serif;
@@ -214,11 +222,6 @@ header .home p {
     padding: 1rem;
 }
 
-/*Doesn't display Search bar in mobile first approach for styling*/
-.second-heading .search-bar {
-    display: none;
-}
-
 /* defines search bar for home page*/
 .search-bar {
     height: 2rem;
@@ -247,7 +250,7 @@ header .home p {
 /* styling cards on product page*/
 .product-card-container {
     display: flex;
-    flex-direction: col;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -462,10 +465,6 @@ footer a, footer p {
         float:right;
         margin-top: 9px;
         margin-right: 2em;
-    }
-
-    .second-heading .search-bar {
-        display: flex;
     }
 
     .about-us {
