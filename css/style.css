@@ -347,7 +347,9 @@ header .home p {
 
 /*hides images on search and bookmark page in small screen*/
 .product-img{
-    display:none;
+    width: 100%;
+    margin:0;
+    padding:0;
 }
 
 /*styles product names on search and bookmark page*/
@@ -440,14 +442,6 @@ footer a, footer p {
     /*larger flex box on bookmark and search page*/
     .card-container .card{
         max-width:12em;
-    }
-
-    /*display product image on bookmark and search page*/
-    .product-img{
-        display: block;
-        width: 100%;
-        margin:0;
-        padding:0;
     }
 }
 
