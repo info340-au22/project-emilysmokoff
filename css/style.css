@@ -8,6 +8,15 @@ html, body {
     margin: 0;
 }
 
+nav {
+    background-color: rgb(26, 81, 56);
+}
+
+.active {
+    color: white;
+    text-decoration: underline;
+}
+
 /*Header as seen on the index.html page*/
 header .home {
     color: rgb(26, 81, 56);
@@ -211,11 +220,6 @@ header .home p {
 .second-heading li {
     display: flex;
     padding: 1rem;
-}
-
-/*Doesn't display Search bar in mobile first approach for styling*/
-.second-heading .search-bar {
-    display: none;
 }
 
 /* defines search bar for home page*/
@@ -461,10 +465,6 @@ footer a, footer p {
         float:right;
         margin-top: 9px;
         margin-right: 2em;
-    }
-
-    .second-heading .search-bar {
-        display: flex;
     }
 
     .about-us {
