@@ -15,7 +15,7 @@ export function BookmarkedBody(props) {
         <div className='header'>
             <div className='h2'>Your Bookmarked Products <span class="add">+ Add Items</span><span class="plus-icon">+</span></div>
         </div>
-        {productsArray}
+        <div className='card-container'>{productsArray}</div>
     </div>
     )
 }
