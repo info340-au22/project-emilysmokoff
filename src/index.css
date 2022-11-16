@@ -18,6 +18,7 @@ nav {
 }
 
 /*Header as seen on the index.html page*/
+
 .home {
     color: rgb(26, 81, 56);
     text-align: center;
@@ -75,6 +76,16 @@ nav img{
 
 /*Main page section header*/
 h2{
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color:rgb(26, 81, 56);
+    font-weight:580;
+    font-size: 2em;
+    margin: 1em;
+}
+
+
+/*INSERT FOR MADELINE REACT*/
+.h2{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color:rgb(26, 81, 56);
     font-weight:580;

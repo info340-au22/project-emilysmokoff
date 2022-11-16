@@ -1,16 +1,19 @@
-import React from 'react';
-import { NavigationBar } from './components/NavigationBar.js';
-import { HomePage } from './components/HomePage.js';
-import { Footer } from './components/Footer.js';
+import React, {useState} from 'react';
 
+import { BookmarkedBody } from './BookmarkedBody.js';
+import { SearchBody } from './SearchBody.js';
+
+import PRODUCT_LIST from './data/products.json';
 
 export default function App(props) {
-    const currentPage = "HomePage";
+    const [productList, setProduct] = useState(PRODUCT_LIST);
+
     return (
-        <div>
-            <NavigationBar currentPage={currentPage}/>
-            <HomePage />
-            <Footer currentPage={currentPage} />
-        </div>
-    );
-}
+        // <BookmarkedBody 
+        //     productList={productList}
+        // />
+        // <SearchBody
+        // productList={productList}
+        // />
+    )
+  }
