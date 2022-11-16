@@ -1,0 +1,32 @@
+[
+  {
+    "product": "Sustainable Makeup Wipes",
+    "company": "EcoPanda ",
+    "price": "$19.99",
+    "image": "/img/wipes.jpg",
+    "imageAlt":"Sustainable Makeup Wipes",
+    "ratingImage": "/img/4.5rating.png",
+    "ratingImageAlt": "4.5 star rating",
+    "id":1
+    },
+    {
+      "product": "Hair Recovery Conditioner for Men",
+      "company": "Scandinavian Biolabs ",
+      "price": "$28",
+      "image": "/img/scand-shampoo.jpg",
+      "imageAlt":"Scandinavian Biolabs Conditioner",
+      "ratingImage": "/img/5rating.png",
+      "ratingImageAlt": "5 star rating",
+      "id":2
+      },
+      {
+        "product": "Thick & Restore + Bamboo Fiber Shampoo",
+        "company": "Maui Moisture ",
+        "price": "$7",
+        "image": "/img/maui-shampoo.jpg",
+        "imageAlt":"Maui Moisture Shampoo",
+        "ratingImage": "/img/4.5rating.png",
+        "ratingImageAlt": "4.5 star rating",
+        "id":3
+        }
+]
