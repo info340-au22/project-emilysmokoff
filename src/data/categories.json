@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Health and Wellness",
+        "image": "/img/health-wellness.jpg",
+        "imageDescription": "fresh veggies"
+    },
+    {
+        "title": "House",
+        "image": "/img/house.jpg",
+        "imageDescription": "clean ingredient cleaning supplies"
+    },
+    {
+        "title": "Kitchen",
+        "image": "/img/kitchen.jpg",
+        "imageDescription": "sustainable kitchen products"
+    },
+    {
+        "title": "Cosmetics",
+        "image": "/img/cosmetic.jpg",
+        "imageDescription": "sustainable cosmetic products"
+
+    },
+    {
+        "title": "Technology",
+        "image": "/img/technology.jpg",
+        "imageDescription": "sustainable technology devices"
+
+    },
+    {
+        "title": "Brands",
+        "image": "/img/brand.jpg",
+        "imageDescription": "trees"
+    }
+]

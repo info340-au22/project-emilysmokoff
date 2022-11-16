@@ -18,12 +18,13 @@ nav {
 }
 
 /*Header as seen on the index.html page*/
-header .home {
+
+.home {
     color: rgb(26, 81, 56);
     text-align: center;
     padding-top: 5rem;
     padding-bottom: 1rem;
-    background-image: url('../project-draft/img/background-photo.jpg');
+    background-image: url('../public/img/background-photo.jpg');
     background-size: cover;
     width: 100%;
 }
@@ -81,6 +82,7 @@ h2{
     font-size: 2em;
     margin: 1em;
 }
+
 
 /*INSERT FOR MADELINE REACT*/
 .h2{
@@ -187,7 +189,7 @@ h2 .profile-header {
 }
 
 /*defines styling for under the website title in the header home page*/
-header .home p {
+.home p {
     font-family: 'Kanit', sans-serif;
     font-size: 2rem;
 }
