@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import { BookmarkedBody } from './components/BookmarkedBody.js';
-//import { SearchBody } from './SearchBody.js';
+//import { BookmarkedBody } from './components/BookmarkedBody.js';
+//import { SearchBody } from './components/SearchBody.js';
 import { NavigationBar } from './components/NavigationBar.js';
-//import { HomePage } from './components/HomePage.js';
+import { HomePage } from './components/HomePage.js';
 import { Footer } from './components/Footer.js';
 
 
@@ -16,10 +16,10 @@ export default function App(props) {
     return (
         <div>
             <NavigationBar currentPage={currentPage}/>
-            {/* <HomePage /> */}
-            <BookmarkedBody 
+            <HomePage />
+            {/* <BookmarkedBody 
              productList={productList}
-            />
+            /> */}
             {/* <SearchBody
             productList={productList}
             /> */}
