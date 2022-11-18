@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 
-//import { BookmarkedBody } from './components/BookmarkedBody.js';
-//import { SearchBody } from './components/SearchBody.js';
+import { BookmarkedBody } from './components/BookmarkedBody.js';
+import { SearchBody } from './components/SearchBody.js';
 import { NavigationBar } from './components/NavigationBar.js';
 import { HomePage } from './components/HomePage.js';
 import { Footer } from './components/Footer.js';
+import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
+import { ProfileForm, SignOut } from './/components/ProfileForm.js';
 
 
 import PRODUCT_LIST from './data/products.json';
@@ -22,6 +24,14 @@ export default function App(props) {
             /> */}
             {/* <SearchBody
             productList={productList}
+            /> */}
+            {/* <RequestForm /> */}
+            {/* <ProfileForm /> */}
+            {/* <SignOut 
+            username="carter" 
+            /> */}
+            {/* <RequestReceipt 
+            productObj = {productList[0]}
             /> */}
             <Footer currentPage={currentPage} />
         </div>
