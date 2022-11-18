@@ -182,11 +182,16 @@ h2 .profile-header {
     margin-bottom: 0;
 }
 
-.footer-bottom {
-    position: absolute;
+.profileBody {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+}
+
+/* .footer-bottom {
+    position:static;
     bottom: 0px;
     width: 100%;
-}
+} */
 
 /*defines styling for under the website title in the header home page*/
 .home p {
