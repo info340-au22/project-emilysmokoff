@@ -11,16 +11,8 @@ export function SearchBody(props) {
         return element;
     })
     return (
-    <div>
-        <div className='search-header'>
-            <div className='h2'>Search</div>
-        </div>
-        <form className="search-page-form">
-            <input className="search-page-bar" id="search-input" type="text" name="search"
-                placeholder=" Search for products, categories, ..."/>
-            <span id="search-icon" className="material-icons" aria-label="search icon">search</span>
-        </form>
-        {productsArray}
+    <div className='bookmarked'>
+        <div className='card-container'>{productsArray}</div>
     </div>
     )
 }
@@ -29,7 +21,7 @@ function ProductItem(props){
     const {product, company, price, image, imageAlt, ratingImage, ratingImageAlt} = props.productData;
 
     return (  
-        <div className='bookmarked'>
+        <div>
             <main> 
                 <div className="card-container">
                     <div className="card">
