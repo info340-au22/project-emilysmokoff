@@ -6,7 +6,7 @@ import { NavigationBar } from './components/NavigationBar.js';
 import { HomePage } from './components/HomePage.js';
 import { Footer } from './components/Footer.js';
 import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
-import { ProfileForm, SignOut } from './/components/ProfileForm.js';
+import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
 
 
 import PRODUCT_LIST from './data/products.json';
@@ -26,9 +26,13 @@ export default function App(props) {
             productList={productList}
             /> */}
             {/* <RequestForm /> */}
-            {/* <ProfileForm /> */}
+            {/* <CreateAccount /> */}
+            {/* <SignIn 
+            username="test"
+            password="test"
+            /> */}
             {/* <SignOut 
-            username="carter" 
+            username="test" 
             /> */}
             {/* <RequestReceipt 
             productObj = {productList[0]}

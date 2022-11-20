@@ -182,9 +182,14 @@ h2 .profile-header {
     margin-bottom: 0;
 }
 
-.profileBody {
+.signOutBody {
     padding-top: 6rem;
-    padding-bottom: 8rem;
+    padding-bottom: 12rem;
+}
+
+.signInBody {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
 }
 
 /* .footer-bottom {
