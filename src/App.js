@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import { BookmarkedBody } from './components/BookmarkedBody.js';
+import { ProductPage } from './components/Product.js';
 import { SearchBody } from './components/SearchBody.js';
 import { NavigationBar } from './components/NavigationBar.js';
 import { HomePage } from './components/HomePage.js';
@@ -19,13 +20,13 @@ export default function App(props) {
         <div>
             <NavigationBar currentPage={currentPage}/>
             <HomePage />
-            {/* <BookmarkedBody 
-             productList={productList}
-            /> */}
+            {/*<BookmarkedBody 
+             productList={productList}/> 
+             */}
             {/* <SearchBody
             productList={productList}
             /> */}
-            {/* <RequestForm /> */}
+            {/*<RequestForm />*/}
             {/* <CreateAccount /> */}
             {/* <SignIn 
             username="test"
@@ -37,6 +38,7 @@ export default function App(props) {
             {/* <RequestReceipt 
             productObj = {productList[0]}
             /> */}
+            {/*<ProductPage />*/}
             <Footer currentPage={currentPage} />
         </div>
 
