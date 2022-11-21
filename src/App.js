@@ -4,7 +4,7 @@ import { NavigationBar } from './components/NavigationBar.js';
 //import { HomePage } from './components/HomePage.js';
 //import { BookmarkedPage } from './components/BookmarkedPage.js';
 //import { ProductPage } from './components/Product.js';
-import { SearchPage } from './components/SearchPage.js';
+//import { SearchPage } from './components/SearchPage.js';
 //import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
 //import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
@@ -47,10 +47,10 @@ export default function App(props) {
             {/* <BookmarkedPage 
              productList={bookmarkedList}
             /> */}
-            <SearchPage
+            {/* <SearchPage
                 productList={displayedList}
                 applyFilterCallback={applyFilter}
-            />
+            /> */}
             {/*<RequestForm />*/}
             {/* <CreateAccount /> */}
             {/* <SignIn 
