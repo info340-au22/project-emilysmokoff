@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+.btn {
+    padding-bottom: 0;
+    padding-top: 0;
+    background-color: white;
+    border-color: white;
+}
+
+.input-group{
+    align-items:center;
+}
+
 /*Allow content to go across the whole page*/
 html, body {
     padding: 0;
@@ -33,7 +44,7 @@ nav {
 body {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     font-size: 18px;
-    flex: 1;
+    flex:1;
 }
 
 /*Home screens top level header */
@@ -70,7 +81,7 @@ nav img{
 }
 
 /*page minus nav margins*/
-.bookmarked main, .search main{
+.bookmarked{
     margin:0 4em;
 }
 
@@ -85,12 +96,24 @@ h2{
 
 
 /*INSERT FOR MADELINE REACT*/
-.h2{
+.bookmark-h2{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color:rgb(26, 81, 56);
     font-weight:580;
     font-size: 2em;
     margin: 1em;
+    line-height: 1.2;
+}
+
+/*INSERT FOR MADELINE REACT*/
+.search-h2{
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color:rgb(26, 81, 56);
+    font-weight:580;
+    font-size: 2em;
+    margin: 1em;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 /*remove space under h2 on search page*/
@@ -226,6 +249,7 @@ h2 .profile-header {
 
 /*Search page form, area including bar*/
 .search-page-form{
+    margin-top:1em;
     text-align: left;
 }
 
@@ -263,8 +287,6 @@ h2 .profile-header {
 /*changes search icon on all pages*/
 #search-icon{
     color:rgb(26, 81, 56);
-    margin: 10px;
-    padding-top:5px;
     
 }
 
