@@ -28,7 +28,7 @@ function ProductItem(props){
             <main> 
                 <div className="card-container">
                     <div className="card">
-                        <img className="product-img" src={image} alt={imageAlt}/>
+                        <img className="bookmark-search-img" src={image} alt={imageAlt}/>
                         <p className="product-name">{product}</p>
                         <p className="company">{company}<span className="price">{price}</span></p>
                         <img className="rating" src={ratingImage} alt={ratingImageAlt}/>
