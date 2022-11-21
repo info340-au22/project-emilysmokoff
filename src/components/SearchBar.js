@@ -34,7 +34,7 @@ function Search(props) {
                 placeholder=" Search for products, categories, ..."
                 onChange={handleChange}
                 value={typedValue}/>
-          <button type="button" className="btn btn-light" onClick={handleSubmit}>
+          <button type="button" className="btn btn-light btn-style" onClick={handleSubmit}>
             <span id="search-icon" className="material-icons">search</span>
           </button>
       </form>

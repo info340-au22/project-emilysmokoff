@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.btn {
+.btn-style {
     padding-bottom: 0;
     padding-top: 0;
     background-color: white;
@@ -400,7 +400,7 @@ h2 .profile-header {
 }
 
 /*hides images on search and bookmark page in small screen*/
-.product-img{
+.bookmark-search-img{
     width: 100%;
     margin:0;
     padding:0;
