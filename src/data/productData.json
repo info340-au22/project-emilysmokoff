@@ -1,0 +1,10 @@
+{
+        "product": "Sustainable Makeup Wipes",
+        "company": "EcoPanda ",
+        "price": "$19.99",
+        "image": "../img/wipes.jpg",
+        "imageAlt": "Sustainable Makeup Wipes",
+        "ratingImage": "../img/4.5rating.png",
+        "ratingImageAlt": "4.5 star rating",
+        "id": 1
+}

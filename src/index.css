@@ -205,11 +205,21 @@ h2 .profile-header {
     margin-bottom: 0;
 }
 
-.footer-bottom {
-    position: absolute;
+.signOutBody {
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+}
+
+.signInBody {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+/* .footer-bottom {
+    position:static;
     bottom: 0px;
     width: 100%;
-}
+} */
 
 /*defines styling for under the website title in the header home page*/
 .home p {
@@ -291,7 +301,13 @@ h2 .profile-header {
     margin-right: 1.5rem;
 }
 
-.product-card img, .map-card img, .rating-card .chart{
+.rating-img {
+    height: 50px;
+    width: 400px;
+    margin: 1rem;
+}
+
+.product-img{
     height: 450px;
     width: 450px;
 }
@@ -306,6 +322,7 @@ h2 .profile-header {
     margin: 1rem;
     margin-bottom: 0;
 }
+
 
 .rating-card img{
     padding: 1rem;
