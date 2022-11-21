@@ -16,29 +16,30 @@ export default function App(props) {
 
     //Change quotes to HomePage, BookmarkedProducts, BrowsePage depending on page
     const currentPage = "BrowsePage";
+    
 
-    //Uncomment for BookmarkedBody component
+    //Uncomment for BookmarkedPage
     //const [bookmarkedList, setBookmarkedList] = useState(PRODUCT_LIST);
 
-    const [productList, setProductList] = useState(PRODUCT_LIST);
 
-    const [searchValue, setSearchValue] = useState('');
+    //Uncomment for SearchPage
+    // const [searchValue, setSearchValue] = useState('');
 
-    function applyFilter(text) {
-        setSearchValue(text);
-    }
+    // function applyFilter(text) {
+    //     setSearchValue(text);
+    // }
 
-    let displayedList = productList.filter((product) => {
-        if (searchValue == '') {
-            return product;
-        } else {
-            if (product.tags.includes(searchValue)) {
-                return product;
-            } else {
-                return null;
-            }
-        }
-    })
+    // let displayedList = PRODUCT_LIST.filter((product) => {
+    //     if (searchValue === '') {
+    //         return product;
+    //     } else {
+    //         if (product.tags.includes(searchValue)) {
+    //             return product;
+    //         } else {
+    //             return null;
+    //         }
+    //     }
+    // })
 
     return (
         <div>
