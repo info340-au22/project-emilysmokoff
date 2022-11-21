@@ -322,10 +322,11 @@ h2 .profile-header {
     padding:1rem;
 }
 
-/*style all cards on bookmarked page*/
+/*style results cards*/
 .card-container{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 2em;
 }
 
 /*style individual card on bookmarked page*/
