@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export function SearchBody(props) {
+export function Results(props) {
     const productsArray = props.productList.map((productObj) => {
         const element = (
             <ProductItem 
@@ -10,13 +10,18 @@ export function SearchBody(props) {
         )
         return element;
     })
+
+    if(productsArray[0]==null){
+        return (
+            <p className='card-container'>No results found. Please try again! </p>
+        )
+    }else{
     return (
-    <div className='bookmarked'>
         <div className='card-container'>{productsArray}</div>
-    </div>
     )
+    }
 }
-    
+
 function ProductItem(props){
     const {product, company, price, image, imageAlt, ratingImage, ratingImageAlt} = props.productData;
 

@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import { NavigationBar } from './components/NavigationBar.js';
 //import { HomePage } from './components/HomePage.js';
-//import { BookmarkedBody } from './components/BookmarkedBody.js';
+//import { BookmarkedPage } from './components/BookmarkedPage.js';
 //import { ProductPage } from './components/Product.js';
-//import { SearchBody } from './components/SearchBody.js';
-//import { SearchBar } from './components/SearchBar.js';
+import { SearchPage } from './components/SearchPage.js';
 //import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
 //import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
@@ -16,44 +15,42 @@ import PRODUCT_LIST from './data/products.json';
 export default function App(props) {
 
     //Change quotes to HomePage, BookmarkedProducts, BrowsePage depending on page
-    const currentPage = "BookmarkedProducts";
+    const currentPage = "BrowsePage";
 
     //Uncomment for BookmarkedBody component
-   // const [productList, setProductList] = useState(PRODUCT_LIST);
+    //const [bookmarkedList, setBookmarkedList] = useState(PRODUCT_LIST);
 
-   //For SearchBody and SearchBar components
-    const [productListSearch, setProductListSearch] = useState(PRODUCT_LIST);
+    const [productList, setProductList] = useState(PRODUCT_LIST);
 
-    const[searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('');
 
-    function applyFilter(text){
+    function applyFilter(text) {
         setSearchValue(text);
-      }
-
-    let displayedListSearch = productListSearch.filter((product) => {
-        if(searchValue==''){
-            return product
-        }
-        if(product.product.includes(searchValue)){
-            return product;
-        }
     }
-    
-    )
+
+    let displayedList = productList.filter((product) => {
+        if (searchValue == '') {
+            return product;
+        } else {
+            if (product.tags.includes(searchValue)) {
+                return product;
+            } else {
+                return null;
+            }
+        }
+    })
 
     return (
         <div>
-            <NavigationBar currentPage={currentPage}/>
+            <NavigationBar currentPage={currentPage} />
             {/* <HomePage /> */}
-            {/* <BookmarkedBody 
-             productList={productList}
+            {/* <BookmarkedPage 
+             productList={bookmarkedList}
             /> */}
-             {/* <SearchBar
-             applyFilterCallback={applyFilter}
+            <SearchPage
+                productList={displayedList}
+                applyFilterCallback={applyFilter}
             />
-            <SearchBody
-            productList={displayedListSearch}
-            /> */}
             {/*<RequestForm />*/}
             {/* <CreateAccount /> */}
             {/* <SignIn 
@@ -71,4 +68,4 @@ export default function App(props) {
         </div>
 
     )
-  }
+}

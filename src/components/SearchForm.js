@@ -1,20 +1,7 @@
 import React, {useState} from 'react';
 
-export function SearchBar(props) {
+export function SearchForm(props) {
 
-    return (
-    <div>
-        <div className='search-header'>
-            <div className='search-h2'>Browse Products</div>
-        </div>
-        <div className='bookmarked'>
-            <Search/>
-        </div>
-    </div>
-    )
-}
-
-function Search(props) {
     const [typedValue, setTypedValue] = useState("");
   
     const handleChange = (event) => {
@@ -24,8 +11,7 @@ function Search(props) {
     }
   
     const handleSubmit = (event) => {
-        console.log("search for", typedValue);
-        props.applyFilterCallback(typedValue);
+      props.applyFilterCallback(typedValue.toLowerCase());
     }
   
     return (
