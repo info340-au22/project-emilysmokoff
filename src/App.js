@@ -4,19 +4,25 @@ import { NavigationBar } from './components/NavigationBar.js';
 //import { HomePage } from './components/HomePage.js';
 //import { BookmarkedBody } from './components/BookmarkedBody.js';
 //import { ProductPage } from './components/Product.js';
-// import { SearchBody } from './components/SearchBody.js';
-// import { SearchBar } from './components/SearchBar.js';
+//import { SearchBody } from './components/SearchBody.js';
+//import { SearchBar } from './components/SearchBar.js';
 //import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
-import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
+//import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
 
 
 import PRODUCT_LIST from './data/products.json';
 
 export default function App(props) {
-    //const [productList, setProductList] = useState(PRODUCT_LIST);
+
+    //Change quotes to HomePage, BookmarkedProducts, BrowsePage depending on page
+    const currentPage = "BookmarkedProducts";
+
+    //Uncomment for BookmarkedBody component
+   // const [productList, setProductList] = useState(PRODUCT_LIST);
+
+   //For SearchBody and SearchBar components
     const [productListSearch, setProductListSearch] = useState(PRODUCT_LIST);
-    const currentPage = "SearchPage";
 
     const[searchValue, setSearchValue] = useState('');
 
@@ -49,7 +55,7 @@ export default function App(props) {
             productList={displayedListSearch}
             /> */}
             {/*<RequestForm />*/}
-            <CreateAccount />
+            {/* <CreateAccount /> */}
             {/* <SignIn 
             username="test"
             password="test"

@@ -11,11 +11,13 @@ export function BookmarkedBody(props) {
         return element;
     })
     return (
+        <div>
+    <div className='search-header'>
+        <div className='search-h2'>Your Bookmarked Products <span class="add">+ Edit Items</span><span class="plus-icon">+</span></div>
+    </div>
     <div className='bookmarked'>
-        <div className='header'>
-            <div className='bookmark-h2'>Your Bookmarked Products <span class="add">+ Edit Items</span><span class="plus-icon">+</span></div>
-        </div>
         <div className='card-container'>{productsArray}</div>
+    </div>
     </div>
     )
 }
@@ -28,7 +30,7 @@ function ProductItem(props){
             <main> 
                 <div className="card-container">
                     <div className="card">
-                        <img className="bookmark-search-img" src={image} alt={imageAlt}/>
+                        <img className="product-search-img" src={image} alt={imageAlt}/>
                         <p className="product-name">{product}</p>
                         <p className="company">{company}<span className="price">{price}</span></p>
                         <img className="rating" src={ratingImage} alt={ratingImageAlt}/>

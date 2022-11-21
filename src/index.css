@@ -95,17 +95,7 @@ h2{
 }
 
 
-/*INSERT FOR MADELINE REACT*/
-.bookmark-h2{
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
-    color:rgb(26, 81, 56);
-    font-weight:580;
-    font-size: 2em;
-    margin: 1em;
-    line-height: 1.2;
-}
-
-/*INSERT FOR MADELINE REACT*/
+/*INSERT FOR MADELINE REACT FOR BOOKMARKS AND SEARCH*/
 .search-h2{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color:rgb(26, 81, 56);
@@ -116,7 +106,7 @@ h2{
     line-height: 1.2;
 }
 
-/*remove space under h2 on search page*/
+/*MADELINE STYLING FOR BOOKMARKS AND SEARCH*/
 .search-header{
     margin-bottom:0;
 }
