@@ -16,7 +16,7 @@ export function NavigationBar (props) {
         else {
             return(
                 <li className="nav-item" key={page.id}>
-                    <a className="nav-link" href="">{page.title}</a>
+                    <a className="nav-link" aria-label={page.title} href="">{page.title}</a>
                 </li>
         )}
     });

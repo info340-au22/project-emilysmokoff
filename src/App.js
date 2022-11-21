@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 
-//import { BookmarkedBody } from './components/BookmarkedBody.js';
-import { SearchBar } from './components/SearchBar.js';
-import { SearchBody } from './components/SearchBody.js';
 import { NavigationBar } from './components/NavigationBar.js';
 //import { HomePage } from './components/HomePage.js';
+//import { BookmarkedBody } from './components/BookmarkedBody.js';
+//import { ProductPage } from './components/Product.js';
+//import { SearchBody } from './components/SearchBody.js';
+//import { SearchBar } from './components/SearchBar.js';
+//import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
+//import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
 
 
@@ -39,12 +42,25 @@ export default function App(props) {
             {/* <BookmarkedBody 
              productList={productList}
             /> */}
-            <SearchBar
-                applyFilterCallback={applyFilter}
+             <SearchBar
+             applyFilterCallback={applyFilter}
             />
             <SearchBody
-                productList={displayedListSearch}
+            productList={displayedListSearch}
             />
+            {/*<RequestForm />*/}
+            {/* <CreateAccount /> */}
+            {/* <SignIn 
+            username="test"
+            password="test"
+            /> */}
+            {/* <SignOut 
+            username="test" 
+            /> */}
+            {/* <RequestReceipt 
+            productObj = {productList[0]}
+            /> */}
+            {/*<ProductPage />*/}
             <Footer currentPage={currentPage} />
         </div>
 
