@@ -13,18 +13,24 @@ import PRODUCT_LIST from './data/products.json';
 export default function App(props) {
 //    const [productList, setProductList] = useState(PRODUCT_LIST);
     const [productListSearch, setProductListSearch] = useState(PRODUCT_LIST);
-    const currentPage = "BrowsePage";
+    const currentPage = "SearchPage";
 
-    const filterProductList = (text) => {
-        let filteredProductList = [];
-        for(let i=0; i<productListSearch.length; i++){
-            let productObj = productListSearch[i];
-            if(productObj.product.includes(text)){
-                filteredProductList.push(productObj);
-            }
+    const[searchValue, setSearchValue] = useState('');
+
+    function applyFilter(text){
+        setSearchValue(text);
+      }
+
+    let displayedListSearch = productListSearch.filter((product) => {
+        if(searchValue==''){
+            return product
         }
-        setProductListSearch(filteredProductList);
+        if(product.product.includes(searchValue)){
+            return product;
+        }
     }
+    
+    )
 
     return (
         <div>
@@ -34,11 +40,10 @@ export default function App(props) {
              productList={productList}
             /> */}
             <SearchBar
-                productList={productListSearch}
-                filterProductList={filterProductList}
+                applyFilterCallback={applyFilter}
             />
             <SearchBody
-                productList={productListSearch}
+                productList={displayedListSearch}
             />
             <Footer currentPage={currentPage} />
         </div>

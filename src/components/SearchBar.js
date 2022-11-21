@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 export function SearchBar(props) {
-console.log(props.filterProductList.type);
 
     return (
     <div>
@@ -26,7 +25,7 @@ function Search(props) {
   
     const handleSubmit = (event) => {
         console.log("search for", typedValue);
-        props.filterProductList(typedValue);
+        props.applyFilterCallback(typedValue);
     }
   
     return (
@@ -41,31 +40,3 @@ function Search(props) {
       </form>
     )
 }
-
-//if usr clicks checkbox, hide 15 minutes in lecture
-
-// function SearchTest(props) {
-//     const [typedValue, setTypedValue] = useState("");
-  
-//     const handleChange = (event) => {
-//       const value = event.target.value;
-//       console.log(value);
-//       setTypedValue(value); //update state and re-render!
-//     }
-  
-//     const handleSubmit = (event) => {
-//         console.log("search for", typedValue);
-//     }
-  
-//     return (
-//       <form className='search-page-form'>
-//             <input className="search-page-bar" id="search-input" type="text" name="search"
-//                 placeholder=" Search for products, categories, ..."
-//                 onChange={handleChange}
-//                 value={typedValue}/>
-//           <button type="button" onClick={handleSubmit} className="btn btn-light">
-//             <span id="search-icon" className="material-icons">search</span>
-//           </button>
-//       </form>
-//     )
-// }
