@@ -45,7 +45,7 @@ export function RequestReceipt (props) {
             <p>You just submitted this product for review:</p>
             <p>Product Name: {props.productObj.product} </p>
             <p>Company Name: {props.productObj.company} </p>
-            <img className="product-img w-25 p-3" src={props.productObj.image}/>
+            <img className="product-img " src={props.productObj.image}/>
             <p>Thanks for submitting!</p>
         </div>
     )
