@@ -15,6 +15,7 @@ export function SignIn(props) {
     if (username == props.username && password == props.password) {
         topMsg = "You are signed in as " + username + ".";
         //Route to sign out page, passing username as a prop
+        <SignOut username = {username} />
     } else {
         topMsg = "Please submit your username and password."
     }
@@ -64,6 +65,7 @@ export function CreateAccount (props) {
 
     if (password == password2) {
         //Route to sign in page, passing username and password as props
+        <SignIn username={username} password = {password} />
     } else {
         accountError = "Your passwords do not match.";
     }

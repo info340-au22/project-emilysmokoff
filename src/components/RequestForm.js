@@ -10,6 +10,8 @@ export function RequestForm(props) {
         event.preventDefault();
         setProdName(event.target.form.productName.value);
         setComName(event.target.form.companyName.value);
+        //Route to request receipt
+        <RequestReceipt product = {prodName} company = {comName} />
     }
 
     let topMsg = "";
