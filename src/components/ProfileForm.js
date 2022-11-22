@@ -20,7 +20,7 @@ export function SignIn(props) {
     }
 
     return (
-        <div className="signInBody">
+        <div className="profileBody">
             <h2 className="text-center profile-header">Sign In</h2>
             <p className="text-center">{topMsg}</p>
             <form>

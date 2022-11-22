@@ -144,7 +144,7 @@ h2 .profile-header {
     border-radius: 50%;
     display: block;
     position: absolute;
-    top: 80%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%);
 }
@@ -160,7 +160,7 @@ h2 .profile-header {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 75%;
+    top: 60%;
     white-space: nowrap;
 }
 
@@ -200,9 +200,9 @@ h2 .profile-header {
     padding-bottom: 12rem;
 }
 
-.signInBody {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+.profileBody {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
 
 /* .footer-bottom {
@@ -298,8 +298,9 @@ h2 .profile-header {
 }
 
 .product-img{
-    height: 450px;
-    width: 450px;
+    height: 300px;
+    /* height: 450px; */
+    /* width: 450px; */
 }
 
 .product-card .price{
