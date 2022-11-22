@@ -13,15 +13,11 @@ export function HomePage (props) {
 }
 
 function ProductCategories (props) {
-    const handleClick = (event) => {
-        console.log("A category has been clicked");
-    }
 
     const categories = PRODUCT_CATEGORIES.map((sustainableCategory) => {
         return (
-        <div className="home-card" onClick={handleClick} key={sustainableCategory.title}>
-                {/*Need to add href here, but doesn't work with onClick console.log cause it rerenders page*/}
-                <a className="category-link">
+        <div className="home-card" key={sustainableCategory.title}>
+                <a className="category-link" href="">
                     <img src={sustainableCategory.image} alt={sustainableCategory.imageDescription} />
                     <h3>{sustainableCategory.title}</h3> 
                 </a>

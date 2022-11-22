@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
-import { BookmarkedBody } from './components/BookmarkedBody.js';
-import { ProductPage } from './components/Product.js';
-import { SearchBody } from './components/SearchBody.js';
+//import { BookmarkedBody } from './components/BookmarkedBody.js';
+//import { ProductPage } from './components/Product.js';
+//import { SearchBody } from './components/SearchBody.js';
 import { NavigationBar } from './components/NavigationBar.js';
 import { HomePage } from './components/HomePage.js';
 import { Footer } from './components/Footer.js';
-import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
+//import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
 import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
 
 
@@ -20,13 +20,13 @@ export default function App(props) {
         <div>
             <NavigationBar currentPage={currentPage}/>
             <HomePage />
-            {/*<BookmarkedBody 
+            {/* <BookmarkedBody 
              productList={productList}/> 
              */}
             {/* <SearchBody
             productList={productList}
             /> */}
-            {/*<RequestForm />*/}
+            {/* <RequestForm /> */}
             {/* <CreateAccount /> */}
             {/* <SignIn 
             username="test"
@@ -38,7 +38,7 @@ export default function App(props) {
             {/* <RequestReceipt 
             productObj = {productList[0]}
             /> */}
-            {/*<ProductPage />*/}
+            {/* <ProductPage /> */}
             <Footer currentPage={currentPage} />
         </div>
 
