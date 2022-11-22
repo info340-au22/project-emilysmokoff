@@ -15,12 +15,13 @@ export function SignIn(props) {
     if (username == props.username && password == props.password) {
         topMsg = "You are signed in as " + username + ".";
         //Route to sign out page, passing username as a prop
+        <SignOut username = {username} />
     } else {
         topMsg = "Please submit your username and password."
     }
 
     return (
-        <div className="signInBody">
+        <div className="profileBody">
             <h2 className="text-center profile-header">Sign In</h2>
             <p className="text-center">{topMsg}</p>
             <form>
@@ -64,6 +65,7 @@ export function CreateAccount (props) {
 
     if (password == password2) {
         //Route to sign in page, passing username and password as props
+        <SignIn username={username} password = {password} />
     } else {
         accountError = "Your passwords do not match.";
     }

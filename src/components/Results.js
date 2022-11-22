@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-export function BookmarkedBody(props) {
+export function Results(props) {
     const productsArray = props.productList.map((productObj) => {
         const element = (
             <ProductItem 
@@ -10,25 +10,27 @@ export function BookmarkedBody(props) {
         )
         return element;
     })
+
+    if(productsArray[0]==null){
+        return (
+            <p className='card-container'>No results found. Please try again! </p>
+        )
+    }else{
     return (
-    <div>
-        <div className='header'>
-            <div className='h2'>Your Bookmarked Products <span class="add">+ Add Items</span><span class="plus-icon">+</span></div>
-        </div>
         <div className='card-container'>{productsArray}</div>
-    </div>
     )
+    }
 }
-    
+
 function ProductItem(props){
     const {product, company, price, image, imageAlt, ratingImage, ratingImageAlt} = props.productData;
 
     return (  
-        <div className='bookmarked'>
+        <div>
             <main> 
                 <div className="card-container">
                     <div className="card">
-                        <img className="product-img" src={image} alt={imageAlt}/>
+                        <img className="bookmark-search-img" src={image} alt={imageAlt}/>
                         <p className="product-name">{product}</p>
                         <p className="company">{company}<span className="price">{price}</span></p>
                         <img className="rating" src={ratingImage} alt={ratingImageAlt}/>
