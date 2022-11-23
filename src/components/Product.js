@@ -40,7 +40,7 @@ function Product(props) {
 
 function Map(props) {
     return (
-        <div class="map-card">
+        <div className="map-card">
                 <h3>Availability near me</h3>
                 <p><button>Show availibility on maps</button></p>
                 <img className="map-img" src={"../img/map.jpeg"} alt={currentProductData.imageAlt} />
