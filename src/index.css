@@ -47,17 +47,12 @@ nav {
     height: 100%;
 }
 
-/*Puts a flex box around all page content*/
+/*Puts a flex box around all page content allowing footer to stay at bottom*/
 .page-content {
     height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-}
-
-/*Grows content to fill empty space on page*/
-.main, main {
-    flex: 1 1 auto;
 }
 
 /*Defining font family for body*/
