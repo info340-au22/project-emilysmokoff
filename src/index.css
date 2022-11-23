@@ -40,6 +40,16 @@ nav {
     width: 100%;
 }
 
+/* .page-content {
+    display: flex;
+    direction: row;
+    height: 100%;
+} */
+
+/* main {
+    flex: 1;
+} */
+
 /*Defining font family for body*/
 body {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -204,12 +214,6 @@ h2 .profile-header {
     padding-top: 3rem;
     padding-bottom: 5rem;
 }
-
-/* .footer-bottom {
-    position:static;
-    bottom: 0px;
-    width: 100%;
-} */
 
 /*defines styling for under the website title in the header home page*/
 .home p {
