@@ -17,10 +17,12 @@
 html, body {
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 nav {
     background-color: rgb(26, 81, 56);
+    flex: 0 0;
 }
 
 .active {
@@ -40,21 +42,28 @@ nav {
     width: 100%;
 }
 
-/* .page-content {
-    display: flex;
-    direction: row;
+/*set root div to a height of 100 to allow for page content a height of 100*/
+#root {
     height: 100%;
-} */
+}
 
-/* main {
-    flex: 1;
-} */
+/*Puts a flex box around all page content*/
+.page-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/*Grows content to fill empty space on page*/
+.main, main {
+    flex: 1 1 auto;
+}
 
 /*Defining font family for body*/
 body {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     font-size: 18px;
-    flex:1;
 }
 
 /*Home screens top level header */
@@ -462,6 +471,7 @@ h2 .profile-header {
 footer {
     background-color:rgb(78, 117, 100);
     color: white;
+    flex: 0 0;
 }
 
 /*Defining Margin for footer*/
