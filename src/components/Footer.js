@@ -1,4 +1,5 @@
 import React from 'react';
+
 import IMAGE_CITATIONS from '../data/imageCitations.json';
 
 export function Footer(props) {

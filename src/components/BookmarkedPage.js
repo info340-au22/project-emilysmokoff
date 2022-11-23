@@ -5,7 +5,7 @@ export function BookmarkedPage(props) {
     return (
         <div>
             <div className='search-header'>
-                <div className='search-h2'>Your Bookmarked Products <span class="add">+ Add Items</span><span class="plus-icon">+</span></div>
+                <div className='search-h2'>Your Bookmarked Products <span className="add">+ Add Items</span><span className="plus-icon">+</span></div>
             </div>
             <div className='bookmarked'>
                 <Results

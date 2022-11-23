@@ -1,91 +1,91 @@
 [
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "",
         "citationDescription": "Background Header taken by Me @Emily Smokoff"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://www.freepik.com/free-vector/big-green-hand-drawn-tree-life_10502868.htm#query=tree%20icon&position=26&from_view=search&track=sph",
         "citationDescription": "logo citation"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://unsplash.com/@marvelous?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Marvin Meyer from Unsplash"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://unsplash.com/@liveinprespective?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Daniela Domingues from Unsplash"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://unsplash.com/@wearespruce?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Spruce Refillable Cleaning from Unsplash"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://unsplash.com/@ulian_ka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Uliana Kopanytsia from Unsplash"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://unsplash.com/@bellebeautymakeup?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Belle Beauty from Unsplash"
     },
     {
-        "id": "HomePage",
+        "id": "/",
         "citationLink": "https://unsplash.com/@mattartz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Matt Artz from Unsplash"
     },
     {
-        "id": "BookmarkedProducts",
+        "id": "/BookmarkedProducts",
         "citationLink": "https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon",
         "citationDescription": "Favicon Citation"
     },
     {
-        "id": "BookmarkedProducts",
+        "id": "/BookmarkedProducts",
         "citationLink": "https://www.freepik.com/free-vector/big-green-hand-drawn-tree-life_10502868.htm#query=tree%20icon&position=26&from_view=search&track=sph",
         "citationDescription": "Logo Citation"
     },
     {
-        "id": "BookmarkedProducts",
+        "id": "/BookmarkedProducts",
         "citationLink": "https://unsplash.com/photos/oXbU5Z3p3r8",
         "citationDescription": "Photo by EcoPanda from Unsplash"
     },
     {
-        "id": "BookmarkedProducts",
+        "id": "/BookmarkedProducts",
         "citationLink": "https://unsplash.com/photos/ihYppkdzeCU",
         "citationDescription": "Photo by Scandanavian Biolabs from Unsplash"
     },
     {
-        "id": "BookmarkedProducts",
+        "id": "/BookmarkedProducts",
         "citationLink": "https://unsplash.com/photos/1DMNn6gBbwQ",
         "citationDescription": "Photo by Gabrielle Henderson from Unsplash"
     },
     {
-        "id": "BrowsePage",
+        "id": "/BrowsePage",
         "citationLink": "https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon",
         "citationDescription": "Favicon Citation"
     },
     {
-        "id": "BrowsePage",
+        "id": "/BrowsePage",
         "citationLink": "https://www.freepik.com/free-vector/big-green-hand-drawn-tree-life_10502868.htm#query=tree%20icon&position=26&from_view=search&track=sph",
         "citationDescription": "Logo Citation"
     },
     {
-        "id": "BrowsePage",
+        "id": "/BrowsePage",
         "citationLink": "https://unsplash.com/photos/oXbU5Z3p3r8",
         "citationDescription": "Photo by EcoPanda from Unsplash"
     },
     {
-        "id": "BrowsePage",
+        "id": "/BrowsePage",
         "citationLink": "https://unsplash.com/photos/ihYppkdzeCU",
         "citationDescription": "Photo by Scandanavian Biolabs from Unsplash"
     },
     {
-        "id": "BrowsePage",
+        "id": "/BrowsePage",
         "citationLink": "https://unsplash.com/photos/1DMNn6gBbwQ",
         "citationDescription": "Photo by Gabrielle Henderson from Unsplash"
     }

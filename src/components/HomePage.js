@@ -1,5 +1,8 @@
 import React from 'react';
 import { Header } from './Header.js';
+
+import { Link } from 'react-router-dom';
+
 import PRODUCT_CATEGORIES from '../data/categories.json'
 
 export function HomePage (props) {
@@ -17,10 +20,10 @@ function ProductCategories (props) {
     const categories = PRODUCT_CATEGORIES.map((sustainableCategory) => {
         return (
         <div className="home-card" key={sustainableCategory.title}>
-                <a className="category-link" href="">
+                <Link className="category-link" to="/BrowsePage">
                     <img src={sustainableCategory.image} alt={sustainableCategory.imageDescription} />
                     <h3>{sustainableCategory.title}</h3> 
-                </a>
+                </Link>
             </div>
         );
     });
