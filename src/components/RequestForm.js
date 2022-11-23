@@ -26,13 +26,13 @@ export function RequestForm(props) {
             <form>
                 <p className="text-center">This is a form to requst a product to appear on our website.</p>
                 <p className="text-center">We will assign sustanability ratings and pricing information before publishing your submission.</p>
-                <label className="label-text" for="product-name">Product Name:</label><br />
+                <label className="label-text" htmlFor="product-name">Product Name:</label><br />
                 <input id="product-name" type="text" name="productName" /><br /><br />
-                <label className="label-text" for="company-name">Company Name:</label><br />
+                <label className="label-text" htmlFor="company-name">Company Name:</label><br />
                 <input id="company-name" type="text" name="companyName" /><br /><br />
                 {/* <label className="label-text" for="ingredients">Ingredient Information:</label><br />
                 <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br /> */}
-                <label className="label-text" for="filename">Upload Product Photo:</label><br />
+                <label className="label-text" htmlFor="filename">Upload Product Photo:</label><br />
                 <input type="file" id="filename" name="filename" className="btn btn-primary label-text" /><br /><br />
                 <input id="submit" type="submit" value="Submit" className="btn btn-primary label-text mb-4" onClick={handleClick}/>
             </form>

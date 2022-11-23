@@ -25,9 +25,9 @@ export function SignIn(props) {
             <h2 className="text-center profile-header">Sign In</h2>
             <p className="text-center">{topMsg}</p>
             <form>
-                <label className="label-text" for="username">Username:</label><br />
+                <label className="label-text" htmlFor="username">Username:</label><br />
                 <input id="username" type="text" name="username"/><br />
-                <label className="label-text" for="password">Password:</label><br />
+                <label className="label-text" htmlFor="password">Password:</label><br />
                 <input id="password" type="password" name="password" /><br /><br />
                 <input type="submit" value="Sign In" className="btn btn-primary label-text mb-4" onClick={handleClick}/>
             </form>
@@ -74,11 +74,11 @@ export function CreateAccount (props) {
         <form className="profileBody">
             <p className="text-center">{accountError}</p>
             <h2 className="text-center profile-header">Create an Account</h2>
-            <label className="label-text" for="username">Create a Username:</label><br />
+            <label className="label-text" htmlFor="username">Create a Username:</label><br />
             <input id="username" type="text" name="username"/><br />
-            <label className="label-text" for="password">Create a Password:</label><br />
+            <label className="label-text" htmlFor="password">Create a Password:</label><br />
             <input id="password" type="password" name="password" /><br />
-            <label className="label-text" for="password">Confirm Password:</label><br />
+            <label className="label-text" htmlFor="password">Confirm Password:</label><br />
             <input id="password2" type="password" name="password2" /><br /><br />
             <input type="submit" value="Sign In" className="btn btn-primary label-text mb-4" onClick={handleClick2}/> 
         </form>
