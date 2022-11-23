@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Results(props) {
     const productsArray = props.productList.map((productObj) => {
@@ -34,7 +35,7 @@ function ProductItem(props){
                         <p className="product-name">{product}</p>
                         <p className="company">{company}<span className="price">{price}</span></p>
                         <img className="rating" src={ratingImage} alt={ratingImageAlt}/>
-                        <a href="product_page.html"><p className="shop-now">Shop Now</p></a>
+                        <Link to="/ProductPage"><p className="shop-now">Shop Now</p></Link>
                     </div>
                 </div>
             </main>
