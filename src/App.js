@@ -17,10 +17,6 @@ import PRODUCT_LIST from './data/products.json';
 
 export default function App(props) {
     
-    //Uncomment for BookmarkedPage
-    const [bookmarkedList, setBookmarkedList] = useState(PRODUCT_LIST);
-
-
     //Uncomment for SearchPage
     const [searchValue, setSearchValue] = useState('');
 
@@ -48,7 +44,7 @@ export default function App(props) {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="BookmarkedProducts" element={<BookmarkedPage 
-                    productList={bookmarkedList} />} 
+                    productList={PRODUCT_LIST} />} 
                 />
                 <Route path="BrowsePage" element={<SearchPage
                     productList={displayedList}
