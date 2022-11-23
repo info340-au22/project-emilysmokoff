@@ -16,11 +16,7 @@ import { Footer } from './components/Footer.js';
 import PRODUCT_LIST from './data/products.json';
 
 export default function App(props) {
-
-    //Change quotes to HomePage, BookmarkedProducts, BrowsePage depending on page to see correct citations
-    const currentPage = "/"
     
-
     //Uncomment for BookmarkedPage
     const [bookmarkedList, setBookmarkedList] = useState(PRODUCT_LIST);
 
@@ -47,7 +43,7 @@ export default function App(props) {
 
     return (
         <div className="page-content">
-            <NavigationBar currentPage={currentPage} />
+            <NavigationBar />
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
