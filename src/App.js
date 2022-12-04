@@ -53,7 +53,7 @@ export default function App(props) {
                     productList={displayedList}
                     applyFilterCallback={applyFilter} />}
                 />
-                <Route path="RequestProduct" element={<RequestForm />} />
+                <Route path="RequestProduct/*" element={<RequestForm />} />
                 <Route path="CreateAccount" element={<CreateAccount />} />
                 <Route path="SignIn" element={<SignIn 
                     username="test"
