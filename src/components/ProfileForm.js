@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 export function SignIn(props) {
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -11,11 +13,16 @@ export function SignIn(props) {
         setPassword(event.target.form.password.value);
     }
 
+    const handleClick4 = (event) => {
+        navigate("/CreateAccount");
+    }
+
     let topMsg = "";
     if (username == props.username && password == props.password) {
         topMsg = "You are signed in as " + username + ".";
         //Route to sign out page, passing username as a prop
-        <SignOut username = {username} />
+        //<SignOut username = {username} />
+        navigate("/SignOut");
     } else {
         topMsg = "Please submit your username and password."
     }
@@ -29,19 +36,26 @@ export function SignIn(props) {
                 <input id="username" type="text" name="username"/><br />
                 <label className="label-text" htmlFor="password">Password:</label><br />
                 <input id="password" type="password" name="password" /><br /><br />
-                <input type="submit" value="Sign In" className="btn btn-primary label-text mb-4" onClick={handleClick}/>
+                <input type="submit" value="Sign In" className="btn btn-primary label-text mb-4" onClick={handleClick}/><br></br>
+                <input type="submit" value="Create Account" className="btn btn-primary label-text mb-4" onClick={handleClick4}/>
             </form>
         </div>
     );
 }
 
 export function SignOut (props) {
+    const navigate = useNavigate();
+
+    const handleClick3 = (event) => {
+        navigate("/SignIn");
+    }
+
     return (
         <div className="signOutBody">
             <form>
                 <h2 className="text-center profile-header">Personal Profile</h2>
                 <p>You are signed in as {props.username}.</p>
-                <input type="submit" value="Sign Out" className="btn btn-primary label-text mb-4"/>
+                <input type="submit" value="Sign Out" className="btn btn-primary label-text mb-4" onClick={handleClick3} />
             </form>
             <span className="footprint"></span>
             <p className="score-label">Your Ecological Footprint Score</p>
@@ -50,6 +64,8 @@ export function SignOut (props) {
 }
 
 export function CreateAccount (props) {
+
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -65,7 +81,8 @@ export function CreateAccount (props) {
 
     if (password == password2) {
         //Route to sign in page, passing username and password as props
-        <SignIn username={username} password = {password} />
+        //<SignIn username={username} password = {password} />
+        navigate("/SignIn");
     } else {
         accountError = "Your passwords do not match.";
     }
