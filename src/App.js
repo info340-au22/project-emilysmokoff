@@ -37,8 +37,11 @@ export default function App(props) {
         }
     })
 
+
     return (
+        
         <div className="page-content">
+
             <NavigationBar />
 
             <Routes>
