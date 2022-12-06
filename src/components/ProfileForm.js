@@ -1,11 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
+
 
 export function SignIn(props) {
     const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    // const username = "";
+    // const password = ""
+    const [newUsername, setNewUsername] = useState('x');
+    const [newPassword, setNewPassword] = useState('x');
+
+    useEffect(() => {
+
+        const db = getDatabase();
+        const usernameRef = dbRef(db, "newUsername");
+        const passwordRef = dbRef(db, "newPassword");
+
+        onValue(usernameRef, (snapshot) => {
+            const newValue = snapshot.val();
+            setNewUsername([newValue]);
+        });
+
+        onValue(passwordRef, (snapshot) => {
+            const newValue = snapshot.val();
+            setNewPassword([newValue]);
+        });
+
+    }, [])
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -18,8 +42,10 @@ export function SignIn(props) {
     }
 
     let topMsg = "";
-    if (username == props.username && password == props.password) {
-        topMsg = "You are signed in as " + username + ".";
+
+
+    if (username == newUsername && password == newPassword) {
+        //topMsg = "You are signed in as " + username + ".";
         //Route to sign out page, passing username as a prop
         //<SignOut username = {username} />
         navigate("/SignOut");
@@ -45,6 +71,19 @@ export function SignIn(props) {
 
 export function SignOut (props) {
     const navigate = useNavigate();
+    const [newUsername, setNewUsername] = useState('');
+
+    useEffect(() => {
+
+        const db = getDatabase();
+        const usernameRef = dbRef(db, "newUsername");
+
+        onValue(usernameRef, (snapshot) => {
+            const newValue = snapshot.val();
+            setNewUsername([newValue]);
+        });
+
+    }, [])
 
     const handleClick3 = (event) => {
         navigate("/SignIn");
@@ -54,7 +93,7 @@ export function SignOut (props) {
         <div className="signOutBody">
             <form>
                 <h2 className="text-center profile-header">Personal Profile</h2>
-                <p>You are signed in as {props.username}.</p>
+                <p>You are signed in as {newUsername}.</p>
                 <input type="submit" value="Sign Out" className="btn btn-primary label-text mb-4" onClick={handleClick3} />
             </form>
             <span className="footprint"></span>
@@ -65,6 +104,7 @@ export function SignOut (props) {
 
 export function CreateAccount (props) {
 
+    const db = getDatabase();
     const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
@@ -79,9 +119,19 @@ export function CreateAccount (props) {
         setPassword2(event.target.form.password2.value);
     }
 
+    // const handleClick = (event) => {
+    //     event.preventDefault();
+        
+    //     navigate("/SignIn");
+    // }
+
     if (password == password2) {
         //Route to sign in page, passing username and password as props
         //<SignIn username={username} password = {password} />
+        const usernameRef = dbRef(db, "newUsername");
+        firebaseSet(usernameRef, username);
+        const passwordRef = dbRef(db, "newPassword");
+        firebaseSet(passwordRef, password);
         navigate("/SignIn");
     } else {
         accountError = "Your passwords do not match.";
@@ -97,7 +147,8 @@ export function CreateAccount (props) {
             <input id="password" type="password" name="password" /><br />
             <label className="label-text" htmlFor="password">Confirm Password:</label><br />
             <input id="password2" type="password" name="password2" /><br /><br />
-            <input type="submit" value="Sign In" className="btn btn-primary label-text mb-4" onClick={handleClick2}/> 
+            <input type="submit" value="Create Account" className="btn btn-primary label-text mb-4" onClick={handleClick2}/> 
+            {/* <input type="submit" value="Sign In" className="btn btn-primary label-text mb-4" onClick={handleClick}/><br></br> */}
         </form>
     )
 }
