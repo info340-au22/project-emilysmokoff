@@ -88,5 +88,95 @@
         "id": "/BrowsePage",
         "citationLink": "https://unsplash.com/photos/1DMNn6gBbwQ",
         "citationDescription": "Photo by Gabrielle Henderson from Unsplash"
+    },
+    {
+        "id": "/BrowsePage/technology",
+        "type": "phone",
+        "citationLink": "https://unsplash.com/es/@oscnord?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Oscar Nord on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/technology",
+        "type": "computer",
+        "citationLink": "https://unsplash.com/@karishea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Kari Shea on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/technology",
+        "type": "watch",
+        "citationLink": "https://unsplash.com/es/@brunovdkraan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Bruno van der Kraan on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/healthwellness",
+        "type": "waterbottle",
+        "citationLink": "https://unsplash.com/@joanofarts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Joan Tran on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/healthwellness",
+        "type": "treadmill",
+        "citationLink": "https://unsplash.com/@intenzafitness?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Intenza Fitness on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/healthwellness",
+        "type": "bike",
+        "citationLink": "https://unsplash.com/@archduk3?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Carl Nenzen Loven on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/house",
+        "type": "toothbrush",
+        "citationLink": "https://unsplash.com/@thehumbleco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by The Humble Co. on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/house",
+        "type": "cleaningsupplies",
+        "citationLink": "https://unsplash.com/@daiga_ellaby?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Daiga Ellaby on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/house",
+        "type": "baskets",
+        "citationLink": "https://unsplash.com/@rodriguezedm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Eduardo Rodriguez on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/kitchen",
+        "type": "glassjars",
+        "citationLink": "https://unsplash.com/es/@dariomen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Darío Méndez on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/kitchen",
+        "type": "grocerybags",
+        "citationLink": "https://unsplash.com/@norevisions?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by No Revisions on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/kitchen",
+        "type": "pans",
+        "citationLink": "https://unsplash.com/@roamincolor?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by roam in color on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/brands",
+        "type": "cocacola",
+        "citationLink": "https://unsplash.com/es/@chernus_tr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Taras Chernus on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/brands",
+        "type": "nike",
+        "citationLink": "https://unsplash.com/@kristianegelund?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Kristian Egelund on Unsplash"
+    },
+    {
+        "id": "/BrowsePage/brands",
+        "type": "tesla",
+        "citationLink": "https://unsplash.com/@priscilladupreez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        "citationDescription": "Photo by Priscilla Du Preez on Unsplash"
     }
 ]
