@@ -6,18 +6,20 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA1QpgC-8gYFfUYZB2dmL1PrjNpHg9K6SU",
-  authDomain: "ecolifetest-749da.firebaseapp.com",
-  projectId: "ecolifetest-749da",
-  storageBucket: "ecolifetest-749da.appspot.com",
-  messagingSenderId: "1089737700653",
-  appId: "1:1089737700653:web:748e3611bf51630e91cfa4"
+  apiKey: "AIzaSyApMQSA5nmzRSP2LGUNJveGlLe_Xi9ukRU",
+  authDomain: "ecolife-30294.firebaseapp.com",
+  databaseURL: "https://ecolife-30294-default-rtdb.firebaseio.com",
+  projectId: "ecolife-30294",
+  storageBucket: "ecolife-30294.appspot.com",
+  messagingSenderId: "398271559675",
+  appId: "1:398271559675:web:7ee574eacd19e1f8e67d5e"
 };
 
 // Initialize Firebase
