@@ -27,10 +27,10 @@ export function RequestForm(props) {
             console.log("tes");
             setTopMsg("Please fill out all fields!");
         } else {
-            const messageRef = dbRef(db, "prodName");
-            firebaseSet(messageRef, prodName);
-            const messageRef2 = dbRef(db, "comName");
-            firebaseSet(messageRef2, comName);
+            const prodRef = dbRef(db, "prodName");
+            firebaseSet(prodRef, prodName);
+            const comRef = dbRef(db, "comName");
+            firebaseSet(comRef, comName);
             // const messageRef3 = ref(db, "prodImg");
             // firebaseSet(messageRef3, prodImg);
             // const imgRef = firebase.storage().storageRef();
@@ -67,7 +67,7 @@ export function RequestForm(props) {
         <div>
             <p className="text-center mt-5">{topMsg}</p>
             <h2 className="text-center request-header">Request a Product</h2>
-            <form method="POST" action="https://api.github.com/search/repositories">
+            <form>
                 <p className="text-center">This is a form to requst a product to appear on our website.</p>
                 <p className="text-center">We will assign sustanability ratings and pricing information before publishing your submission.</p>
                 <label className="label-text" htmlFor="product-name">Product Name:</label><br />
@@ -92,16 +92,16 @@ export function RequestReceipt (props) {
     useEffect(() => {
 
         const db = getDatabase();
-        const messageRef = dbRef(db, "prodName");
-        const messageRef2 = dbRef(db, "comName");
+        const prodRef = dbRef(db, "prodName");
+        const comRef = dbRef(db, "comName");
         //const messageRef3 = ref(db, "prodImg");
 
-        onValue(messageRef, (snapshot) => {
+        onValue(prodRef, (snapshot) => {
             const newValue = snapshot.val();
             setProdName([newValue])
         });
 
-        onValue(messageRef2, (snapshot) => {
+        onValue(comRef, (snapshot) => {
             const newValue = snapshot.val();
             setComName([newValue])
         });
