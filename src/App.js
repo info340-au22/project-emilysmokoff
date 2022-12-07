@@ -49,8 +49,11 @@ export default function App(props) {
                 <Route path="BookmarkedProducts" element={<BookmarkedPage 
                     productList={PRODUCT_LIST} />} 
                 />
-                <Route path="BrowsePage" element={<SearchPage
-                    productList={displayedList}
+                <Route path="BrowsePage" element={
+                    <SearchPage
+                    applyFilterCallback={applyFilter} />
+                } />
+                <Route path="BrowsePage/:category" element={<SearchPage
                     applyFilterCallback={applyFilter} />}
                 />
                 <Route path="RequestProduct/*" element={<RequestForm />} />
@@ -65,7 +68,7 @@ export default function App(props) {
                 <Route path="RequestProductReceipt" element={<RequestReceipt 
                     productObj = {PRODUCT_LIST[0]} />} 
                 />
-                <Route path="ProductPage" element={<ProductPage />} />
+                <Route path="ProductPage/:id" element={<ProductPage />} />
             </Routes>
 
             <Footer currentPage={useLocation().pathname} />

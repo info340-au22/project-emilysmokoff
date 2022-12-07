@@ -1,6 +1,6 @@
 [
   {
-    "category": "Cosmetics",
+    "category": "cosmetics",
     "type": "wipes",
     "product": "Sustainable Makeup Wipes",
     "company": "EcoPanda ",
@@ -13,7 +13,7 @@
     "id":1
   },
   {
-    "category": "Cosmetics",
+    "category": "cosmetics",
     "type": "scand-shampoo",
     "product": "Hair Recovery Conditioner for Men",
     "company": "Scandinavian Biolabs ",
@@ -26,7 +26,7 @@
     "id":2
   },
   {
-    "category": "Cosmetics",
+    "category": "cosmetics",
     "type": "maui-shampoo",
     "product": "Thick & Restore + Bamboo Fiber Shampoo",
     "company": "Maui Moisture ",
@@ -39,7 +39,7 @@
     "id":3
   },
   {
-    "category": "Health and Wellness",
+    "category": "healthandwellness",
     "type": "waterbottle",
     "product": "Stainless Steel Water Bottle",
     "company": "Swell ",
@@ -52,7 +52,7 @@
     "id":4
   },
   {
-    "category": "Health and Wellness",
+    "category": "healthandwellness",
     "type": "treadmill",
     "product": "Treadmill",
     "company": "Intenza Fitness ",
@@ -65,7 +65,7 @@
     "id":5
   },
   {
-    "category": "Health and Wellness",
+    "category": "healthandwellness",
     "type": "bike",
     "product": "Bike",
     "company": "Bianchi ",
@@ -78,7 +78,7 @@
     "id":6
   },
   {
-    "category": "House",
+    "category": "house",
     "type": "toothbrush",
     "product": "Toothbrush",
     "company": "Sevenhead ",
@@ -91,7 +91,7 @@
     "id":7
   },
   {
-    "category": "House",
+    "category": "house",
     "type": "cleaningsupplies",
     "product": "Cleaning Supplies",
     "company": "Grove Collaborative ",
@@ -104,7 +104,7 @@
     "id":8
   },
   {
-    "category": "House",
+    "category": "house",
     "type": "baskets",
     "product": "Baskets",
     "company": "Threshold ",
@@ -117,7 +117,7 @@
     "id":9
   },
   {
-    "category": "Kitchen",
+    "category": "kitchen",
     "type": "glassjars",
     "product": "Glass Jars Set",
     "company": "Threshold ",
@@ -130,7 +130,7 @@
     "id":10
   },
   {
-    "category": "Kitchen",
+    "category": "kitchen",
     "type": "grocerybags",
     "product": "Grocery Bags",
     "company": "All Cotton and Li ",
@@ -143,7 +143,7 @@
     "id":11
   },
   {
-    "category": "Kitchen",
+    "category": "kitchen",
     "type": "pans",
     "product": "Pans",
     "company": "Le Crueset ",
@@ -156,7 +156,7 @@
     "id":12
   },
   {
-    "category": "Brands",
+    "category": "brands",
     "type": "cocacola",
     "product": "Coca Cola",
     "company": "Coca Cola ",
@@ -169,7 +169,7 @@
     "id":13
   },
   {
-    "category": "Brands",
+    "category": "brands",
     "type": "nike",
     "product": "Nike",
     "company": "Nike ",
@@ -182,7 +182,7 @@
     "id":14
   },
   {
-    "category": "Brands",
+    "category": "brands",
     "type": "tesla",
     "product": "Tesla",
     "company": "Tesla ",
@@ -195,7 +195,7 @@
     "id":15
   },
   {
-    "category": "Technology",
+    "category": "technology",
     "type": "phone",
     "product": "Smart Phone",
     "company": "Apple ",
@@ -208,7 +208,7 @@
     "id":16
   },
   {
-    "category": "Technology",
+    "category": "technology",
     "type": "computer",
     "product": "Laptop",
     "company": "Apple ",
@@ -221,7 +221,7 @@
     "id":17
   },
   {
-    "category": "Technology",
+    "category": "technology",
     "type": "watch",
     "product": "Watch",
     "company": "Tissot ",

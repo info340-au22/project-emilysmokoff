@@ -18,9 +18,10 @@ export function HomePage (props) {
 function ProductCategories (props) {
 
     const categories = PRODUCT_CATEGORIES.map((sustainableCategory) => {
+        let browseLink = "/BrowsePage/" + sustainableCategory.type;
         return (
         <div className="home-card" key={sustainableCategory.title}>
-                <Link className="category-link" to="/BrowsePage">
+                <Link className="category-link" to={browseLink}>
                     <img src={sustainableCategory.image} alt={sustainableCategory.imageDescription} />
                     <h3>{sustainableCategory.title}</h3> 
                 </Link>
