@@ -19,7 +19,7 @@ export function NavigationBar (props) {
             
             <div className="container-fluid">
                 <Link className="nav-link" to="/">
-                    <h1>EC<img src="img/logo.png" alt="logo representing letter o" />-LIFE</h1> </Link>
+                    <h1>EC<img src="/img/logo.png" alt="logo representing letter o" />-LIFE</h1> </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
