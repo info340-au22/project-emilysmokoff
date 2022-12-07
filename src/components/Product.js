@@ -31,22 +31,40 @@ function PageTitle(props) {
 
 function Product(props) {
     let currentProduct = props.currentProduct[0];
-    return (
-        <main>
-            <div className="product-card-container">
-                <div className="product-card">
-                    <div>
-                        <h3>{currentProduct.product}</h3>
-                        <img className="product-img" src={currentProduct.image} alt={currentProduct.imageAlt} />
-                        <p className="price">{currentProduct.price}</p>
-                        <p className="content">{currentProduct.company}</p>
-                        <img className="rating-img" src={currentProduct.ratingImage} alt={currentProduct.ratingImageAlt} />
-                        <p><button>Add to Cart</button></p>
+    if(currentProduct.category  == "brands") {
+        return (
+            <main>
+                <div className="product-card-container">
+                    <div className="product-card">
+                        <div>
+                            <h3>{currentProduct.product}</h3>
+                            <img className="product-img" src={currentProduct.image} alt={currentProduct.imageAlt} />
+                            <p className="content">{currentProduct.company}</p>
+                            <img className="rating-img" src={currentProduct.ratingImage} alt={currentProduct.ratingImageAlt} />
+                            <p><button>Add to Cart</button></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-    )
+            </main>
+        )
+    }
+    else {
+        return (
+            <main>
+                <div className="product-card-container">
+                    <div className="product-card">
+                        <div>
+                            <h3>{currentProduct.product}</h3>
+                            <img className="product-img" src={currentProduct.image} alt={currentProduct.imageAlt} />
+                            <p className="price">{currentProduct.price}</p>
+                            <p className="content">{currentProduct.company}</p>
+                            <img className="rating-img" src={currentProduct.ratingImage} alt={currentProduct.ratingImageAlt} />
+                            <p><button>Add to Cart</button></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+    )}
 }
 
 function Map(props) {
