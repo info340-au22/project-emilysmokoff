@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 //import firebase from 'firebase/app';
 import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
-//import { getStorage, ref as storageRef } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 export function RequestForm(props) {
 
     const [prodName, setProdName] = useState("");
     const [comName, setComName] = useState("");
-    const [prodImg, setProdImg] = useState("");
-    const [topMsg, setTopMsg] = useState(""); 
+    const [prodImg, setProdImg] = useState(undefined);
+    const [imgURL, setImgURL] = useState("");
 
+
+    const [topMsg, setTopMsg] = useState(""); 
 
     
     const db = getDatabase();
-    //const storage = getStorage();
 
     //let topMsg = "";
 
@@ -44,7 +45,7 @@ export function RequestForm(props) {
             // task.then(snapshot) {
 
             // }
-
+            handleImageUpload(event);
             navigate("/RequestProductReceipt");
         } 
     }
@@ -58,7 +59,23 @@ export function RequestForm(props) {
     }
 
     const handleChange3 = (event) => {
-        setProdImg(event.target.value);
+        if (event.target.files.length > 0 && event.target.files[0]) {
+            const imageFile = event.target.files[0];
+            setProdImg(imageFile);
+            setImgURL(URL.createObjectURL(imageFile))
+        }
+    }
+
+    const handleImageUpload = async (event) => {
+        const storage = getStorage();
+        const requestRef = dbRef(db, "imgUrl");
+        firebaseSet(requestRef, imgURL);
+        const imgTitle = "requestImages/" + props.currentUser.userName + " - product: " + prodName + ", company: " + comName + ".png"
+        const imageRef = ref(storage, imgTitle);
+        await uploadBytes(imageRef, prodImg)
+        const downloadUrlString = await getDownloadURL(imageRef)
+        const imgTitleRef = dbRef(db, "downloadUrlString");
+        firebaseSet(imgTitleRef, downloadUrlString);
     }
 
     
@@ -77,7 +94,7 @@ export function RequestForm(props) {
                 {/* <label className="label-text" for="ingredients">Ingredient Information:</label><br />
                 <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br /> */}
                 <label className="label-text" htmlFor="filename">Upload Product Photo:</label><br />
-                <input type="file" id="filename" value={prodImg} onChange={handleChange3} name="filename" className="btn btn-primary label-text" /><br /><br />
+                <input type="file" id="filename" onChange={handleChange3} name="filename" className="btn btn-primary label-text" /><br /><br />
                 <input id="submit" type="submit" value="Submit" className="btn btn-primary label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
             </form>
         </div>
@@ -88,13 +105,14 @@ export function RequestReceipt (props) {
 
     const [prodName, setProdName] = useState("");
     const [comName, setComName] = useState("");
+    const [imgRef, setImgRef] = useState("");
 
     useEffect(() => {
 
         const db = getDatabase();
         const prodRef = dbRef(db, "prodName");
         const comRef = dbRef(db, "comName");
-        //const messageRef3 = ref(db, "prodImg");
+        const imgRef = dbRef(db, "downloadUrlString")
 
         onValue(prodRef, (snapshot) => {
             const newValue = snapshot.val();
@@ -106,6 +124,11 @@ export function RequestReceipt (props) {
             setComName([newValue])
         });
 
+        onValue(imgRef, (snapshot) => {
+            const newValue = snapshot.val();
+            setImgRef([newValue])
+        });
+
     }, [])
 
     return (
@@ -114,7 +137,7 @@ export function RequestReceipt (props) {
             <p>You just submitted this product for review:</p>
             <p>Product Name: {prodName} </p>
             <p>Company Name: {comName} </p>
-            {/* <img className="product-img " src={props.productObj.image}/> */}
+            <img src={imgRef} className="w-25 p-3" />
             <p>Thanks for submitting!</p>
         </div>
     )
