@@ -1,4 +1,5 @@
 import React from 'react';
+import { Collapse } from 'bootstrap';
 
 import { Link, NavLink } from 'react-router-dom';
 
@@ -28,21 +29,18 @@ export function NavigationBar (props) {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {navPages}
                     </ul>
-
-                    <form>
-                        <span>
-                            <input id="search-input" type="text" name="search" placeholder=" Search for products" />
-                        </span>
-                    </form>
-
-                    <span className="material-icons" aria-label="search icon">search</span>
+                    <form id="nav-search-form">
+                            <input id="nav-search-input" type="text" name="search" placeholder=" Search for products" />
+                        <span className="material-icons"type="button" id="nav-search-icon" aria-label="search icon">search</span>
+                </form>
                     
                     <NavLink className="nav-link" to="/SignIn">
                         {/* <span className="material-icons" aria-label="Personal Profile">account_circle</span> */}
-                        <img src={props.currentUser.userImg} className="w-50 p-3 rounded-circle" alt="profile photo"/>
+                        <img src={props.currentUser.userImg} className="navbar-profile-picture" alt="profile photo"/>
                     </NavLink>
                 </div>
             </div>   
         </nav>
+
     );
 }
