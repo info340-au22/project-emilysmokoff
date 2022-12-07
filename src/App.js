@@ -67,6 +67,7 @@ export default function App(props) {
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
+
                 <Route element={<ProtectedPage currentUser={currentUser} />}>
                     <Route path="BookmarkedProducts" element={<BookmarkedPage 
                         productList={PRODUCT_LIST} />} 
@@ -78,8 +79,11 @@ export default function App(props) {
                         productObj = {PRODUCT_LIST[0]} />} 
                     />
                 </Route>
-                <Route path="BrowsePage" element={<SearchPage
-                    productList={displayedList}
+                <Route path="BrowsePage" element={
+                    <SearchPage
+                    applyFilterCallback={applyFilter} />
+                } />
+                <Route path="BrowsePage/:category" element={<SearchPage
                     applyFilterCallback={applyFilter} />}
                 />
                 <Route path="SignIn" element={<SignIn 
@@ -88,8 +92,7 @@ export default function App(props) {
                 <Route path="SignOut" element={<SignOut 
                     currentUser={currentUser} />}
                 />
-                
-                <Route path="ProductPage" element={<ProductPage />} />
+                <Route path="ProductPage/:id" element={<ProductPage />} />
             </Routes>
 
             <Footer currentPage={useLocation().pathname} />
