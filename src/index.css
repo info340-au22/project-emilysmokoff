@@ -402,6 +402,9 @@ h2 .profile-header {
 /*hides images on search and bookmark page in small screen*/
 .bookmark-search-img{
     width: 100%;
+    height: 10em;
+    object-fit: cover;
+
     margin:0;
     padding:0;
 }
