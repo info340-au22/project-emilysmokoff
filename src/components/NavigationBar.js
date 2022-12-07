@@ -20,7 +20,6 @@ export function NavigationBar (props) {
             <div className="container-fluid">
                 <Link className="nav-link" to="/">
                     <h1>EC<img src="img/logo.png" alt="logo representing letter o" />-LIFE</h1> </Link>
-
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -38,7 +37,10 @@ export function NavigationBar (props) {
 
                     <span className="material-icons" aria-label="search icon">search</span>
                     
-                    <NavLink to="/SignIn"><span className="material-icons" aria-label="Personal Profile">account_circle</span></NavLink>
+                    <NavLink className="nav-link" to="/SignIn">
+                        {/* <span className="material-icons" aria-label="Personal Profile">account_circle</span> */}
+                        <img src={props.currentUser.userImg} className="w-50 p-3 rounded-circle" alt="profile photo"/>
+                    </NavLink>
                 </div>
             </div>   
         </nav>

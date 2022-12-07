@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Routes, Route, useLocation, Outlet, Navigate } from 'react-router-dom';
+import { Routes, Route, useLocation, Outlet, Navigate, useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth'
 
 
@@ -23,6 +23,7 @@ export default function App(props) {
     //Uncomment for SearchPage
     const [searchValue, setSearchValue] = useState('');
     const [currentUser, setCurrentUser] = useState({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"})
+    const navigate = useNavigate();
 
     function applyFilter(text) {
         setSearchValue(text);
@@ -51,17 +52,18 @@ export default function App(props) {
                 firebaseUser.userImg = firebaseUser.photoURL || "/img/null.png";
                 setCurrentUser(firebaseUser);
             } else {
+                navigate("SignIn");
                 setCurrentUser({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"});
             }
         })
-    })
+    }, [])
 
 
     return (
         
         <div className="page-content">
 
-            <NavigationBar />
+            <NavigationBar currentUser={currentUser} />
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -69,7 +71,9 @@ export default function App(props) {
                     <Route path="BookmarkedProducts" element={<BookmarkedPage 
                         productList={PRODUCT_LIST} />} 
                     />
-                    <Route path="RequestProduct/*" element={<RequestForm />} />
+                    <Route path="RequestProduct" element={<RequestForm 
+                        currentUser={currentUser} />}
+                     />
                     <Route path="RequestProductReceipt" element={<RequestReceipt 
                         productObj = {PRODUCT_LIST[0]} />} 
                     />
@@ -78,7 +82,6 @@ export default function App(props) {
                     productList={displayedList}
                     applyFilterCallback={applyFilter} />}
                 />
-                {/* <Route path="CreateAccount" element={<CreateAccount />} /> */}
                 <Route path="SignIn" element={<SignIn 
                     currentUser={currentUser}/>} 
                 />

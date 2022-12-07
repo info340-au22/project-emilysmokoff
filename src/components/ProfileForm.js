@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
 import { StyledFirebaseAuth } from 'react-firebaseui'
 import { getAuth, EmailAuthProvider, GoogleAuthProvider, signOut } from 'firebase/auth'
 
 export function SignIn(props) {
-    const navigate = useNavigate();
 
     // const [username, setUsername] = useState('');
     // const [password, setPassword] = useState('');
@@ -88,20 +86,20 @@ export function SignIn(props) {
         credentialHelper: 'none'
     }
 
-    if (props.currentUser.userId) {
+    if (props.currentUser.userId || props.currentUser.userId == "Log Out") {
         return <Navigate to="/SignOut" />
     }
 
     return (
         <div>
+            <h2 className="text-center profile-header">Sign In</h2>
             <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj} />
-
         </div>
     )
 }
 
 export function SignOut (props) {
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     //const [newUsername, setNewUsername] = useState('');
 
     // useEffect(() => {
@@ -116,7 +114,9 @@ export function SignOut (props) {
 
     // }, [])
 
+
     const handleClick3 = (event) => {
+        navigate("/SignIn");
         signOut(getAuth());
     }
 
