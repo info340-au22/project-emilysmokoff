@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Outlet, Navigate } from 'react-router-dom';
+import { getAuth } from 'firebase/auth'
+
 
 import { NavigationBar } from './components/NavigationBar.js';
 import { HomePage } from './components/HomePage.js';
@@ -9,16 +11,18 @@ import { ProductPage } from './components/Product.js';
 import { SearchPage } from './components/SearchPage.js';
 import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
 
-import { CreateAccount, SignOut, SignIn } from './/components/ProfileForm.js';
+import { SignOut, SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
 
 
 import PRODUCT_LIST from './data/products.json';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function App(props) {
     
     //Uncomment for SearchPage
     const [searchValue, setSearchValue] = useState('');
+    const [currentUser, setCurrentUser] = useState({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"})
 
     function applyFilter(text) {
         setSearchValue(text);
@@ -38,6 +42,21 @@ export default function App(props) {
     })
 
 
+    useEffect(() =>{
+        const auth = getAuth();
+        onAuthStateChanged(auth, (firebaseUser) => {
+            if (firebaseUser) {
+                firebaseUser.userId = firebaseUser.uid;
+                firebaseUser.userName = firebaseUser.displayName;
+                firebaseUser.userImg = firebaseUser.photoURL || "/img/null.png";
+                setCurrentUser(firebaseUser);
+            } else {
+                setCurrentUser({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"});
+            }
+        })
+    })
+
+
     return (
         
         <div className="page-content">
@@ -46,25 +65,27 @@ export default function App(props) {
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="BookmarkedProducts" element={<BookmarkedPage 
-                    productList={PRODUCT_LIST} />} 
-                />
+                <Route element={<ProtectedPage currentUser={currentUser} />}>
+                    <Route path="BookmarkedProducts" element={<BookmarkedPage 
+                        productList={PRODUCT_LIST} />} 
+                    />
+                    <Route path="RequestProduct/*" element={<RequestForm />} />
+                    <Route path="RequestProductReceipt" element={<RequestReceipt 
+                        productObj = {PRODUCT_LIST[0]} />} 
+                    />
+                </Route>
                 <Route path="BrowsePage" element={<SearchPage
                     productList={displayedList}
                     applyFilterCallback={applyFilter} />}
                 />
-                <Route path="RequestProduct/*" element={<RequestForm />} />
-                <Route path="CreateAccount" element={<CreateAccount />} />
+                {/* <Route path="CreateAccount" element={<CreateAccount />} /> */}
                 <Route path="SignIn" element={<SignIn 
-                    username="test"
-                    password="test" />} 
+                    currentUser={currentUser}/>} 
                 />
                 <Route path="SignOut" element={<SignOut 
-                    username="test" />}
+                    currentUser={currentUser} />}
                 />
-                <Route path="RequestProductReceipt" element={<RequestReceipt 
-                    productObj = {PRODUCT_LIST[0]} />} 
-                />
+                
                 <Route path="ProductPage" element={<ProductPage />} />
             </Routes>
 
@@ -72,4 +93,12 @@ export default function App(props) {
         </div>
 
     )
+}
+
+function ProtectedPage(props) {
+    if (props.currentUser.userId === null) {
+        return <Navigate to="/SignIn" />
+    } else {
+        return <Outlet />
+    }
 }
