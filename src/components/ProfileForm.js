@@ -160,8 +160,7 @@ export function UserProfile (props) {
             <form>
                 <h2 className="text-center profile-header">Personal Profile</h2>
                 <p>You are signed in as {props.currentUser.userName}.</p>
-                {console.log(imageUrl)}
-                <img src={imageUrl} alt="user avatar preview" className="mb-4"/> <br></br>
+                <img src={imageUrl} alt="user avatar preview" className="w-25 p-3 mb-4"/> <br></br>
                 <label htmlFor="imageUploadInput" className="btn btn-success mb-4">Choose Image</label> <br></br>
                 <button className="btn btn-success" onClick={handleImageUpload}>Save to Profile</button> <br></br>
                 <input type="file" name="image" id="imageUploadInput" className="d-none" onChange={handleChange}/> <br></br>
