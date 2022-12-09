@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Results } from './Results';
 import { SearchForm } from './SearchForm';
 
@@ -9,11 +10,11 @@ export function SearchPage(props) {
                 <div className='search-h2'>Browse Products</div>
             </div>
             <div className='bookmarked'>
-            <SearchForm
-             applyFilterCallback={props.applyFilterCallback}
-            />
+                <SearchForm
+                applyFilterCallback={props.applyFilterCallback}
+                />
                 <Results
-                    productList={props.productList}
+                productList={props.productList}
                 />
             </div>
         </div>

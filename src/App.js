@@ -89,10 +89,12 @@ export default function App(props) {
         
         <div className="page-content">
 
-            <NavigationBar currentUser={currentUser} />
+            <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter}/>
 
             <Routes>
-                <Route path="/" element={<HomePage currentUser={currentUser} />} />
+
+                <Route path="/" element={<HomePage currentUser={currentUser} applyFilterCallback={applyFilter} />} />
+
                 <Route element={<ProtectedPage currentUser={currentUser} />}>
                     <Route path="BookmarkedProducts" element={<BookmarkedPage 
                         productList={PRODUCT_LIST} />} 
@@ -107,14 +109,20 @@ export default function App(props) {
                         currentUser={currentUser} />}
                     />
                 </Route>
-                <Route path="BrowsePage" element={<SearchPage
+                <Route path="BrowsePage" element={
+                    <SearchPage
                     productList={displayedList}
+                    applyFilterCallback={applyFilter} />
+                } />
+                <Route path="BrowsePage/:category" element={<SearchPage
                     applyFilterCallback={applyFilter} />}
                 />
                 <Route path="SignIn" element={<SignIn 
                     currentUser={currentUser}/>} 
                 />
-                <Route path="ProductPage" element={<ProductPage />} />
+
+                <Route path="ProductPage/:id" element={<ProductPage />} />
+
             </Routes>
 
             <Footer currentPage={location.pathname} />

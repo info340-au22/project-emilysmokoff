@@ -1,33 +1,39 @@
 [
     {
         "title": "Health and Wellness",
+        "type": "healthandwellness",
         "image": "/img/health-wellness.jpg",
         "imageDescription": "fresh veggies"
     },
     {
         "title": "House",
+        "type": "house",
         "image": "/img/house.jpg",
         "imageDescription": "clean ingredient cleaning supplies"
     },
     {
         "title": "Kitchen",
+        "type": "kitchen",
         "image": "/img/kitchen.jpg",
         "imageDescription": "sustainable kitchen products"
     },
     {
         "title": "Cosmetics",
+        "type": "cosmetics",
         "image": "/img/cosmetic.jpg",
         "imageDescription": "sustainable cosmetic products"
 
     },
     {
         "title": "Technology",
+        "type": "technology",
         "image": "/img/technology.jpg",
         "imageDescription": "sustainable technology devices"
 
     },
     {
         "title": "Brands",
+        "type": "brands",
         "image": "/img/brand.jpg",
         "imageDescription": "trees"
     }

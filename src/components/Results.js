@@ -2,43 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export function Results(props) {
-    const productsArray = props.productList.map((productObj) => {
-        const element = (
-            <ProductItem 
-            productData={productObj} 
-            key={productObj.id} 
-            />
-        )
-        return element;
-    })
-
-    if(productsArray[0]==null){
-        return (
-            <p className='card-container'>No results found. Please try again! </p>
-        )
-    }else{
-    return (
-        <div className='card-container'>{productsArray}</div>
-    )
-    }
-}
-
-function ProductItem(props){
-    const {product, company, price, image, imageAlt, ratingImage, ratingImageAlt} = props.productData;
-
-    return (  
-        <div>
-            <main> 
-                <div className="card-container">
-                    <div className="card">
-                        <img className="bookmark-search-img" src={image} alt={imageAlt}/>
-                        <p className="product-name">{product}</p>
-                        <p className="company">{company}<span className="price">{price}</span></p>
-                        <img className="rating" src={ratingImage} alt={ratingImageAlt}/>
-                        <Link to="/ProductPage"><p className="shop-now">Shop Now</p></Link>
-                    </div>
+    const productsDiv = props.productList.map((productData) => {
+            let productPage = "/ProductPage/" + productData.id;
+            return(
+                <div className="card" key={productData.id}>
+                    <img className="bookmark-search-img" src={productData.image} alt={productData.imageAlt}/>
+                    <p className="product-name">{productData.product}</p>
+                    <p className="company">{productData.company}<span className="price">{productData.price}</span></p>
+                    <img className="rating" src={productData.ratingImage} alt={productData.ratingImageAlt}/>
+                    <Link to={productPage}><p className="shop-now">View Product</p></Link> 
                 </div>
-            </main>
-        </div>
+        )} //link to specific product here
     )
+
+    console.log(productsDiv);
+    if(productsDiv.length===0){
+
+        return (
+            <div className='no-results'>
+                <p className='card-container'>No results found. Please try again! </p>
+                <Link className='search-page-request' to="/RequestProduct">Click here to request a product</Link>
+            </div>
+        );
+    }else{
+        return (
+            <main>
+                <div className='card-container'>{productsDiv}</div>
+            </main>
+        )
+    }
 }
