@@ -561,6 +561,10 @@ footer a, footer p {
         margin-right: 2em;
     }
 
+    .add:hover{
+        color:rgb(21, 132, 93);
+    }
+
     .about-us {
         padding-top: 3rem;
         background-color: lightgray;
