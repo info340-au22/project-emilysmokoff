@@ -17,13 +17,35 @@ import { Footer } from './components/Footer.js';
 
 import PRODUCT_LIST from './data/products.json';
 import { onAuthStateChanged } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 
 export default function App(props) {
+
+    const location = useLocation();
+    const auth = getAuth();
+    const [user, loading, error] = useAuthState(auth);
     
     //Uncomment for SearchPage
     const [searchValue, setSearchValue] = useState('');
     const [currentUser, setCurrentUser] = useState({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"})
+    //const [currentUser, setCurrentUser] = useState("");
     const navigate = useNavigate();
+
+    // if (loading) {
+    //     return <p>Initializing user</p>
+    // }
+
+    // if (user) {
+    //     user.userId = user.uid;
+    //     user.userName = user.displayName;
+    //     user.userImg = user.photoURL || "/img/null.png";
+    //     setCurrentUser(user);
+    //     setCurrentUser({"userId": user.uid, "userName": user.displayName, "userImg": user.photoURL || "/img/null.png"})
+    // } else {
+    //     navigate("SignIn");
+    //     setCurrentUser({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"});
+    // }
 
     function applyFilter(text) {
         setSearchValue(text);
@@ -43,8 +65,9 @@ export default function App(props) {
     })
 
 
+
+
     useEffect(() =>{
-        const auth = getAuth();
         onAuthStateChanged(auth, (firebaseUser) => {
             if (firebaseUser) {
                 firebaseUser.userId = firebaseUser.uid;
@@ -52,10 +75,13 @@ export default function App(props) {
                 firebaseUser.userImg = firebaseUser.photoURL || "/img/null.png";
                 setCurrentUser(firebaseUser);
             } else {
-                navigate("SignIn");
+                //setCurrentUser(null);
                 setCurrentUser({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"});
+                navigate("SignIn");
             }
         })
+
+
     }, [])
 
 
@@ -66,7 +92,7 @@ export default function App(props) {
             <NavigationBar currentUser={currentUser} />
 
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<HomePage currentUser={currentUser} />} />
                 <Route element={<ProtectedPage currentUser={currentUser} />}>
                     <Route path="BookmarkedProducts" element={<BookmarkedPage 
                         productList={PRODUCT_LIST} />} 
@@ -92,7 +118,7 @@ export default function App(props) {
                 <Route path="ProductPage" element={<ProductPage />} />
             </Routes>
 
-            <Footer currentPage={useLocation().pathname} />
+            <Footer currentPage={location.pathname} />
         </div>
 
     )

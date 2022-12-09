@@ -39,7 +39,7 @@ export function NavigationBar (props) {
                     
                     <NavLink className="nav-link" to="/SignIn">
                         {/* <span className="material-icons" aria-label="Personal Profile">account_circle</span> */}
-                        <img src={props.currentUser.userImg} className="w-50 p-3 rounded-circle" alt="profile photo"/>
+                        <img src={props.currentUser.userImg} className="navProfile rounded-circle" alt="profile photo"/>
                     </NavLink>
                 </div>
             </div>   
