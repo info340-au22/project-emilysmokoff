@@ -88,10 +88,16 @@ export function SignIn(props) {
         credentialHelper: 'none'
     }
 
-    if (props.currentUser.userId || props.currentUser.userId == "Log Out") {
-        return <Navigate to="/SignOut" />
+    // let userId = null;
+    if (props.currentUser != null) {
+        // userId = props.currentUser.userId;
+        // if (props.currentUser.userId || props.currentUser.userId == "Log Out") {
+            return <Navigate to="/UserProfile" />
+//        }
+    
     }
 
+    
     return (
         <div>
             <h2 className="text-center profile-header">Sign In</h2>
@@ -102,9 +108,9 @@ export function SignIn(props) {
     )
 }
 
-export function SignOut (props) {
+export function UserProfile (props) {
     const navigate = useNavigate();
-    const [profileImg, setprofileImg] = useState(undefined)
+    const [profileImg, setprofileImg] = useState(undefined);
     let initialURL = props.currentUser.userImg;
     const [imageUrl, setImageUrl] = useState(initialURL)
     //const [newUsername, setNewUsername] = useState('');

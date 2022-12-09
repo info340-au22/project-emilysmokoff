@@ -1,11 +1,12 @@
 import React from 'react';
 import { Header } from './Header.js';
 
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import PRODUCT_CATEGORIES from '../data/categories.json'
 
 export function HomePage (props) {
+    <Outlet />
     return (
         <div>
             <Header />
