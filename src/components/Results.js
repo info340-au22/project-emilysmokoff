@@ -10,7 +10,7 @@ export function Results(props) {
                     <p className="product-name">{productData.product}</p>
                     <p className="company">{productData.company}<span className="price">{productData.price}</span></p>
                     <img className="rating" src={productData.ratingImage} alt={productData.ratingImageAlt}/>
-                    <Link to={productPage}><p className="shop-now">Shop Now</p></Link> 
+                    <Link to={productPage}><p className="shop-now">View Product</p></Link> 
                 </div>
         )} //link to specific product here
     )
