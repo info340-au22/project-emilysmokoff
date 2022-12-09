@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PRODUCTS from '../data/products.json';
-
 export function Results(props) {
-    const productsDiv = PRODUCTS.map((productData) => {
-        if((productData.category == props.productCategory) || (props.productCategory == null)) {
+    const productsDiv = props.productList.map((productData) => {
+        // if((productData.category == props.productCategory) || (props.productCategory == null)) {
             let productPage = "/ProductPage/" + productData.id;
             return(
                 <div className="card" key={productData.id}>
@@ -16,14 +14,17 @@ export function Results(props) {
                     <Link to={productPage}><p className="shop-now">Shop Now</p></Link> 
                 </div>
         )} //link to specific product here
-    })
-    if(productsDiv==null){
+    )
+
+    console.log(productsDiv);
+    if(productsDiv.length===0){
         return (
-            <p className='card-container'>No results found. Please try again! </p>
-            //link to request product page
+            <div className='no-results'>
+                <p className='card-container'>No results found. Please try again! </p>
+                <Link className='search-page-request' to="/RequestProduct">Click here to request a product</Link>
+            </div>
         );
-    }
-    else{
+    }else{
         return (
             <main>
                 <div className='card-container'>{productsDiv}</div>

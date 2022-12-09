@@ -9,7 +9,7 @@
     "imageAlt":"Sustainable Makeup Wipes",
     "ratingImage": "/img/4.5rating.png",
     "ratingImageAlt": "4.5 star rating",
-    "tags":"sustainable makeup wipes ecopanda",
+    "tags":"cosmetics sustainable makeup wipes ecopanda",
     "id":1
   },
   {
@@ -22,7 +22,7 @@
     "imageAlt":"Scandinavian Biolabs Conditioner",
     "ratingImage": "/img/5rating.png",
     "ratingImageAlt": "5 star rating",
-    "tags":"hair recovery conditioner for men scandanavian biolabs haircare hair care shower",
+    "tags":"cosmetics hair recovery conditioner for men scandanavian biolabs haircare hair care shower",
     "id":2
   },
   {
@@ -35,7 +35,7 @@
     "imageAlt":"Maui Moisture Shampoo",
     "ratingImage": "/img/4.5rating.png",
     "ratingImageAlt": "4.5 star rating",
-    "tags":"thick & restore + bamboo fiber shampoo thick and restore + bamboo fiber shampoo thick and restore bamboo fiber shampoo maui moisture haircare hair care shower",
+    "tags":"cosmetics thick & restore + bamboo fiber shampoo thick and restore + bamboo fiber shampoo thick and restore bamboo fiber shampoo maui moisture haircare hair care shower",
     "id":3
   },
   {
@@ -48,7 +48,7 @@
     "imageAlt":"Swell Water Bottle",
     "ratingImage": "/img/4.5rating.png",
     "ratingImageAlt": "4.5 star rating",
-    "tags":"health and wellness water bottle waterbottle stainless steel water bottle swell",
+    "tags":"healthandwellness health and wellness water bottle waterbottle stainless steel water bottle swell",
     "id":4
   },
   {
@@ -59,9 +59,9 @@
     "price": "$1,000",
     "image": "/img/treadmill.jpg",
     "imageAlt":"Intenza Fitness Treadmill",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
-    "tags":"health and wellness treadmill intenza fitness",
+    "ratingImage": "/img/2rating.png",
+    "ratingImageAlt": "2 star rating",
+    "tags":"healthandwellness health and wellness treadmill intenza fitness",
     "id":5
   },
   {
@@ -74,7 +74,7 @@
     "imageAlt":"Bianchi Bike",
     "ratingImage": "/img/4.5rating.png",
     "ratingImageAlt": "4.5 star rating",
-    "tags":"health and wellness bianchi bike",
+    "tags":"healthandwellness health and wellness bianchi bike",
     "id":6
   },
   {
@@ -98,8 +98,8 @@
     "price": "$20",
     "image": "/img/cleaningsupplies.jpg",
     "imageAlt":"Grove Collaborative Cleaning Supplies",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/4rating.png",
+    "ratingImageAlt": "4 star rating",
     "tags":"house cleaning supply cleaning supplies grove collaborative",
     "id":8
   },
@@ -111,8 +111,8 @@
     "price": "$25",
     "image": "/img/baskets.jpg",
     "imageAlt":"Threshold Baskets",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/4rating.png",
+    "ratingImageAlt": "4 star rating",
     "tags":"house basket baskets threashold",
     "id":9
   },
@@ -137,8 +137,8 @@
     "price": "$7",
     "image": "/img/grocerybags.jpg",
     "imageAlt":"All Cotton and Li Grocery Bags",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/5rating.png",
+    "ratingImageAlt": "5 star rating",
     "tags":"kitchen grocery bag grocery bags grocerybag all cotton and li grocery bags",
     "id":11
   },
@@ -150,8 +150,8 @@
     "price": "$6",
     "image": "/img/pans.jpg",
     "imageAlt":"Le Crueset Pans",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/4rating.png",
+    "ratingImageAlt": "4 star rating",
     "tags":"kitchen pan pans le cruiset pans le cruiset pan",
     "id":12
   },
@@ -163,9 +163,9 @@
     "price": "$0",
     "image": "/img/cocacola.jpg",
     "imageAlt":"The brand Coca Cola",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
-    "tags":"food and beverage cocacola coke coca cola drink soda",
+    "ratingImage": "/img/1rating.png",
+    "ratingImageAlt": "1 star rating",
+    "tags":"brands food and beverage cocacola coke coca cola drink soda",
     "id":13
   },
   {
@@ -189,8 +189,8 @@
     "price": "$0",
     "image": "/img/tesla.jpg",
     "imageAlt":"The brand Tesla",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/1rating.png",
+    "ratingImageAlt": "1 star rating",
     "tags":"brand brands tesla car",
     "id":15
   },
@@ -202,8 +202,8 @@
     "price": "$1,000",
     "image": "/img/phone.jpg",
     "imageAlt":"Apple iPhone",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/1rating.png",
+    "ratingImageAlt": "1 star rating",
     "tags":"tech technology smartphone smart phone apple iphone",
     "id":16
   },
@@ -215,8 +215,8 @@
     "price": "$800",
     "image": "/img/computer.jpg",
     "imageAlt":"Apple Laptop",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/1rating.png",
+    "ratingImageAlt": "1 star rating",
     "tags":"tech technology apple laptop mac pc",
     "id":17
   },
@@ -228,8 +228,8 @@
     "price": "$400",
     "image": "/img/watch.jpg",
     "imageAlt":"Tissot watch",
-    "ratingImage": "/img/4.5rating.png",
-    "ratingImageAlt": "4.5 star rating",
+    "ratingImage": "/img/3rating.png",
+    "ratingImageAlt": "3 star rating",
     "tags":"tech technology tissot watch",
     "id":18
   }

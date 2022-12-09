@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Collapse } from 'bootstrap';
 
-import { Link, NavLink } from 'react-router-dom';
-
 export function NavigationBar (props) {
+
+    const navigate = useNavigate();
+
     const displayPages = [{id: "/", title: "Home"}, {id: "/BrowsePage", title: "Browse Products"},
     {id: "/RequestProduct", title: "Upload Products"}, {id: "/BookmarkedProducts", title: "Bookmarked Products"}];
 
@@ -14,6 +17,19 @@ export function NavigationBar (props) {
             </li>
         )
     });
+
+    const [typedValue, setTypedValue] = useState("");
+  
+    const handleChange = (event) => {
+      const value = event.target.value;
+      setTypedValue(value); //update state and re-render!
+    }
+  
+    const handleSubmit = (event) => {    
+        props.applyFilterCallback(typedValue.toLowerCase()); 
+        console.log(navigate);
+      navigate('/BrowsePage');
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -30,13 +46,13 @@ export function NavigationBar (props) {
                         {navPages}
                     </ul>
                     <form id="nav-search-form">
-                            <input id="nav-search-input" type="text" name="search" placeholder=" Search for products" />
-                        <span className="material-icons"type="button" id="nav-search-icon" aria-label="search icon">search</span>
-                </form>
+                        <input id="nav-search-input" type="text" name="search" placeholder=" Search for products" onChange={handleChange} value={typedValue}/>
+                        <span className="material-icons" type="button" id="nav-search-icon" aria-label="search icon" onClick={handleSubmit} >search</span>
+                   </form>
                     
                     <NavLink className="nav-link" to="/SignIn">
                         {/* <span className="material-icons" aria-label="Personal Profile">account_circle</span> */}
-                        <img src={props.currentUser.userImg} className="navbar-profile-picture" alt="profile photo"/>
+                        <img src={props.currentUser.userImg} className="navbar-profile-picture" alt="profile"/>
                     </NavLink>
                 </div>
             </div>   
