@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export function Results(props) {
     const productsDiv = props.productList.map((productData) => {
-        // if((productData.category == props.productCategory) || (props.productCategory == null)) {
             let productPage = "/ProductPage/" + productData.id;
             return(
                 <div className="card" key={productData.id}>
@@ -18,6 +17,7 @@ export function Results(props) {
 
     console.log(productsDiv);
     if(productsDiv.length===0){
+
         return (
             <div className='no-results'>
                 <p className='card-container'>No results found. Please try again! </p>
