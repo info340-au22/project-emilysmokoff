@@ -10,6 +10,11 @@ export function NavigationBar (props) {
     const displayPages = [{id: "/", title: "Home"}, {id: "/BrowsePage", title: "Browse Products"},
     {id: "/RequestProduct", title: "Upload Products"}, {id: "/BookmarkedProducts", title: "Bookmarked Products"}];
 
+    let userImg = "/img/null.png";
+    if (props.currentUser != null) {
+        userImg = props.currentUser.userImg;
+    }
+
     const navPages = displayPages.map((page) => {
         return(
             <li className="nav-item" key={page.id}>
@@ -50,9 +55,9 @@ export function NavigationBar (props) {
                         <span className="material-icons" type="button" id="nav-search-icon" aria-label="search icon" onClick={handleSubmit} >search</span>
                    </form>
                     
-                    <NavLink className="nav-link" to="/SignIn">
+                    <NavLink className="nav-link" to="/UserProfile">
                         {/* <span className="material-icons" aria-label="Personal Profile">account_circle</span> */}
-                        <img src={props.currentUser.userImg} className="navbar-profile-picture" alt="profile"/>
+                        <img src={userImg} className="navProfile rounded-circle" alt="profile photo"/>
                     </NavLink>
                 </div>
             </div>   

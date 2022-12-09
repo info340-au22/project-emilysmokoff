@@ -1,12 +1,12 @@
   import React from 'react';
 import { Header } from './Header.js';
 
-import { useNavigate } from 'react-router-dom';
+
+import { useNavigate, Link, Outlet } from 'react-router-dom';
 
 import PRODUCT_CATEGORIES from '../data/categories.json'
 
 export function HomePage (props) {
-
     return (
         <div>
             <Header />

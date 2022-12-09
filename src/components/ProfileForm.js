@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { StyledFirebaseAuth } from 'react-firebaseui'
-import { getAuth, EmailAuthProvider, GoogleAuthProvider, signOut } from 'firebase/auth'
+import { getAuth, EmailAuthProvider, GoogleAuthProvider, signOut, updateProfile } from 'firebase/auth'
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { getDatabase, set as firebaseSet, ref as dbRef } from 'firebase/database'
 
 export function SignIn(props) {
 
@@ -86,20 +88,31 @@ export function SignIn(props) {
         credentialHelper: 'none'
     }
 
-    if (props.currentUser.userId || props.currentUser.userId == "Log Out") {
-        return <Navigate to="/SignOut" />
+    // let userId = null;
+    if (props.currentUser != null) {
+        // userId = props.currentUser.userId;
+        // if (props.currentUser.userId || props.currentUser.userId == "Log Out") {
+            return <Navigate to="/UserProfile" />
+//        }
+    
     }
 
+    
     return (
         <div>
             <h2 className="text-center profile-header">Sign In</h2>
-            <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj} />
+            {!props.user &&
+                <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj} />
+            }
         </div>
     )
 }
 
-export function SignOut (props) {
+export function UserProfile (props) {
     const navigate = useNavigate();
+    const [profileImg, setprofileImg] = useState(undefined);
+    let initialURL = props.currentUser.userImg;
+    const [imageUrl, setImageUrl] = useState(initialURL)
     //const [newUsername, setNewUsername] = useState('');
 
     // useEffect(() => {
@@ -115,9 +128,31 @@ export function SignOut (props) {
     // }, [])
 
 
-    const handleClick3 = (event) => {
+    const handleClick3 = async (event) => {
+        await signOut(getAuth());
         navigate("/SignIn");
-        signOut(getAuth());
+    }
+
+    const handleChange = (event) => {
+        if(event.target.files.length > 0 && event.target.files[0]) {
+          const profileImg = event.target.files[0]
+          setprofileImg(profileImg);
+          setImageUrl(URL.createObjectURL(profileImg));
+        }
+    }
+
+    const handleImageUpload = async (event) => {
+        event.preventDefault();
+        const storage = getStorage();
+        const imageRef = storageRef(storage, "userImages/" +props.currentUser.userId+".png");
+        await uploadBytes(imageRef, profileImg);
+        const downloadUrlString = await getDownloadURL(imageRef);
+        //console.log(downloadUrlString);
+        await updateProfile(props.currentUser, { photoURL: downloadUrlString });
+
+        // const db = getDatabase();
+        // const userImgRef = dbRef(db, "userData/" + props.currentUser.userId + "/imgUrl");
+        // firebaseSet(userImgRef, downloadUrlString)
     }
 
     return (
@@ -125,10 +160,12 @@ export function SignOut (props) {
             <form>
                 <h2 className="text-center profile-header">Personal Profile</h2>
                 <p>You are signed in as {props.currentUser.userName}.</p>
-                <input type="submit" value="Sign Out" className="btn btn-primary label-text mb-4" onClick={handleClick3} />
+                <img src={imageUrl} alt="user avatar preview" className="w-25 p-3 mb-4"/> <br></br>
+                <label htmlFor="imageUploadInput" className="btn btn-success mb-4">Choose Image</label> <br></br>
+                <button className="btn btn-success" onClick={handleImageUpload}>Save to Profile</button> <br></br>
+                <input type="file" name="image" id="imageUploadInput" className="d-none" onChange={handleChange}/> <br></br>
+                <input type="submit" value="Sign Out" className="btn btn-success label-text" onClick={handleClick3} />
             </form>
-            <span className="footprint"></span>
-            <p className="score-label">Your Ecological Footprint Score</p>
         </div>
     )
 }

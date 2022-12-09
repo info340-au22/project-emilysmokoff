@@ -94,8 +94,8 @@ export function RequestForm(props) {
                 {/* <label className="label-text" for="ingredients">Ingredient Information:</label><br />
                 <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br /> */}
                 <label className="label-text" htmlFor="filename">Upload Product Photo:</label><br />
-                <input type="file" id="filename" onChange={handleChange3} name="filename" className="btn btn-primary label-text" /><br /><br />
-                <input id="submit" type="submit" value="Submit" className="btn btn-primary label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
+                <input type="file" id="filename" onChange={handleChange3} name="filename" className="btn btn-success label-text" /><br /><br />
+                <input id="submit" type="submit" value="Submit" className="btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
             </form>
         </div>
     );

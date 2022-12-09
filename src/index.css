@@ -158,32 +158,10 @@ h2 .profile-header {
     text-align: center;
 }
 
-/*Style the footprint circle icon*/
-.footprint {
-    height: 100px;
-    width: 100px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%);
-}
-
 /*Style the form labels*/
 .label-text {
     font-weight:370;
     margin-bottom: 0;
-}
-
-/*Ecological footprint label*/
-.score-label {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 60%;
-    white-space: nowrap;
 }
 
 /*Request page*/
@@ -527,6 +505,11 @@ footer .citing-links {
 footer li {
     display: block;
     text-align: center;
+}
+
+.navProfile {
+    width: 50px;
+    height: 50px;
 }
 
 /*Defines text styling for footer elements*/
