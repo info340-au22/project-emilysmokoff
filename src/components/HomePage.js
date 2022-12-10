@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Header } from './Header.js';
+
 
 import { useNavigate, Link, Outlet } from 'react-router-dom';
 
 import PRODUCT_CATEGORIES from '../data/categories.json'
 
 export function HomePage (props) {
+
     return (
         <div>
+            <Header />
             <ProductCategories applyFilterCallback={props.applyFilterCallback} />
             <AboutUs />
         </div>
@@ -38,7 +42,7 @@ function ProductCategories (props) {
         <main>
             <div className="second-heading">
                 <ul>
-                    <li><h2>Search by Sustainable Product Categories</h2></li>
+                    <li><h2>Search in Sustainable Product Categories</h2></li>
                 </ul>
             </div>
 

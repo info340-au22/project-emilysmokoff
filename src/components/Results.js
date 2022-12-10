@@ -15,7 +15,6 @@ export function Results(props) {
         )} //link to specific product here
     )
 
-    console.log(productsDiv);
     if(productsDiv.length===0){
 
         return (

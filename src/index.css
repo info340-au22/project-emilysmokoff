@@ -31,7 +31,6 @@ nav {
 }
 
 /*Header as seen on the index.html page*/
-
 .home {
     color: rgb(26, 81, 56);
     text-align: center;
@@ -55,8 +54,13 @@ nav {
 .page-content {
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
+}
+
+/*Assigns any space in the page to the main content div*/
+.route-choice {
+    flex: 1;
 }
 
 /*Defining font family for body*/
@@ -340,6 +344,11 @@ h2 .profile-header {
     margin-bottom: 0;
 }
 
+.product-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 
 .rating-card img{
     padding: 1rem;
@@ -383,6 +392,7 @@ h2 .profile-header {
 .home-card-container {
     display: inline-flex;
     align-items: center;
+    flex-grow: 3;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-left: 1.5rem;
