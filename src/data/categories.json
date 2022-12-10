@@ -3,25 +3,25 @@
         "title": "Health and Wellness",
         "type": "healthandwellness",
         "image": "/img/health-wellness.jpg",
-        "imageDescription": "fresh veggies"
+        "imageDescription": "fresh veggies taken from Marvin Meyer from Unsplash"
     },
     {
         "title": "House",
         "type": "house",
         "image": "/img/house.jpg",
-        "imageDescription": "clean ingredient cleaning supplies"
+        "imageDescription": "clean ingredient cleaning supplies taken from Daniela Domingues from Unsplash"
     },
     {
         "title": "Kitchen",
         "type": "kitchen",
         "image": "/img/kitchen.jpg",
-        "imageDescription": "sustainable kitchen products"
+        "imageDescription": "sustainable kitchen products taken from Spruce Refillable Cleaning from Unsplash"
     },
     {
         "title": "Cosmetics",
         "type": "cosmetics",
         "image": "/img/cosmetic.jpg",
-        "imageDescription": "sustainable cosmetic products"
+        "imageDescription": "sustainable cosmetic products taken from Belle Beauty from Unsplash"
 
     },
     {

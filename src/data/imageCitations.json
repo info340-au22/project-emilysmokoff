@@ -40,31 +40,6 @@
         "citationDescription": "Photo by Matt Artz from Unsplash"
     },
     {
-        "id": "/BookmarkedProducts",
-        "citationLink": "https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon",
-        "citationDescription": "Favicon Citation"
-    },
-    {
-        "id": "/BookmarkedProducts",
-        "citationLink": "https://www.freepik.com/free-vector/big-green-hand-drawn-tree-life_10502868.htm#query=tree%20icon&position=26&from_view=search&track=sph",
-        "citationDescription": "Logo Citation"
-    },
-    {
-        "id": "/BookmarkedProducts",
-        "citationLink": "https://unsplash.com/photos/oXbU5Z3p3r8",
-        "citationDescription": "Photo by EcoPanda from Unsplash"
-    },
-    {
-        "id": "/BookmarkedProducts",
-        "citationLink": "https://unsplash.com/photos/ihYppkdzeCU",
-        "citationDescription": "Photo by Scandanavian Biolabs from Unsplash"
-    },
-    {
-        "id": "/BookmarkedProducts",
-        "citationLink": "https://unsplash.com/photos/1DMNn6gBbwQ",
-        "citationDescription": "Photo by Gabrielle Henderson from Unsplash"
-    },
-    {
         "id": "/BrowsePage",
         "citationLink": "https://www.iconfinder.com/icons/4801314/leaf_leaves_nature_plane_tree_icon",
         "citationDescription": "Favicon Citation"
@@ -75,106 +50,106 @@
         "citationDescription": "Logo Citation"
     },
     {
-        "id": "/BrowsePage/cosmetics",
+        "id": "/BrowsePage/cosmetics/0",
         "citationLink": "https://unsplash.com/photos/oXbU5Z3p3r8",
         "citationDescription": "Photo by EcoPanda from Unsplash"
     },
     {
-        "id": "/BrowsePage/cosmetics",
+        "id": "/BrowsePage/cosmetics/1",
         "citationLink": "https://unsplash.com/photos/ihYppkdzeCU",
         "citationDescription": "Photo by Scandanavian Biolabs from Unsplash"
     },
     {
-        "id": "/BrowsePage/cosmetics",
+        "id": "/BrowsePage/cosmetics/2",
         "citationLink": "https://unsplash.com/photos/1DMNn6gBbwQ",
         "citationDescription": "Photo by Gabrielle Henderson from Unsplash"
     },
     {
-        "id": "/BrowsePage/technology",
+        "id": "/BrowsePage/technology/15",
         "type": "phone",
         "citationLink": "https://unsplash.com/es/@oscnord?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Oscar Nord on Unsplash"
     },
     {
-        "id": "/BrowsePage/technology",
+        "id": "/BrowsePage/technology/16",
         "type": "computer",
         "citationLink": "https://unsplash.com/@karishea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Kari Shea on Unsplash"
     },
     {
-        "id": "/BrowsePage/technology",
+        "id": "/BrowsePage/technology/17",
         "type": "watch",
         "citationLink": "https://unsplash.com/es/@brunovdkraan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Bruno van der Kraan on Unsplash"
     },
     {
-        "id": "/BrowsePage/healthwellness",
+        "id": "/BrowsePage/healthwellness/3",
         "type": "waterbottle",
         "citationLink": "https://unsplash.com/@joanofarts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Joan Tran on Unsplash"
     },
     {
-        "id": "/BrowsePage/healthwellness",
+        "id": "/BrowsePage/healthwellness/4",
         "type": "treadmill",
         "citationLink": "https://unsplash.com/@intenzafitness?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Intenza Fitness on Unsplash"
     },
     {
-        "id": "/BrowsePage/healthwellness",
+        "id": "/BrowsePage/healthwellness/5",
         "type": "bike",
         "citationLink": "https://unsplash.com/@archduk3?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Carl Nenzen Loven on Unsplash"
     },
     {
-        "id": "/BrowsePage/house",
+        "id": "/BrowsePage/house/6",
         "type": "toothbrush",
         "citationLink": "https://unsplash.com/@thehumbleco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by The Humble Co. on Unsplash"
     },
     {
-        "id": "/BrowsePage/house",
+        "id": "/BrowsePage/house/7",
         "type": "cleaningsupplies",
         "citationLink": "https://unsplash.com/@daiga_ellaby?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Daiga Ellaby on Unsplash"
     },
     {
-        "id": "/BrowsePage/house",
+        "id": "/BrowsePage/house/8",
         "type": "baskets",
         "citationLink": "https://unsplash.com/@rodriguezedm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Eduardo Rodriguez on Unsplash"
     },
     {
-        "id": "/BrowsePage/kitchen",
+        "id": "/BrowsePage/kitchen/9",
         "type": "glassjars",
         "citationLink": "https://unsplash.com/es/@dariomen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Darío Méndez on Unsplash"
     },
     {
-        "id": "/BrowsePage/kitchen",
+        "id": "/BrowsePage/kitchen/10",
         "type": "grocerybags",
         "citationLink": "https://unsplash.com/@norevisions?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by No Revisions on Unsplash"
     },
     {
-        "id": "/BrowsePage/kitchen",
+        "id": "/BrowsePage/kitchen/11",
         "type": "pans",
         "citationLink": "https://unsplash.com/@roamincolor?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by roam in color on Unsplash"
     },
     {
-        "id": "/BrowsePage/brands",
+        "id": "/BrowsePage/brands/12",
         "type": "cocacola",
         "citationLink": "https://unsplash.com/es/@chernus_tr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Taras Chernus on Unsplash"
     },
     {
-        "id": "/BrowsePage/brands",
+        "id": "/BrowsePage/brands/13",
         "type": "nike",
         "citationLink": "https://unsplash.com/@kristianegelund?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Kristian Egelund on Unsplash"
     },
     {
-        "id": "/BrowsePage/brands",
+        "id": "/BrowsePage/brands/14",
         "type": "tesla",
         "citationLink": "https://unsplash.com/@priscilladupreez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Priscilla Du Preez on Unsplash"
