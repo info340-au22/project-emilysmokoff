@@ -1,12 +1,9 @@
 import React from 'react';
 
-import { useParams } from 'react-router-dom';
-
 import { Results } from './Results';
 import { SearchForm } from './SearchForm';
 
 export function SearchPage(props) {
-    const urlParams = useParams();
     return (
         <div>
             <div className='search-header'>
@@ -17,7 +14,7 @@ export function SearchPage(props) {
                 applyFilterCallback={props.applyFilterCallback}
                 />
                 <Results
-                productCategory={urlParams.category}
+                productList={props.productList}
                 />
             </div>
         </div>

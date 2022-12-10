@@ -42,6 +42,10 @@ nav {
     width: 100%;
 }
 
+.category-link{
+    text-align: center;
+}
+
 /*set root div to a height of 100 to allow for page content a height of 100*/
 #root {
     height: 100%;
@@ -125,6 +129,10 @@ h2{
     margin-bottom:0;
 }
 
+.no-results{
+    margin-bottom: 16em;
+}
+
 h3{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color:black;
@@ -150,32 +158,10 @@ h2 .profile-header {
     text-align: center;
 }
 
-/*Style the footprint circle icon*/
-.footprint {
-    height: 100px;
-    width: 100px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%);
-}
-
 /*Style the form labels*/
 .label-text {
     font-weight:370;
     margin-bottom: 0;
-}
-
-/*Ecological footprint label*/
-.score-label {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 60%;
-    white-space: nowrap;
 }
 
 /*Request page*/
@@ -249,6 +235,15 @@ h2 .profile-header {
 .search-page-form{
     margin-top:1em;
     text-align: left;
+}
+
+.search-page-request{
+    color:black;
+    padding-bottom: 100px;
+}
+
+.search-page-request:hover{
+    color:rgb(21, 132, 93);
 }
 
 /*Defines styling for the flex box in the home page that contains title and search bar*/
@@ -512,6 +507,11 @@ footer li {
     text-align: center;
 }
 
+.navProfile {
+    width: 50px;
+    height: 50px;
+}
+
 /*Defines text styling for footer elements*/
 footer a, footer p {
     color: white;
@@ -542,6 +542,10 @@ footer a, footer p {
         float:right;
         margin-top: 9px;
         margin-right: 2em;
+    }
+
+    .add:hover{
+        color:rgb(21, 132, 93);
     }
 
     .about-us {

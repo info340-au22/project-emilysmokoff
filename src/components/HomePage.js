@@ -1,7 +1,8 @@
-import React from 'react';
+  import React from 'react';
 import { Header } from './Header.js';
 
-import { Link } from 'react-router-dom';
+
+import { useNavigate, Link, Outlet } from 'react-router-dom';
 
 import PRODUCT_CATEGORIES from '../data/categories.json'
 
@@ -9,7 +10,7 @@ export function HomePage (props) {
     return (
         <div>
             <Header />
-            <ProductCategories />
+            <ProductCategories applyFilterCallback={props.applyFilterCallback} />
             <AboutUs />
         </div>
     );
@@ -17,14 +18,22 @@ export function HomePage (props) {
 
 function ProductCategories (props) {
 
+    const navigate = useNavigate();
+
+    const handleSubmit = (event, prop) => {
+       props.applyFilterCallback(prop); 
+       console.log(navigate);
+       navigate('/BrowsePage');
+    }
+
+
     const categories = PRODUCT_CATEGORIES.map((sustainableCategory) => {
-        let browseLink = "/BrowsePage/" + sustainableCategory.type;
         return (
-        <div className="home-card" key={sustainableCategory.title}>
-                <Link className="category-link" to={browseLink}>
+        <div className="home-card" type="button" key={sustainableCategory.title}>
+                <div className="category-link" onClick={(event) => handleSubmit(event, sustainableCategory.type)} >
                     <img src={sustainableCategory.image} alt={sustainableCategory.imageDescription} />
                     <h3>{sustainableCategory.title}</h3> 
-                </Link>
+                </div>
             </div>
         );
     });
