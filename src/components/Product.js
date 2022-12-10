@@ -52,8 +52,10 @@ function Product(props) {
                         <div>
                             <h3>{currentProduct.product}</h3>
                             <img className="product-img" src={currentProduct.image} alt={currentProduct.imageAlt} />
-                            <p className="content">{currentProduct.company}</p>
+                            <p className="content">Brand: {currentProduct.company}</p>
                             <img className="rating-img" src={currentProduct.ratingImage} alt={currentProduct.ratingImageAlt} />
+                            <p className="rating-justification">{currentProduct.ratingJustification}</p>
+                            <a href={currentProduct.link}>Learn more about this brand here.</a>
                             <p><button onClick={handleClick}>{buttonText}</button></p>
                         </div>
                     </div>
@@ -70,8 +72,10 @@ function Product(props) {
                             <h3>{currentProduct.product}</h3>
                             <img className="product-img" src={currentProduct.image} alt={currentProduct.imageAlt} />
                             <p className="price">{currentProduct.price}</p>
-                            <p className="content">{currentProduct.company}</p>
+                            <p className="content">Brand: {currentProduct.company}</p>
                             <img className="rating-img" src={currentProduct.ratingImage} alt={currentProduct.ratingImageAlt} />
+                            <p className="rating-justification">{currentProduct.ratingJustification}</p>
+                            <a href={currentProduct.link}>Learn more about or purchase this product here.</a>
                             <p><button onClick={handleClick}>{buttonText}</button></p>
                         </div>
                     </div>

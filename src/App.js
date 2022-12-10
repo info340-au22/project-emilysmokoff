@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Outlet, Navigate, useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth'
 
-
 import { NavigationBar } from './components/NavigationBar.js';
 import { HomePage } from './components/HomePage.js';
 import { BookmarkedPage } from './components/BookmarkedPage.js';
@@ -24,7 +23,6 @@ export default function App(props) {
 
     const auth = getAuth();
     const [currentUser, loading, error] = useAuthState(auth);
-    
     //Uncomment for SearchPage
     const [searchValue, setSearchValue] = useState('');
     // const [currentUser, setCurrentUser] = useState({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"})
@@ -85,48 +83,48 @@ export default function App(props) {
 
 
     return (
-        
         <div className="page-content">
-
             <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter} />
+            <div className="route-choice">
+                <Routes>
 
-            <Routes>
+                    <Route path="/" element={<HomePage 
+                    currentUser={currentUser} 
+                    applyFilterCallback={applyFilter} 
+                    /> } />
 
-                <Route path="/" element={<HomePage currentUser={currentUser} applyFilterCallback={applyFilter} />} />
-
-                <Route element={<ProtectedPage currentUser={currentUser} />}>
-                    <Route path="BookmarkedProducts" element={<BookmarkedPage 
-                        productList={PRODUCT_LIST} />} 
+                    <Route element={<ProtectedPage currentUser={currentUser} />}>
+                        <Route path="BookmarkedProducts" element={<BookmarkedPage 
+                            productList={PRODUCT_LIST} />} 
+                        />
+                        <Route path="RequestProduct" element={<RequestForm 
+                            currentUser={currentUser} />}
+                        />
+                        <Route path="RequestProductReceipt" element={<RequestReceipt 
+                            productObj = {PRODUCT_LIST[0]} />} 
+                        />
+                        <Route path="UserProfile" element={<UserProfile 
+                            currentUser={currentUser} />}
+                        />
+                    </Route>
+                    <Route path="BrowsePage" element={
+                        <SearchPage
+                        productList={displayedList}
+                        applyFilterCallback={applyFilter} />
+                    } />
+                    <Route path="BrowsePage/:category" element={<SearchPage
+                        applyFilterCallback={applyFilter} />}
                     />
-                    <Route path="RequestProduct" element={<RequestForm 
-                        currentUser={currentUser} />}
-                     />
-                    <Route path="RequestProductReceipt" element={<RequestReceipt 
-                        productObj = {PRODUCT_LIST[0]} />} 
+                    <Route path="SignIn" element={<SignIn 
+                        currentUser={currentUser}/>} 
                     />
-                    <Route path="UserProfile" element={<UserProfile 
-                        currentUser={currentUser} />}
-                    />
-                </Route>
-                <Route path="BrowsePage" element={
-                    <SearchPage
-                    productList={displayedList}
-                    applyFilterCallback={applyFilter} />
-                } />
-                <Route path="BrowsePage/:category" element={<SearchPage
-                    applyFilterCallback={applyFilter} />}
-                />
-                <Route path="SignIn" element={<SignIn 
-                    currentUser={currentUser}/>} 
-                />
 
-                <Route path="ProductPage/:id" element={<ProductPage />} />
+                    <Route path="ProductPage/:id" element={<ProductPage />} />
 
-            </Routes>
-
+                </Routes>
+            </div>
             <Footer />
         </div>
-
     )
 }
 
