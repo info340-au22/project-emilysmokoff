@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Collapse } from 'bootstrap';
 
+
 export function NavigationBar (props) {
 
     const navigate = useNavigate();
@@ -32,8 +33,7 @@ export function NavigationBar (props) {
   
     const handleSubmit = (event) => {    
         props.applyFilterCallback(typedValue.toLowerCase()); 
-        console.log(navigate);
-      navigate('/BrowsePage');
+        navigate('/BrowsePage');
     }
 
     return (
@@ -41,7 +41,7 @@ export function NavigationBar (props) {
             
             <div className="container-fluid">
                 <Link className="nav-link" to="/">
-                    <h1>EC<img src="/img/logo.png" alt="logo representing letter o" />-LIFE</h1> </Link>
+                    <h1>EC<img src="/img/logo.png" alt="logo representing letter o taken from freepik on Free Pik" />-LIFE</h1> </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

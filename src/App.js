@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Routes, Route, useLocation, Outlet, Navigate, useNavigate } from 'react-router-dom';
+import { Routes, Route, Outlet, Navigate, useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth'
 
 
@@ -22,7 +22,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function App(props) {
 
-    const location = useLocation();
     const auth = getAuth();
     const [currentUser, loading, error] = useAuthState(auth);
     
@@ -89,7 +88,7 @@ export default function App(props) {
         
         <div className="page-content">
 
-            <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter}/>
+            <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter} />
 
             <Routes>
 
@@ -125,7 +124,7 @@ export default function App(props) {
 
             </Routes>
 
-            <Footer currentPage={location.pathname} />
+            <Footer />
         </div>
 
     )
