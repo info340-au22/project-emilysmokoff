@@ -1,0 +1,482 @@
+[
+    {
+        "id": 1,
+        "productId": 1,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 2,
+        "productId": 1,
+        "gps": {
+            "latitude": 40.384348163335,
+            "longitude": -88.505667591970
+        }
+    },
+    {
+        "id": 3,
+        "productId": 1,
+        "gps": {
+            "latitude": 37.396358397360,
+            "longitude": -87.80616906409
+        }
+    },
+    {
+        "id": 4,
+        "productId": 1,
+        "gps": {
+            "latitude": 34.38430865720,
+            "longitude": -80.698367498
+        }
+    },
+    {
+        "id": 5,
+        "productId": 2,
+        "gps": {
+            "latitude": 39.3863080,
+            "longitude": -90.80806109534
+        }
+    },
+    {
+        "id": 6,
+        "productId": 2,
+        "gps": {
+            "latitude": 41.3863385,
+            "longitude": -96.6671736
+        }
+    },
+    {
+        "id": 7,
+        "productId": 2,
+        "gps": {
+            "latitude": 32.385348340,
+            "longitude": -91.5449748246
+        }
+    },
+    {
+        "id": 8,
+        "productId": 2,
+        "gps": {
+            "latitude": 34.3953284753,
+            "longitude": -86.56466666
+        }
+    },
+    {
+        "id": 9,
+        "productId": 2,
+        "gps": {
+            "latitude": 46.38632801,
+            "longitude": -94.74776245
+        }
+    },
+    {
+        "id": 10,
+        "productId": 2,
+        "gps": {
+            "latitude": 48.3963587,
+            "longitude":  -82.69456576
+        }
+    },
+    {
+        "id": 11,
+        "productId": 3,
+        "gps": {
+            "latitude": 43.396308,
+            "longitude": -91.64545866
+        }
+    },
+    {
+        "id": 12,
+        "productId": 3,
+        "gps": {
+            "latitude": 31.3943383,
+            "longitude": -88.70516566
+        }
+    },
+    {
+        "availability-id": 13,
+        "productId": 3,
+        "gps": {
+            "latitude": 27.38630853,
+            "longitude": -108.53436466
+        }
+    },
+    {
+        "id": 14,
+        "productId": 3,
+        "gps": {
+            "latitude": 32.394328,
+            "longitude": -92.646059496
+        }
+    },
+    {
+        "id": 15,
+        "productId": 3,
+        "gps": {
+            "latitude": 33.386348123,
+            "longitude": -111.6852626
+        }
+    },
+    {
+        "id": 16,
+        "productId": 3,
+        "gps": {
+            "latitude": 30.3853088715,
+            "longitude": -92.457265674
+        }
+    },
+    {
+        "id": 17,
+        "productId": 4,
+        "gps": {
+            "latitude": 39.394318213,
+            "longitude": -100.80756205966
+        }
+    },
+    {
+        "id": 18,
+        "productId": 4,
+        "gps": {
+            "latitude": 34.38635853,
+            "longitude": -97.7453666
+        }
+    },
+    {
+        "id": 19,
+        "productId": 4,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 20,
+        "productId": 5,
+        "gps": {
+            "latitude": 39.394308298,
+            "longitude": -78.5589688766
+        }
+    },
+    {
+        "id": 21,
+        "productId": 5,
+        "gps": {
+            "latitude": 40.39539503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 22,
+        "productId": 2,
+        "gps": {
+            "latitude": 36.3863380,
+            "longitude":  -79.594766466
+        }
+    },
+    {
+        "id": 23,
+        "productId": 5,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 24,
+        "productId": 6,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": -96.4977588466
+        }
+    },
+    {
+        "id": 25,
+        "productId": 6,
+        "gps": {
+            "latitude": 45.38431823,
+            "longitude": -73.468174166
+        }
+    },
+    {
+        "id": 26,
+        "productId": 7,
+        "gps": {
+            "latitude": 37.394348,
+            "longitude": -78.7266646
+        }
+    },
+    {
+        "id": 27,
+        "productId": 7,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 28,
+        "productId": 8,
+        "gps": {
+            "latitude": 40.384348163335,
+            "longitude": -88.505667591970
+        }
+    },
+    {
+        "id": 29,
+        "productId": 8,
+        "gps": {
+            "latitude": 37.396358397360,
+            "longitude": -87.80616906409
+        }
+    },
+    {
+        "id": 30,
+        "productId": 8,
+        "gps": {
+            "latitude": 34.38430865720,
+            "longitude": -80.698367498
+        }
+    },
+    {
+        "id": 31,
+        "productId": 9,
+        "gps": {
+            "latitude": 39.3863080,
+            "longitude": -90.80806109534
+        }
+    },
+    {
+        "id": 32,
+        "productId": 9,
+        "gps": {
+            "latitude": 41.3863385,
+            "longitude": -96.6671736
+        }
+    },
+    {
+        "id": 33,
+        "productId": 10,
+        "gps": {
+            "latitude": 32.385348340,
+            "longitude": -91.5449748246
+        }
+    },
+    {
+        "id": 34,
+        "productId": 10,
+        "gps": {
+            "latitude": 34.3953284753,
+            "longitude": -86.56466666
+        }
+    },
+    {
+        "id": 35,
+        "productId": 10,
+        "gps": {
+            "latitude": 46.38632801,
+            "longitude": -94.74776245
+        }
+    },
+    {
+        "id": 36,
+        "productId": 11,
+        "gps": {
+            "latitude": 48.3963587,
+            "longitude":  -82.69456576
+        }
+    },
+    {
+        "id": 37,
+        "productId": 12,
+        "gps": {
+            "latitude": 43.396308,
+            "longitude": -91.64545866
+        }
+    },
+    {
+        "id": 38,
+        "productId": 13,
+        "gps": {
+            "latitude": 31.3943383,
+            "longitude": -88.70516566
+        }
+    },
+    {
+        "id": 39,
+        "productId": 14,
+        "gps": {
+            "latitude": 27.38630853,
+            "longitude": -108.53436466
+        }
+    },
+    {
+        "id": 40,
+        "productId": 14,
+        "gps": {
+            "latitude": 32.394328,
+            "longitude": -92.646059496
+        }
+    },
+    {
+        "id": 41,
+        "productId": 15,
+        "gps": {
+            "latitude": 33.386348123,
+            "longitude": -111.6852626
+        }
+    },
+    {
+        "id": 42,
+        "productId": 16,
+        "gps": {
+            "latitude": 30.3853088715,
+            "longitude": -92.457265674
+        }
+    },
+    {
+        "id": 43,
+        "productId": 17,
+        "gps": {
+            "latitude": 39.394318213,
+            "longitude": -100.80756205966
+        }
+    },
+    {
+        "id": 44,
+        "productId": 18,
+        "gps": {
+            "latitude": 34.38635853,
+            "longitude": -97.7453666
+        }
+    },
+    {
+        "id": 45,
+        "productId": 14,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 46,
+        "productId": 11,
+        "gps": {
+            "latitude": 39.394308298,
+            "longitude": -78.5589688766
+        }
+    },
+    {
+        "id": 47,
+        "productId": 11,
+        "gps": {
+            "latitude": 40.39539503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 48,
+        "productId": 12,
+        "gps": {
+            "latitude": 36.3863380,
+            "longitude":  -79.594766466
+        }
+    },
+    {
+        "id": 49,
+        "productId": 12,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 50,
+        "productId": 2,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": -96.4977588466
+        }
+    },
+    {
+        "id": 51,
+        "productId": 1,
+        "gps": {
+            "latitude": 45.38431823,
+            "longitude": -73.468174166
+        }
+    },
+    {
+        "id": 52,
+        "productId": 1,
+        "gps": {
+            "latitude": 37.394348,
+            "longitude": -78.7266646
+        }
+    }, 
+    {
+        "id": 53,
+        "productId": 1,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 54,
+        "productId": 1,
+        "gps": {
+            "latitude": 39.394308298,
+            "longitude": -78.5589688766
+        }
+    },
+    {
+        "id": 55,
+        "productId": 1,
+        "gps": {
+            "latitude": 40.39539503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 56,
+        "productId": 12,
+        "gps": {
+            "latitude": 36.3863380,
+            "longitude":  -79.594766466
+        }
+    },
+    {
+        "id": 57,
+        "productId": 2,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": 126.69407466
+        }
+    },
+    {
+        "id": 58,
+        "productId": 3,
+        "gps": {
+            "latitude": 36.909503,
+            "longitude": -96.4977588466
+        }
+    },
+    {
+        "id": 59,
+        "productId": 3,
+        "gps": {
+            "latitude": 45.38431823,
+            "longitude": -73.468174166
+        }
+    },
+    {
+        "id": 60,
+        "productId": 5,
+        "gps": {
+            "latitude": 37.394348,
+            "longitude": -78.7266646
+        }
+    }
+]

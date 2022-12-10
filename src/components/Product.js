@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 
 import PRODUCTS from '../data/products.json';
-
+import AVAILABILITY from '../data/availability.json';
 
 export function ProductPage(props) {
     const urlParams = useParams();
@@ -15,6 +15,7 @@ export function ProductPage(props) {
             return data;
         }
     })
+
     return (
         <div>
             <PageTitle />
@@ -86,20 +87,25 @@ function Product(props) {
 }
 
 function Map(props) {
-    const products = PRODUCTS
-    const position = [37.7749, 122.4194]
+    const urlParams = useParams();
+    const currentAvailability = AVAILABILITY.filter((data) => {
+        if (data.productId == urlParams.id) {
+            return data;
+        }
+    })
+    const position = [37.7749, -122.4194]
     return (
         <div id="map">
             <h3>Product Availability: </h3>
-            <MapContainer center={position} zoom={10} scrollWheelZoom={true}>
+            <MapContainer center={position} zoom={3} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {products.map(product => (
+                {currentAvailability.map(location => (
                 <Marker 
-                key = {product.id}
-                position={[product.gps.latitude, product.gps.longitude]}>
+                key = {location.id}
+                position={[location.gps.latitude, location.gps.longitude]}>
                 </Marker>))
                 }
             </MapContainer>
