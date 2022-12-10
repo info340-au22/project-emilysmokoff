@@ -523,6 +523,22 @@ footer a, footer p {
     line-height: 3;
 }
 
+@media (max-width:270px) {
+    .about-us {
+        display: none;
+    }
+    .home-card img {
+        display: none;
+    }
+    .second-heading h2 {
+        size: 1rem;
+        margin-left: 0;
+    }
+    .second-heading ul {
+        padding-left: 0;
+    }
+}
+
 @media (min-width:598px){
     /*larger flex box on bookmark and search page*/
     .card-container .card{

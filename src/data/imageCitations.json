@@ -65,43 +65,50 @@
         "citationDescription": "Photo by Gabrielle Henderson from Unsplash"
     },
     {
-        "id": "/BrowsePage/technology/15",
+        "id": "/BrowsePage/technology",
+        "alternatePath": "/ProductPage/15",
         "type": "phone",
         "citationLink": "https://unsplash.com/es/@oscnord?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Oscar Nord on Unsplash"
     },
     {
-        "id": "/BrowsePage/technology/16",
+        "id": "/BrowsePage/technology",
+        "alternatePath": "/ProductPage/16",
         "type": "computer",
         "citationLink": "https://unsplash.com/@karishea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Kari Shea on Unsplash"
     },
     {
-        "id": "/BrowsePage/technology/17",
+        "id": "/BrowsePage/technology",
+        "alternatePath": "/ProductPage/17",
         "type": "watch",
         "citationLink": "https://unsplash.com/es/@brunovdkraan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Bruno van der Kraan on Unsplash"
     },
     {
-        "id": "/BrowsePage/healthwellness/3",
+        "id": "/BrowsePage/healthwellness",
+        "alternatePath": "/ProductPage/3",
         "type": "waterbottle",
         "citationLink": "https://unsplash.com/@joanofarts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Joan Tran on Unsplash"
     },
     {
         "id": "/BrowsePage/healthwellness/4",
+        "alternatePath": "/ProductPage/4",
         "type": "treadmill",
         "citationLink": "https://unsplash.com/@intenzafitness?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Intenza Fitness on Unsplash"
     },
     {
-        "id": "/BrowsePage/healthwellness/5",
+        "id": "/BrowsePage/healthwellness",
+        "alternatePath": "/ProductPage/5",
         "type": "bike",
         "citationLink": "https://unsplash.com/@archduk3?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by Carl Nenzen Loven on Unsplash"
     },
     {
         "id": "/BrowsePage/house/6",
+        "alternatePath": "/ProductPage",
         "type": "toothbrush",
         "citationLink": "https://unsplash.com/@thehumbleco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
         "citationDescription": "Photo by The Humble Co. on Unsplash"

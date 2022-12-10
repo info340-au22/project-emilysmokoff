@@ -3,19 +3,19 @@
         "title": "Health and Wellness",
         "type": "healthandwellness",
         "image": "/img/health-wellness.jpg",
-        "imageDescription": "fresh veggies taken from Marvin Meyer from Unsplash"
+        "imageDescription": "fresh veggies taken by Daniela Domingues from Unsplash"
     },
     {
         "title": "House",
         "type": "house",
         "image": "/img/house.jpg",
-        "imageDescription": "clean ingredient cleaning supplies taken from Daniela Domingues from Unsplash"
+        "imageDescription": "clean ingredient cleaning supplies taken by Spruce Refillable Cleaning from Unsplash"
     },
     {
         "title": "Kitchen",
         "type": "kitchen",
         "image": "/img/kitchen.jpg",
-        "imageDescription": "sustainable kitchen products taken from Spruce Refillable Cleaning from Unsplash"
+        "imageDescription": "sustainable kitchen products taken by Uliana Kopanytsia from Unsplash"
     },
     {
         "title": "Cosmetics",
@@ -28,13 +28,13 @@
         "title": "Technology",
         "type": "technology",
         "image": "/img/technology.jpg",
-        "imageDescription": "sustainable technology devices"
+        "imageDescription": "sustainable technology devices taken by Marvin Meyer from Unsplash"
 
     },
     {
         "title": "Brands",
         "type": "brands",
         "image": "/img/brand.jpg",
-        "imageDescription": "trees"
+        "imageDescription": "trees taken by Matt Artz from Unsplash"
     }
 ]

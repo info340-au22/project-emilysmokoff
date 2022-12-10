@@ -1,6 +1,4 @@
-  import React from 'react';
-import { Header } from './Header.js';
-
+import React from 'react';
 
 import { useNavigate, Link, Outlet } from 'react-router-dom';
 
@@ -9,7 +7,6 @@ import PRODUCT_CATEGORIES from '../data/categories.json'
 export function HomePage (props) {
     return (
         <div>
-            <Header />
             <ProductCategories applyFilterCallback={props.applyFilterCallback} />
             <AboutUs />
         </div>
@@ -22,7 +19,6 @@ function ProductCategories (props) {
 
     const handleSubmit = (event, prop) => {
        props.applyFilterCallback(prop); 
-       console.log(navigate);
        navigate('/BrowsePage');
     }
 
@@ -42,7 +38,7 @@ function ProductCategories (props) {
         <main>
             <div className="second-heading">
                 <ul>
-                    <li><h2>Sustainable Product Categories</h2></li>
+                    <li><h2>Search by Sustainable Product Categories</h2></li>
                 </ul>
             </div>
 
