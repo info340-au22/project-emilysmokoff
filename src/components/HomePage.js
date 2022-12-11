@@ -42,7 +42,7 @@ function ProductCategories (props) {
         <main>
             <div className="second-heading">
                 <ul>
-                    <li><h2>Search in Sustainable Product Categories</h2></li>
+                    <li><h2>Search by Sustainable Product Categories</h2></li>
                 </ul>
             </div>
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
 
 import { Routes, Route, Outlet, Navigate, useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth'
@@ -9,6 +10,7 @@ import { BookmarkedPage } from './components/BookmarkedPage.js';
 import { ProductPage } from './components/Product.js';
 import { SearchPage } from './components/SearchPage.js';
 import { RequestForm, RequestReceipt } from './/components/RequestForm.js';
+import { ApproveProduct, ApprovalScreen, DenialScreen } from './components/ApproveProduct.js';
 
 import { UserProfile , SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
@@ -120,6 +122,9 @@ export default function App(props) {
                     />
 
                     <Route path="ProductPage/:id" element={<ProductPage />} />
+                    <Route path="ApproveProduct/:productId" element={<ApproveProduct />} />
+                    <Route path="ApprovalScreen" element={<ApprovalScreen />} />
+                    <Route path="DenialScreen" element={<DenialScreen />} />
 
                 </Routes>
             </div>
