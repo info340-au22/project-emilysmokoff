@@ -16,9 +16,15 @@ export function NavigationBar (props) {
         userImg = props.currentUser.userImg;
     }
 
+    const handleNavClick = (event, prop) => {
+        if(prop == '/BrowsePage'){
+            props.setStateCallback('');
+        }
+    }
+
     const navPages = displayPages.map((page) => {
         return(
-            <li className="nav-item" key={page.id}>
+            <li className="nav-item" key={page.id} onClick={(event) => handleNavClick(event, page.id)}>
                 <NavLink className="nav-link" to={page.id} aria-label={page.title} href="">{page.title}</NavLink>
             </li>
         )
