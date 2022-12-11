@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
 
 import { Routes, Route, Outlet, Navigate, useNavigate } from 'react-router-dom';
@@ -63,74 +63,52 @@ export default function App(props) {
         }
     })
 
+        return (
+            <div className="page-content">
+                <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter} />
+                <div className="route-choice">
+                    <Routes>
 
+                        <Route path="/" element={<HomePage 
+                        currentUser={currentUser} 
+                        applyFilterCallback={applyFilter} 
+                        /> } />
 
-
-    // useEffect(() =>{
-    //     onAuthStateChanged(auth, (firebaseUser) => {
-    //         if (firebaseUser) {
-    //             firebaseUser.userId = firebaseUser.uid;
-    //             firebaseUser.userName = firebaseUser.displayName;
-    //             firebaseUser.userImg = firebaseUser.photoURL || "/img/null.png";
-    //             setCurrentUser(firebaseUser);
-    //         } else {
-    //             //setCurrentUser(null);
-    //             setCurrentUser({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"});
-    //             navigate("SignIn");
-    //         }
-    //     })
-
-
-    // }, [])
-
-
-    return (
-        <div className="page-content">
-            <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter} />
-            <div className="route-choice">
-                <Routes>
-
-                    <Route path="/" element={<HomePage 
-                    currentUser={currentUser} 
-                    applyFilterCallback={applyFilter} 
-                    /> } />
-
-                    <Route element={<ProtectedPage currentUser={currentUser} />}>
-                        <Route path="BookmarkedProducts" element={<BookmarkedPage 
-                            productList={PRODUCT_LIST} />} 
+                        <Route element={<ProtectedPage currentUser={currentUser} />}>
+                            <Route path="BookmarkedProducts" element={<BookmarkedPage 
+                                productList={displayedList} />} 
+                            />
+                            <Route path="RequestProduct" element={<RequestForm 
+                                currentUser={currentUser} /> }
+                                // currentArray={fullProductArray} />}
+                            />
+                            <Route path="RequestProductReceipt/:ProductId" element={<RequestReceipt  />} />
+                            <Route path="UserProfile" element={<UserProfile 
+                                currentUser={currentUser} />}
+                            />
+                        </Route>
+                        <Route path="BrowsePage" element={
+                            <SearchPage
+                            productList={displayedList}
+                            applyFilterCallback={applyFilter} />
+                        } />
+                        <Route path="BrowsePage/:category" element={<SearchPage
+                            applyFilterCallback={applyFilter} />}
                         />
-                        <Route path="RequestProduct" element={<RequestForm 
-                            currentUser={currentUser} />}
+                        <Route path="SignIn" element={<SignIn 
+                            currentUser={currentUser}/>} 
                         />
-                        <Route path="RequestProductReceipt" element={<RequestReceipt 
-                            productObj = {PRODUCT_LIST[0]} />} 
-                        />
-                        <Route path="UserProfile" element={<UserProfile 
-                            currentUser={currentUser} />}
-                        />
-                    </Route>
-                    <Route path="BrowsePage" element={
-                        <SearchPage
-                        productList={displayedList}
-                        applyFilterCallback={applyFilter} />
-                    } />
-                    <Route path="BrowsePage/:category" element={<SearchPage
-                        applyFilterCallback={applyFilter} />}
-                    />
-                    <Route path="SignIn" element={<SignIn 
-                        currentUser={currentUser}/>} 
-                    />
 
-                    <Route path="ProductPage/:id" element={<ProductPage />} />
-                    <Route path="ApproveProduct/:productId" element={<ApproveProduct />} />
-                    <Route path="ApprovalScreen" element={<ApprovalScreen />} />
-                    <Route path="DenialScreen" element={<DenialScreen />} />
+                        <Route path="ProductPage/:id" element={<ProductPage />} />
+                        <Route path="ApproveProduct/:productId" element={<ApproveProduct />} />
+                        <Route path="ApprovalScreen" element={<ApprovalScreen />} />
+                        <Route path="DenialScreen" element={<DenialScreen />} />
 
-                </Routes>
+                    </Routes>
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
-    )
+        )
 }
 
 function ProtectedPage(props) {
