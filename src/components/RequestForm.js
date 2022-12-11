@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 //import firebase from 'firebase/app';
 import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -12,13 +12,34 @@ export function RequestForm(props) {
     const [prodImg, setProdImg] = useState(undefined);
     const [imgURL, setImgURL] = useState("");
 
-
     const [topMsg, setTopMsg] = useState(""); 
 
         
     const db = getDatabase();
 
     //let topMsg = "";
+
+    const productRef = dbRef(db, "products");
+
+    const [fullProductArray, setFullProductArray] = useState([]);
+    const [ranProductList, setRanProductList] = useState(false);
+    
+    useEffect(() => {
+        onValue(productRef, (snapshot) => {
+            const productArray = [];
+            setRanProductList(true);
+            snapshot.forEach((product) => {
+                const productData = product.val();
+                productArray.push(productData);
+            });
+
+            setFullProductArray(productArray);
+
+        });
+    }, []);
+
+    const key = fullProductArray.length;
+    const id = fullProductArray.length + 1;
 
     const navigate = useNavigate();
 
@@ -28,10 +49,16 @@ export function RequestForm(props) {
         if (prodName == "" || comName == "") {
             setTopMsg("Please fill out all fields!");
         } else {
-            const prodRef = dbRef(db, "prodName");
+            const newIdRef = dbRef(db, "products/" + key);
+            firebaseSet(newIdRef, key);
+            const prodRef = dbRef(db, "products/" + key + "/product");
             firebaseSet(prodRef, prodName);
-            const comRef = dbRef(db, "comName");
+            const comRef = dbRef(db, "products/" + key + "/company");
             firebaseSet(comRef, comName);
+            const idRef = dbRef(db, "products/" + key + "/id");
+            firebaseSet(idRef, id);
+            const approvalRef = dbRef(db, "products/" + key + "/approval");
+            firebaseSet(approvalRef, "unapproved");
             // const messageRef3 = ref(db, "prodImg");
             // firebaseSet(messageRef3, prodImg);
             // const imgRef = firebase.storage().storageRef();
@@ -46,7 +73,7 @@ export function RequestForm(props) {
 
             // }
             handleImageUpload(event);
-            navigate("/RequestProductReceipt");
+            navigate("/RequestProductReceipt/" + key);
         } 
     }
 
@@ -68,20 +95,27 @@ export function RequestForm(props) {
 
     const handleImageUpload = async (event) => {
         const storage = getStorage();
-        const requestRef = dbRef(db, "imgUrl");
+        const requestRef = dbRef(db, "products/" + key + "/imgUrl");
         firebaseSet(requestRef, imgURL);
         const imgTitle = "requestImages/" + props.currentUser.userName + " - product: " + prodName + ", company: " + comName + ".png"
         const imageRef = ref(storage, imgTitle);
         await uploadBytes(imageRef, prodImg)
         const downloadUrlString = await getDownloadURL(imageRef)
-        const imgTitleRef = dbRef(db, "downloadUrlString");
-        firebaseSet(imgTitleRef, downloadUrlString);
+        const image = dbRef(db, "products/" + key + "/image");
+        firebaseSet(image, downloadUrlString);
     }
 
     if(props.currentUser.userName == "Admin") {
         return (
             <AdminRequest />
         );
+    }
+    else if (ranProductList == false) {
+        return (
+            <div className='no-results'>
+                <p className='card-container'>Loading your page!</p>
+            </div>
+        )
     }
     else {
         return(
@@ -111,13 +145,15 @@ export function RequestReceipt (props) {
     const [prodName, setProdName] = useState("");
     const [comName, setComName] = useState("");
     const [imgRef, setImgRef] = useState("");
+    const urlParams = useParams();
+    const objKey = urlParams.ProductId;
 
     useEffect(() => {
 
         const db = getDatabase();
-        const prodRef = dbRef(db, "prodName");
-        const comRef = dbRef(db, "comName");
-        const imgRef = dbRef(db, "downloadUrlString")
+        const prodRef = dbRef(db, "products/" + objKey + "/product");
+        const comRef = dbRef(db, "products/" + objKey + "/company");
+        const imgRef = dbRef(db, "products/" + objKey + "/image");
 
         onValue(prodRef, (snapshot) => {
             const newValue = snapshot.val();

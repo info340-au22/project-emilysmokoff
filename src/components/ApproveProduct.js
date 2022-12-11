@@ -117,8 +117,8 @@ export function ApproveProduct (props) {
         const imageRef = ref(storage, imgTitle);
         await uploadBytes(imageRef, prodImg);
         const downloadUrlString = await getDownloadURL(imageRef)
-        const imgTitleRef = dbRef(db, "products/" + productKey.productId + "/ratingImage");
-        firebaseSet(imgTitleRef, downloadUrlString);
+        const ratingImage = dbRef(db, "products/" + productKey.productId + "/ratingImage");
+        firebaseSet(ratingImage, downloadUrlString);
     }
 
     if(loadedProduct == false) {
