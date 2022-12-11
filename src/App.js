@@ -15,21 +15,62 @@ import { ApproveProduct, ApprovalScreen, DenialScreen } from './components/Appro
 import { UserProfile , SignIn } from './/components/ProfileForm.js';
 import { Footer } from './components/Footer.js';
 
-
-import PRODUCT_LIST from './data/products.json';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-
 export default function App(props) {
+
+    const db = getDatabase();
+
+    const productRef = dbRef(db, "products");
+
+    const [ranProductList, setRanProductList] = useState(false);
+    const [approvedProductArray, setApprovedProductArray] = useState([]);
+    
+    useEffect(() => {
+        onValue(productRef, (snapshot) => {
+            const productArray = [];
+            setRanProductList(true);
+            snapshot.forEach((product) => {
+                const productData = product.val();
+                productArray.push(productData);
+            });
+
+            const filteredArray = productArray.filter((value) => {
+                if(value.approval === "approved") {
+                    return value;
+                }
+            });
+            setApprovedProductArray(filteredArray);
+        });
+    }, []);
+
+    const [searchValue, setSearchValue] = useState('');
+
+    function applyFilter(text) {
+        setSearchValue(text);
+    }
+
+    let displayedList = approvedProductArray.filter((product) => {
+        if (searchValue === '') {
+            return product;
+        } else {
+            if (product.tags.includes(searchValue)) {
+                return product;
+            } else {
+                return null;
+            }
+        }
+    })
+
+    function setState (nullValue){
+        setSearchValue(nullValue);
+    }
 
     const auth = getAuth();
     const [currentUser, loading, error] = useAuthState(auth);
-    //Uncomment for SearchPage
-    const [searchValue, setSearchValue] = useState('');
     // const [currentUser, setCurrentUser] = useState({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"})
     //const [currentUser, setCurrentUser] = useState("");
-    const navigate = useNavigate();
 
     if (loading) {
         return <p>Initializing user</p>
@@ -45,27 +86,10 @@ export default function App(props) {
         // navigate("SignIn");
         // setCurrentUser({"userId": null, "userName": "Log Out", "userImg": "/img/null.png"});
     }
-
-    function applyFilter(text) {
-        setSearchValue(text);
-    }
-
-
-    let displayedList = PRODUCT_LIST.filter((product) => {
-        if (searchValue === '') {
-            return product;
-        } else {
-            if (product.tags.includes(searchValue)) {
-                return product;
-            } else {
-                return null;
-            }
-        }
-    })
-
+    
         return (
             <div className="page-content">
-                <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter} />
+                <NavigationBar currentUser={currentUser} applyFilterCallback={applyFilter} setStateCallback={setState} />
                 <div className="route-choice">
                     <Routes>
 
@@ -90,6 +114,7 @@ export default function App(props) {
                         <Route path="BrowsePage" element={
                             <SearchPage
                             productList={displayedList}
+                            ranProductList={ranProductList}
                             applyFilterCallback={applyFilter} />
                         } />
                         <Route path="BrowsePage/:category" element={<SearchPage
