@@ -1,5 +1,6 @@
 [
   {
+    "approval": true,
     "category": "cosmetics",
     "type": "wipes",
     "product": "Makeup Wipes",
@@ -19,6 +20,7 @@
   }
   },
   {
+    "approval": true,
     "category": "cosmetics",
     "type": "scand-shampoo",
     "product": "Conditioner for Men",
@@ -38,6 +40,7 @@
   }
   },
   {
+    "approval": true,
     "category": "cosmetics",
     "type": "maui-shampoo",
     "product": "Shampoo",
@@ -57,6 +60,7 @@
   }
   },
   {
+    "approval": true,
     "category": "healthandwellness",
     "type": "waterbottle",
     "product": "Water Bottle",
@@ -76,6 +80,7 @@
   }
   },
   {
+    "approval": true,
     "category": "healthandwellness",
     "type": "treadmill",
     "product": "Treadmill",
@@ -95,6 +100,7 @@
         }
   },
   {
+    "approval": true,
     "category": "healthandwellness",
     "type": "bike",
     "product": "Bike",
@@ -114,6 +120,7 @@
         }
   },
   {
+    "approval": true,
     "category": "house",
     "type": "toothbrush",
     "product": "Toothbrush",
@@ -133,6 +140,7 @@
     }
   },
   {
+    "approval": true,
     "category": "house",
     "type": "cleaningsupplies",
     "product": "Cleaning Supplies",
@@ -152,6 +160,7 @@
     }
   },
   {
+    "approval": true,
     "category": "house",
     "type": "baskets",
     "product": "Baskets",
@@ -171,6 +180,7 @@
   }
   },
   {
+    "approval": true,
     "category": "kitchen",
     "type": "glassjars",
     "product": "Glass Jars Set",
@@ -190,6 +200,7 @@
     }
   },
   {
+    "approval": true,
     "category": "kitchen",
     "type": "grocerybags",
     "product": "Grocery Bags",
@@ -209,6 +220,7 @@
     }
   },
   {
+    "approval": true,
     "category": "kitchen",
     "type": "pans",
     "product": "Pans",
@@ -228,6 +240,7 @@
     }
   },
   {
+    "approval": true,
     "category": "brands",
     "type": "cocacola",
     "product": "Coca Cola",
@@ -247,6 +260,7 @@
     }
   },
   {
+    "approval": true,
     "category": "brands",
     "type": "nike",
     "product": "Nike",
@@ -266,6 +280,7 @@
     }
   },
   {
+    "approval": true,
     "category": "brands",
     "type": "tesla",
     "product": "Tesla",
@@ -285,6 +300,7 @@
     }
   },
   {
+    "approval": true,
     "category": "technology",
     "type": "phone",
     "product": "iPhone",
@@ -304,6 +320,7 @@
     }
   },
   {
+    "approval": true,
     "category": "technology",
     "type": "computer",
     "product": "Macbook",
@@ -323,6 +340,7 @@
     }
   },
   {
+    "approval": true,
     "category": "technology",
     "type": "watch",
     "product": "Watch",

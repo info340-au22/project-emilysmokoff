@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 //import firebase from 'firebase/app';
 import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
+import { AdminRequest } from './AdminRequest.js';
 
 export function RequestForm(props) {
-
     const [prodName, setProdName] = useState("");
     const [comName, setComName] = useState("");
     const [prodImg, setProdImg] = useState(undefined);
@@ -14,7 +15,7 @@ export function RequestForm(props) {
 
     const [topMsg, setTopMsg] = useState(""); 
 
-    
+        
     const db = getDatabase();
 
     //let topMsg = "";
@@ -25,7 +26,6 @@ export function RequestForm(props) {
         event.preventDefault();
 
         if (prodName == "" || comName == "") {
-            console.log("tes");
             setTopMsg("Please fill out all fields!");
         } else {
             const prodRef = dbRef(db, "prodName");
@@ -78,27 +78,32 @@ export function RequestForm(props) {
         firebaseSet(imgTitleRef, downloadUrlString);
     }
 
-    
-    
-    return(
-        <div>
-            <p className="text-center mt-5">{topMsg}</p>
-            <h2 className="text-center request-header">Request a Product</h2>
-            <form>
-                <p className="text-center">This is a form to requst a product to appear on our website.</p>
-                <p className="text-center">We will assign sustanability ratings and pricing information before publishing your submission.</p>
-                <label className="label-text" htmlFor="product-name">Product Name:</label><br />
-                <input id="product-name" value={prodName} type="text" onChange={handleChange} name="productName" /><br /><br />
-                <label className="label-text" htmlFor="company-name">Company Name:</label><br />
-                <input id="company-name" value={comName} type="text" onChange={handleChange2} name="companyName"/><br /><br />
-                {/* <label className="label-text" for="ingredients">Ingredient Information:</label><br />
-                <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br /> */}
-                <label className="label-text" htmlFor="filename">Upload Product Photo:</label><br />
-                <input type="file" id="filename" onChange={handleChange3} name="filename" className="btn btn-success label-text" /><br /><br />
-                <input id="submit" type="submit" value="Submit" className="btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
-            </form>
-        </div>
-    );
+    if(props.currentUser.userName == "Admin") {
+        return (
+            <AdminRequest />
+        );
+    }
+    else {
+        return(
+            <div>
+                <p className="text-center mt-5">{topMsg}</p>
+                <h2 className="text-center request-header">Request a Product</h2>
+                <form>
+                    <p className="text-center">This is a form to requst a product to appear on our website.</p>
+                    <p className="text-center">We will assign sustanability ratings and pricing information before publishing your submission.</p>
+                    <label className="label-text" htmlFor="product-name">Product Name:</label><br />
+                    <input id="product-name" value={prodName} type="text" onChange={handleChange} name="productName" /><br /><br />
+                    <label className="label-text" htmlFor="company-name">Company Name:</label><br />
+                    <input id="company-name" value={comName} type="text" onChange={handleChange2} name="companyName"/><br /><br />
+                    {/* <label className="label-text" for="ingredients">Ingredient Information:</label><br />
+                    <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br /> */}
+                    <label className="label-text" htmlFor="filename">Upload Product Photo:</label><br />
+                    <input type="file" id="filename" onChange={handleChange3} name="filename" className="btn btn-success label-text" /><br /><br />
+                    <input id="submit" type="submit" value="Submit" className="btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
+                </form>
+            </div>
+        );
+     }
 }
 
 export function RequestReceipt (props) {

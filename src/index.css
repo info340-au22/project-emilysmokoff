@@ -362,6 +362,16 @@ h2 .profile-header {
     padding:1rem;
 }
 
+.define-spacing {
+    margin-left: 2em;
+}
+
+/*Defines the deny button on te approving a product page*/
+#deny {
+    background-color: red;
+    margin-left: 3em;
+}
+
 /*style results cards*/
 .card-container{
     display: flex;
@@ -426,6 +436,7 @@ h2 .profile-header {
     align-items: center;
 }
 
+/* Defines the linking characteristics of the home card */
 .home-card a {
     text-decoration: none;
     text-align: center;
