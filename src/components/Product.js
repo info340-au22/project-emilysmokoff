@@ -7,27 +7,50 @@ import { getDatabase, ref as dbRef, onValue, runTransaction } from 'firebase/dat
 
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
-import PRODUCTS from '../data/products.json';
 import AVAILABILITY from '../data/availability.json';
 
 export function ProductPage(props) {
+    const db = getDatabase();
     const urlParams = useParams();
-    let currentProduct = PRODUCTS.filter((data) => {
-        if (data.id == urlParams.id) {
-            return data;
-        }
-    })
+    const productKey = urlParams.id - 1;
+    const productRef = dbRef(db, "products/" + productKey);
+
+    const [currentProduct, setCurrentProduct] = useState({});
+    const [loadedProduct, setLoadedProduct] = useState(false);
+
+    useEffect(() => {
+        onValue(productRef, (snapshot) => {
+            let tempObj = {};
+            snapshot.forEach((productValue) => {
+                const prodKey = productValue.key;
+                const productData = productValue.val();
+                tempObj[prodKey] = productData;
+            });
+            setCurrentProduct(tempObj);
+            setLoadedProduct(true);
+        })
+    }, []);
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
-    return (
-        <div>
-            <PageTitle />
-            <Product currentProduct={currentProduct} />
-            <Map currentProduct={currentProduct} />
-        </div>
-    )
+    if(loadedProduct == false) {
+        return (
+            <div className='no-results'>
+                <p className='card-container'>Loading your product!</p>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div>
+                <PageTitle />
+                <Product currentProduct={currentProduct} />
+                <Map currentProduct={currentProduct} />
+            </div>
+        )
+    }
 };
 
 function PageTitle(props) {
@@ -41,7 +64,7 @@ function PageTitle(props) {
 function Product(props) {
     let buttonText = "Add to Bookmarks"
     const auth = getAuth();
-    let currentProduct = props.currentProduct[0];
+    let currentProduct = props.currentProduct;
     const db = getDatabase();
     const [bookmarkStatus, setBookmarkStatus] = useState(false)
     const productRef = dbRef(db, "products/" + (currentProduct.id - 1));
@@ -128,25 +151,34 @@ function Product(props) {
 
 function Map(props) {
     const urlParams = useParams();
+    if(urlParams.id > 17) {
+        return (
+            <div>
+                <p className='card-container'>We are working on finding locations, come back at a later date when we find its location!</p>
+            </div>
+        )
+    }
+    else {
     const currentAvailability = AVAILABILITY.filter((data) => (data.productId == urlParams.id))
     const position = [37.7749, -122.4194]
-    return (
-        <div id="map">
-            <h2>Product Availability: </h2>
-            <div id="map-container">
-                <MapContainer center={position} zoom={3} scrollWheelZoom={true}>
-                    <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    {currentAvailability.map(location => (
-                        <Marker
-                            key={location.id}
-                            position={[location.gps.latitude, location.gps.longitude]}>
-                        </Marker>))
-                    }
-                </MapContainer>
+        return (
+            <div id="map">
+                <h2>Product Availability: </h2>
+                <div id="map-container">
+                    <MapContainer center={position} zoom={3} scrollWheelZoom={true}>
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        {currentAvailability.map(location => (
+                            <Marker
+                                key={location.id}
+                                position={[location.gps.latitude, location.gps.longitude]}>
+                            </Marker>))
+                        }
+                    </MapContainer>
+                </div>
             </div>
-        </div>
-    )
+        )
+   }
 }
