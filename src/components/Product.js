@@ -88,27 +88,25 @@ function Product(props) {
 
 function Map(props) {
     const urlParams = useParams();
-    const currentAvailability = AVAILABILITY.filter((data) => {
-        if (data.productId == urlParams.id) {
-            return data;
-        }
-    })
+    const currentAvailability = AVAILABILITY.filter((data) => (data.productId == urlParams.id))
     const position = [37.7749, -122.4194]
     return (
         <div id="map">
-            <h3>Product Availability: </h3>
-            <MapContainer center={position} zoom={3} scrollWheelZoom={true}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {currentAvailability.map(location => (
-                <Marker 
-                key = {location.id}
-                position={[location.gps.latitude, location.gps.longitude]}>
-                </Marker>))
-                }
-            </MapContainer>
+            <h2>Product Availability: </h2>
+            <div id="map-container">
+                <MapContainer center={position} zoom={3} scrollWheelZoom={true}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    {currentAvailability.map(location => (
+                        <Marker
+                            key={location.id}
+                            position={[location.gps.latitude, location.gps.longitude]}>
+                        </Marker>))
+                    }
+                </MapContainer>
+            </div>
         </div>
     )
 }

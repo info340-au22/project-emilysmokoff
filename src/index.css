@@ -338,12 +338,6 @@ h2 .profile-header {
     font-size: 22px;
 }
 
-.rating-card, .map-card, .product-card{
-    flex-basis: 0;
-    margin: 1rem;
-    margin-bottom: 0;
-}
-
 .product-card h3 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -354,12 +348,13 @@ h2 .profile-header {
     padding: 1rem;
 }
 
-.leaflet-container {
-    width: 100vw;
-    height: 100vh;
+#map-container {
+    margin: 100px;
 }
-.map-card{
-    padding:1rem;
+
+.leaflet-container {
+    width: 80vw;
+    height: 80vh;
 }
 
 .define-spacing {
