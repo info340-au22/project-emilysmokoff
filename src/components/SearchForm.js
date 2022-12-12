@@ -6,7 +6,6 @@ export function SearchForm(props) {
   
     const handleChange = (event) => {
       const value = event.target.value;
-      console.log(value);
       setTypedValue(value); //update state and re-render!
     }
   
