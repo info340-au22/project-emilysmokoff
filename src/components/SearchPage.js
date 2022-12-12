@@ -17,8 +17,8 @@ export function SearchPage(props) {
     else {
         return (
             <div>
-                <div className='search-header'>
-                    <div className='search-h2'>Browse Products</div>
+                <div className='search-bookmark-header'>
+                    <div className='search-bookmark-h2'>Browse Products</div>
                 </div>
                 <div className='bookmarked'>
                     <SearchForm
