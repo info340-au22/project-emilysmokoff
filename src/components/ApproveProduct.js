@@ -4,10 +4,12 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 
 export function ApproveProduct (props) {
+    //this code set adds products to the database when admin approves them
     const db = getDatabase();
     const productKey= useParams();
     const productRef = dbRef(db, "products/" + productKey.productId);
 
+    //sets all state objects needed to define new database product element
     const [productObject, setProductObject] = useState({});
     const [loadedProduct, setLoadedProduct] = useState(false);
     const [productRating, setProductRating] = useState("");
@@ -37,6 +39,7 @@ export function ApproveProduct (props) {
         })
     }, []);
 
+    //sets database keys with values so they can be displayed with other products
     const handleClick = async (event) => {
         event.preventDefault();
         if (price == "" || imageAlt == "" || ratingJustification == "" || tags == "" || category == "" || link == "" || ratingImgAlt == "") {
