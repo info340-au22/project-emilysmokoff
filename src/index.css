@@ -3,22 +3,67 @@
 }
 
 /*Allow content to go across the whole page*/
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
     height: 100%;
 }
 
 /*Defines styling of nav bar*/
-nav {
+.nav {
     background-color: rgb(26, 81, 56);
     flex: 0 0;
+}
+
+.container{
+    max-width: none;
 }
 
 /*Defines styling of nav bar titles*/
 .active {
     color: white;
     text-decoration: underline;
+}
+
+/*For company name/logo on nav bar*/
+h1 {
+    font-family: 'Raleway';
+    color: white;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/*Defines our logo image width and position*/
+nav img {
+    width: .8em;
+    margin-bottom: .15em;
+}
+
+/*Nav search behavior*/
+.nav-search-form {
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+.search-input {
+    margin-bottom: 10px;
+}
+
+#nav-search-icon {
+    padding-bottom: 0;
+    position: relative;
+    top: 10px;
+}
+
+/*Nav bar profile picture*/
+.navbar-profile-picture {
+    width: 36px;
+    border-radius: 50%;
+    margin-right: 1em;
+    margin-top: .5em;
+    margin-bottom: 1em;
 }
 
 /*Header as seen on the index.html page*/
@@ -33,7 +78,7 @@ nav {
 }
 
 /*Align the link for a category description in the center*/
-.category-link{
+.category-link {
     text-align: center;
 }
 
@@ -70,21 +115,6 @@ body {
     margin-bottom: .5rem;
 }
 
-/*For logo*/ 
-h1{
-    font-family: 'Raleway';
-    color:white;
-    padding: 10px;
-    font-weight: 700;
-    font-size: 2rem;
-}
-
-/*Defines our logo image width and position*/
-nav img{
-    width: .8em;
-    margin-bottom: .15em;
-}
-
 /*Setting the styling for our buttons*/
 .btn-style {
     padding-bottom: 0;
@@ -94,8 +124,8 @@ nav img{
 }
 
 /* Center our form group of inputs*/
-.input-group{
-    align-items:center;
+.input-group {
+    align-items: center;
 }
 
 /*Defines our material icons positions and styling*/
@@ -104,53 +134,30 @@ nav img{
     top: 4px;
     right: 4px;
     font-size: 2rem;
-    color:white;
-    margin-left:10px;
+    color: white;
+    margin-left: 10px;
     padding-bottom: 4px;
 }
 
 /*page minus nav margins*/
-.bookmarked{
-    margin:0 4em;
+.bookmarked {
+    margin: 0 4em;
 }
 
 /*Main page section header*/
-h2{
+h2 {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
-    color:rgb(26, 81, 56);
-    font-weight:580;
+    color: rgb(26, 81, 56);
+    font-weight: 580;
     font-size: 2em;
     margin: 1em;
-}
-
-
-/*INSERT FOR MADELINE REACT FOR BOOKMARKS AND SEARCH*/
-.search-h2{
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
-    color:rgb(26, 81, 56);
-    font-weight:580;
-    font-size: 2em;
-    margin: 1em;
-    margin-bottom: 0;
-    line-height: 1.2;
-}
-
-/*MADELINE STYLING FOR BOOKMARKS AND SEARCH*/
-.search-header{
-    margin-bottom:0;
-}
-
-/*Defining margin for page when results loading or not present*/
-.no-results{
-    margin-bottom: 16em;
-    margin-top:1em;
 }
 
 /* Defines our h3 elements*/
-h3{
+h3 {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
-    color:black;
-    font-weight:580;
+    color: black;
+    font-weight: 580;
     font-size: 1em;
 }
 
@@ -174,14 +181,15 @@ h2 .profile-header {
 
 /*Style the form labels*/
 .label-text {
-    font-weight:370;
+    font-weight: 370;
     margin-bottom: 0;
 }
 
 /*Request page*/
 
 /*Center the title and form*/
-.request-header, form {
+.request-header,
+form {
     text-align: center;
 }
 
@@ -196,7 +204,7 @@ h2 .profile-header {
 }
 
 /*Position of the form*/
-.request-body{
+.request-body {
     position: absolute;
     width: 100%;
     top: 10%;
@@ -205,7 +213,7 @@ h2 .profile-header {
 
 /*Form labels*/
 .label-text {
-    font-weight:370;
+    font-weight: 370;
     margin-bottom: 0;
 }
 
@@ -225,41 +233,149 @@ h2 .profile-header {
     font-size: 2rem;
 }
 
-/*Bookmarked products page-only plus to bookmark*/
-.plus-icon{
+/*Style header on search and bookmarks page*/
+.search-bookmark-header {
+    margin-bottom: 0;
+}
+
+/*Style h2 on search and bookmarks page*/
+.search-bookmark-h2 {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
-    color:black;
-    font-weight:400;
+    color: rgb(26, 81, 56);
+    font-weight: 580;
+    font-size: 2em;
+    margin: 1em;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+/*Defining margin for page when results loading or not present*/
+.no-results {
+    margin-bottom: 16em;
+    margin-top: 1em;
+}
+
+/*Bookmarked products page-only plus to bookmark*/
+.plus-icon {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    color: black;
+    font-weight: 400;
     font-size: 1em;
-    float:right;
+    float: right;
 }
 
 /*Bookmarked products page-"add items" hide in small screen*/
-.add{
+.add {
     display: none;
 }
 
 /*Search page bar*/
-.search-page-bar{
-    width:50%;
+.search-page-bar {
+    width: 50%;
     margin-bottom: 1em;
 }
 
 /*Search page form, area including bar*/
-.search-page-form{
-    margin-top:1em;
+.search-page-form {
+    margin-top: 1em;
     text-align: left;
 }
 
+/*changes search icon name instead of material icon*/
+#search-icon {
+    color: rgb(26, 81, 56);
+
+}
+
 /*Defines block on search page when requesting view*/
-.search-page-request{
-    color:black;
+.search-page-request {
+    color: black;
     padding-bottom: 100px;
 }
 
 /*Defines hover behavior when requesting view*/
-.search-page-request:hover{
-    color:rgb(21, 132, 93);
+.search-page-request:hover {
+    color: rgb(21, 132, 93);
+}
+
+/*style results cards*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+/*style individual card on bookmark and search page*/
+.card-container .card {
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    margin: 1em 1em;
+    margin-left: 0;
+    text-align: center;
+}
+
+.card-body {
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+}
+
+.card-container a {
+    color: black;
+    text-decoration: none;
+}
+
+/*hides images on search and bookmark page in small screen*/
+.bookmark-search-img {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/*styles product names on search and bookmark page*/
+.product-name {
+    font-weight: 370;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+/*styles company name on search and bookmark page*/
+.company {
+    font-size: .85em;
+    padding: 10px;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+
+/*styles price next to company on search and bookmark page*/
+.price {
+    float: inline-end;
+    font-weight: 370;
+}
+
+/*styles shop now button on search and bookmark page*/
+.shop-now {
+    background-color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/*shop now highlights black on search and bookmark page*/
+.shop-now:hover {
+    background-color: black;
+    color: white;
+}
+
+/*styles rating on search and bookmark page*/
+.rating {
+    width: 130px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*Defines styling for the flex box in the home page that contains title and search bar*/
@@ -274,54 +390,6 @@ h2 .profile-header {
 .second-heading li {
     display: flex;
     padding: 1rem;
-}
-
-/* defines search bar for home page*/
-.search-bar {
-    height: 2rem;
-    width: 14rem;
-    border-radius: 2rem;
-    border-color:rgb(26, 81, 56);
-}
-/* styles search bar on product page*/
-.product-search-bar {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-    height: 2rem;
-    width: 14rem;
-    border-radius: 2rem;
-    border-color: rgb(26, 81, 56);
-}
-
-/*changes search icon name instead of material icon*/
-#search-icon{
-    color:rgb(26, 81, 56);
-    
-}
-
-/*Nav search behavior*/
-.nav-search-form{
-    text-align: left;
-    margin-bottom: 14px;
-}
-
-.search-input{
-    margin-bottom: 10px;
-}
-
-#nav-search-icon{
-    padding-bottom: 0;
-    position: relative;
-    top: 10px;
-}
-
-/*Nav bar profile picture*/
-.navbar-profile-picture{
-    width:36px;
-    border-radius: 50%;
-    margin-right:1em;
-    margin-top:.5em;
-    margin-bottom: 1em;
 }
 
 /* styling cards on product page*/
@@ -343,13 +411,11 @@ h2 .profile-header {
 }
 
 /*Defines product characteristics*/
-.product-img{
+.product-img {
     height: 300px;
-    /* height: 450px; */
-    /* width: 450px; */
 }
 
-.product-card .price{
+.product-card .price {
     color: grey;
     font-size: 22px;
 }
@@ -359,8 +425,7 @@ h2 .profile-header {
     font-weight: bold;
 }
 
-
-.rating-card img{
+.rating-card img {
     padding: 1rem;
 }
 
@@ -382,32 +447,6 @@ h2 .profile-header {
 .deny {
     background-color: red;
     margin-left: 3em;
-}
-
-/*style results cards*/
-.card-container{
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2em;
-}
-
-/*style individual card on bookmarked page*/
-.card-container .card{
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-    margin:1em 1em;
-    margin-left: 0;
-    text-align: center;
-}
-
-.card-body{
-    background-color: rgb(247, 247, 247);
-    text-align: center;
-}
-
-.card-container a{
-    color:black;
-    text-decoration: none;
 }
 
 /* defines the main card container on the home page */
@@ -454,60 +493,6 @@ h2 .profile-header {
     text-align: center;
 }
 
-/*hides images on search and bookmark page in small screen*/
-.bookmark-search-img{
-    width: 100%;
-    height: 10em;
-    object-fit: cover;
-    margin:0;
-    padding:0;
-}
-
-/*styles product names on search and bookmark page*/
-.product-name{
-    font-weight:370;
-    padding: 10px;
-    margin-bottom: 0;
-}
-
-/*styles company name on search and bookmark page*/
-.company{
-    font-size: .85em;
-    padding: 10px;
-    font-weight:300;
-    margin-bottom: 3px;
-}
-
-/*styles price next to company on search and bookmark page*/
-.price{
-    float:inline-end;
-    font-weight: 370;
-}
-
-/*styles shop now button on search and bookmark page*/
-.shop-now{
-    background-color: white;
-    padding-top:16px;
-    padding-bottom:16px;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-/*shop now highlights black on search and bookmark page*/
-.shop-now:hover{
-    background-color:black;
-    color:white;
-}
-
-/*styles rating on search and bookmark page*/
-.rating{
-    width:130px;
-    margin-bottom: 10px;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /*Defines the alignment of the about us section on home page*/
 .about-us {
     text-align: center;
@@ -521,7 +506,7 @@ h2 .profile-header {
 
 /* Footer styling colors */
 footer {
-    background-color:rgb(78, 117, 100);
+    background-color: rgb(78, 117, 100);
     color: white;
     flex: 0 0;
 }
@@ -549,56 +534,63 @@ footer li {
 }
 
 /*Defines text styling for footer elements*/
-footer a, footer p {
+footer a,
+footer p {
     color: white;
     text-decoration: none;
     line-height: 3;
 }
 
 @media (max-width:270px) {
+
     /*Takes out unnecessary display items on home page*/
     .about-us {
         display: none;
     }
+
     .home-card img {
         display: none;
     }
+
     .second-heading h2 {
         size: 1rem;
         margin-left: 0;
     }
+
     .second-heading ul {
         padding-left: 0;
     }
 }
 
-@media (min-width:598px){
+@media (min-width:598px) {
+
     /*larger flex box on bookmark and search page*/
-    .card-container .card{
-        max-width:12em;
+    .card-container .card {
+        max-width: 12em;
     }
 }
 
-@media (min-width:768px){
+@media (min-width:768px) {
+
     /*hide plus icon on bookmark*/
-    .plus-icon{
-        display:none;
+    .plus-icon {
+        display: none;
     }
 
     /*start displaying add items on bookmark*/
-    .add{
-        display:block;
+    .add {
+        display: block;
         font-family: 'Montserrat', 'Open Sans', sans-serif;
-        color:black;
-        font-weight:400;
+        color: black;
+        font-weight: 400;
         font-size: .6em;
-        float:right;
+        float: right;
         margin-top: 9px;
         margin-right: 2em;
     }
 
-    .add:hover{
-        color:rgb(21, 132, 93);
+    .add:hover {
+        color: rgb(21, 132, 93);
     }
 
     .about-us {
@@ -617,17 +609,19 @@ footer a, footer p {
         top: 60%;
         transform: none;
     }
+
     .score-label {
         width: auto;
         left: 76%;
         top: 55%;
-    } 
+    }
 
 }
 
 @media (min-width: 992px) {
+
     /*larger flex box on bookmark and search page*/
-    .card-container .card{
-        max-width:255px;
+    .card-container .card {
+        max-width: 255px;
     }
 }
