@@ -40,7 +40,7 @@ export function ApproveProduct (props) {
             setProductObject(tempObj);
             setLoadedProduct(true);
         })
-    }, []);
+    }, [productKey]);
 
     //sets database keys with values so they can be displayed with other products
     const handleClick = async (event) => {

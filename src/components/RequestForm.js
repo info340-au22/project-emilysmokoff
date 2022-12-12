@@ -166,7 +166,7 @@ export function RequestReceipt (props) {
             setImgRef([newValue])
         });
 
-    }, [])
+    }, [objKey])
 
     return (
         <div className="text-center">
