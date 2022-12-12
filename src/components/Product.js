@@ -12,15 +12,16 @@ import { ErrorScreen } from './ApproveProduct.js';
 import AVAILABILITY from '../data/availability.json';
 
 export function ProductPage(props) {
-    const db = getDatabase();
     const urlParams = useParams();
     const productKey = urlParams.id - 1;
-    const productRef = dbRef(db, "products/" + productKey);
 
     const [currentProduct, setCurrentProduct] = useState({});
     const [loadedProduct, setLoadedProduct] = useState(false);
 
     useEffect(() => {
+        const db = getDatabase();
+        const productRef = dbRef(db, "products/" + productKey);
+
         onValue(productRef, (snapshot) => {
             let tempObj = {};
             snapshot.forEach((productValue) => {
@@ -31,7 +32,7 @@ export function ProductPage(props) {
             setCurrentProduct(tempObj);
             setLoadedProduct(true);
         })
-    }, []);
+    }, [productKey]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -64,21 +65,22 @@ function PageTitle(props) {
 }
 
 function Product(props) {
+    const db = getDatabase();
     const [topMsg, setTopMsg] = useState(""); //asks users to sign in if they are not signed in
     let buttonText = "Add to Bookmarks";
     const auth = getAuth();
     let currentProduct = props.currentProduct;
-    const db = getDatabase();
     const [bookmarkStatus, setBookmarkStatus] = useState(false)
-    const productRef = dbRef(db, "products/" + (currentProduct.id - 1));
     useEffect(() => {
+        const db = getDatabase();
+        const productRef = dbRef(db, "products/" + (currentProduct.id - 1));
         onValue(productRef, (snapshot) => {
             if (auth.currentUser) {
                 const product = snapshot.val()
                 setBookmarkStatus(product.bookmarkUsers && (product.bookmarkUsers.includes(auth.currentUser.userId)))
             }
         });
-    }, []);
+    }, [currentProduct, auth]);
     const productBookmarkUsersRef = dbRef(db, "products/" + (currentProduct.id - 1) + "/bookmarkUsers");
     const handleClick = (event) => {
         if (!auth.currentUser) {
