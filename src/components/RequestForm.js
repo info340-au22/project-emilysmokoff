@@ -99,8 +99,8 @@ export function RequestForm(props) {
         firebaseSet(requestRef, imgURL);
         const imgTitle = "requestImages/" + props.currentUser.userName + " - product: " + prodName + ", company: " + comName + ".png"
         const imageRef = ref(storage, imgTitle);
-        await uploadBytes(imageRef, prodImg)
-        const downloadUrlString = await getDownloadURL(imageRef)
+        await uploadBytes(imageRef, prodImg);
+        const downloadUrlString = await getDownloadURL(imageRef);
         const image = dbRef(db, "products/" + key + "/image");
         firebaseSet(image, downloadUrlString);
     }
