@@ -14,15 +14,15 @@ export function RequestForm(props) {
 
     const [topMsg, setTopMsg] = useState(""); 
 
-        
     const db = getDatabase();
-
-    const productRef = dbRef(db, "products");
 
     const [fullProductArray, setFullProductArray] = useState([]);
     const [ranProductList, setRanProductList] = useState(false);
     
     useEffect(() => {
+        const db = getDatabase();
+        const productRef = dbRef(db, "products");
+
         onValue(productRef, (snapshot) => {
             const productArray = [];
             setRanProductList(true);

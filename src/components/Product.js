@@ -171,7 +171,7 @@ function Map(props) {
         )
     }
     else {
-    const currentAvailability = AVAILABILITY.filter((data) => (data.productId == urlParams.id));
+    const currentAvailability = AVAILABILITY.filter((data) => (data.productId.toString() === urlParams.id));
     const position = [37.7749, -122.4194]; //default current position of user
     const mappedCurrentAvailability = currentAvailability.map(location => (
         <Marker

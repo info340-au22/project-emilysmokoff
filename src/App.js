@@ -20,14 +20,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function App(props) {
 
-    const db = getDatabase();
-
-    const productRef = dbRef(db, "products");
-
     const [ranProductList, setRanProductList] = useState(false);
     const [approvedProductArray, setApprovedProductArray] = useState([]);
     
     useEffect(() => {
+        const db = getDatabase();
+        const productRef = dbRef(db, "products");
+        
         onValue(productRef, (snapshot) => {
             const productArray = [];
             setRanProductList(true);
@@ -38,8 +37,9 @@ export default function App(props) {
 
             const filteredArray = productArray.filter((value) => {
                 if(value.approval === "approved") {
-                    return value;
+                    return true;
                 }
+                return false;
             });
             setApprovedProductArray(filteredArray);
         });
