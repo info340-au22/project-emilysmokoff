@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+//This library says it is not in use, but if we dont include this import statement our nav bar won't expand for hamburger menu
 import { Collapse } from 'bootstrap';
 
 
@@ -17,7 +18,7 @@ export function NavigationBar (props) {
     }
 
     const handleNavClick = (event, prop) => {
-        if(prop == '/BrowsePage'){
+        if(prop === '/BrowsePage'){
             props.setStateCallback('');
         }
     }
@@ -56,14 +57,13 @@ export function NavigationBar (props) {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {navPages}
                     </ul>
-                    <form id="nav-search-form">
-                        <input id="nav-search-input" type="text" name="search" placeholder=" Search for products" onChange={handleChange} value={typedValue}/>
+                    <form className="nav-search-form">
+                        <input id="nav-search-input" className="nav-search-input" type="text" name="search" placeholder=" Search for products" onChange={handleChange} value={typedValue}/>
                         <span className="material-icons" type="button" id="nav-search-icon" aria-label="search icon" onClick={handleSubmit} >search</span>
                    </form>
                     
                     <NavLink className="nav-link" to="/UserProfile">
-                        {/* <span className="material-icons" aria-label="Personal Profile">account_circle</span> */}
-                        <img src={userImg} className="navProfile rounded-circle" alt="profile photo"/>
+                        <img src={userImg} className="navProfile rounded-circle" alt="profile"/>
                     </NavLink>
                 </div>
             </div>   

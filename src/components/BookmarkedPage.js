@@ -6,6 +6,7 @@ import { getAuth } from 'firebase/auth'
 
 export function BookmarkedPage(props) {
     const auth = getAuth();
+    const resultsPerUser = props.productList.filter(item => (item.bookmarkUsers && item.bookmarkUsers.includes(auth.currentUser.userId)));
     return (
         <div>
             <div className='search-header'>
@@ -13,7 +14,7 @@ export function BookmarkedPage(props) {
             </div>
             <div className='bookmarked'>
                 <Results
-                    productList={props.productList.filter(item => (item.bookmarkUsers && item.bookmarkUsers.includes(auth.currentUser.userId)))}
+                    productList={resultsPerUser}
                 />
             </div>
         </div>
