@@ -2,17 +2,6 @@
     box-sizing: border-box;
 }
 
-.btn-style {
-    padding-bottom: 0;
-    padding-top: 0;
-    background-color: white;
-    border-color: white;
-}
-
-.input-group{
-    align-items:center;
-}
-
 /*Allow content to go across the whole page*/
 html, body {
     padding: 0;
@@ -20,11 +9,13 @@ html, body {
     height: 100%;
 }
 
+/*Defines styling of nav bar*/
 nav {
     background-color: rgb(26, 81, 56);
     flex: 0 0;
 }
 
+/*Defines styling of nav bar titles*/
 .active {
     color: white;
     text-decoration: underline;
@@ -41,6 +32,7 @@ nav {
     width: 100%;
 }
 
+/*Align the link for a category description in the center*/
 .category-link{
     text-align: center;
 }
@@ -87,11 +79,26 @@ h1{
     font-size: 2rem;
 }
 
+/*Defines our logo image width and position*/
 nav img{
     width: .8em;
     margin-bottom: .15em;
 }
 
+/*Setting the styling for our buttons*/
+.btn-style {
+    padding-bottom: 0;
+    padding-top: 0;
+    background-color: white;
+    border-color: white;
+}
+
+/* Center our form group of inputs*/
+.input-group{
+    align-items:center;
+}
+
+/*Defines our material icons positions and styling*/
 .material-icons {
     position: relative;
     top: 4px;
@@ -133,10 +140,12 @@ h2{
     margin-bottom:0;
 }
 
+/*Defining margin for page when results loading or not present*/
 .no-results{
     margin-bottom: 16em;
 }
 
+/* Defines our h3 elements*/
 h3{
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color:black;
@@ -241,11 +250,13 @@ h2 .profile-header {
     text-align: left;
 }
 
+/*Defines block on search page when requesting view*/
 .search-page-request{
     color:black;
     padding-bottom: 100px;
 }
 
+/*Defines hover behavior when requesting view*/
 .search-page-request:hover{
     color:rgb(21, 132, 93);
 }
@@ -287,6 +298,7 @@ h2 .profile-header {
     
 }
 
+/*Nav search behavior*/
 #nav-search-form{
     text-align: left;
     margin-bottom: 14px;
@@ -302,6 +314,7 @@ h2 .profile-header {
     top: 10px;
 }
 
+/*Nav bar profile picture*/
 .navbar-profile-picture{
     width:36px;
     border-radius: 50%;
@@ -321,12 +334,14 @@ h2 .profile-header {
     margin-right: 1.5rem;
 }
 
+/*Defines size of sustainability rating*/
 .rating-img {
     height: 50px;
     width: 400px;
     margin: 1rem;
 }
 
+/*Defines product characteristics*/
 .product-img{
     height: 300px;
     /* height: 450px; */
@@ -348,6 +363,7 @@ h2 .profile-header {
     padding: 1rem;
 }
 
+/*Defines map features*/
 #map-container {
     margin: 100px;
 }
@@ -540,6 +556,7 @@ footer a, footer p {
 }
 
 @media (max-width:270px) {
+    /*Takes out unnecessary display items on home page*/
     .about-us {
         display: none;
     }
