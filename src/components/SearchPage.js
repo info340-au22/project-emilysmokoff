@@ -15,7 +15,6 @@ export function SearchPage(props) {
     }
     // wrap the return statement in this else bracket (I commented out the closing bracket below)
     else {
-
         return (
             <div>
                 <div className='search-header'>
@@ -27,6 +26,7 @@ export function SearchPage(props) {
                     />
                     <Results
                     productList={props.productList}
+                    page={'search'}
                     />
                 </div>
             </div>
