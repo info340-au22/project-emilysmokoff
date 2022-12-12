@@ -24,7 +24,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -17,7 +17,7 @@ export function Results(props) {
     )
 
     if (productsDiv.length === 0) {
-        if (props.page == 'search') {
+        if (props.page === 'search') {
             return (
                 <div className='no-results'>
                     <p className='card-container'>No results found. Please try again! </p>

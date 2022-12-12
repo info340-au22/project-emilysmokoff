@@ -5,8 +5,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 export function ApproveProduct (props) {
     //this code set adds products to the database when admin approves them
-    const db = getDatabase();
     const productKey= useParams();
+    const db = getDatabase();
     const productRef = dbRef(db, "products/" + productKey.productId);
 
     //sets all state objects needed to define new database product element
@@ -27,6 +27,9 @@ export function ApproveProduct (props) {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const db = getDatabase();
+        const productRef = dbRef(db, "products/" + productKey.productId);
+
         onValue(productRef, (snapshot) => {
             let tempObj = {};
             snapshot.forEach((productValue) => {
