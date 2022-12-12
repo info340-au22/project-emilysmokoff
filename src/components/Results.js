@@ -16,13 +16,21 @@ export function Results(props) {
     )
 
     if(productsDiv.length===0){
-
-        return (
-            <div className='no-results'>
-                <p className='card-container'>No results found. Please try again! </p>
-                <Link className='search-page-request' to="/RequestProduct">Click here to request a product</Link>
-            </div>
-        );
+        if(props.page == 'search'){
+            return (
+                <div className='no-results'>
+                    <p className='card-container'>No results found. Please try again! </p>
+                    <Link className='search-page-request' to="/RequestProduct">Click here to request a product</Link>
+                </div>
+            );
+        }else{
+            return (
+                <div className='no-results'>
+                    <p className='card-container'>You have not bookmarked any products yet! </p>
+                    <Link className='search-page-request' to="/BrowsePage">Click here to browse products</Link>
+                </div>
+            );
+        }
     }else{
         return (
             <main>

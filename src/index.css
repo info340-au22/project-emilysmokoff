@@ -143,6 +143,7 @@ h2{
 /*Defining margin for page when results loading or not present*/
 .no-results{
     margin-bottom: 16em;
+    margin-top:1em;
 }
 
 /* Defines our h3 elements*/
