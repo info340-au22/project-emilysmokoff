@@ -2,8 +2,10 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { Results } from './Results';
+import { getAuth } from 'firebase/auth'
 
 export function BookmarkedPage(props) {
+    const auth = getAuth();
     return (
         <div>
             <div className='search-header'>
@@ -11,7 +13,7 @@ export function BookmarkedPage(props) {
             </div>
             <div className='bookmarked'>
                 <Results
-                    productList={props.productList}
+                    productList={props.productList.filter(item => (item.bookmarkUsers && item.bookmarkUsers.includes(auth.currentUser.userId)))}
                 />
             </div>
         </div>

@@ -96,7 +96,7 @@
         }
     },
     {
-        "availability-id": 13,
+        "id": 13,
         "productId": 3,
         "gps": {
             "latitude": 27.38630853,
