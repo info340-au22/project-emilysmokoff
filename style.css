@@ -208,6 +208,11 @@ header .home p {
     text-align: left;
 }
 
+/*No results response*/
+.no-results{
+    margin-top: 1em;
+}
+
 /*Defines styling for the flex box in the home page that contains title and search bar*/
 .second-heading ul {
     display: flex;

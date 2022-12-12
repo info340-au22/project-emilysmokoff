@@ -27,6 +27,7 @@ export function SearchPage(props) {
                 />
                 <Results
                 productList={props.productList}
+                page={'search'}
                 />
             </div>
         </div>
