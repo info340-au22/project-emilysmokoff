@@ -1,9 +1,11 @@
 import React from 'react';
 
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getAuth } from 'firebase/auth'
+import { getDatabase, ref as dbRef, onValue, runTransaction } from 'firebase/database';
 
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
 import PRODUCTS from '../data/products.json';
 import AVAILABILITY from '../data/availability.json';
@@ -15,6 +17,9 @@ export function ProductPage(props) {
             return data;
         }
     })
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>
@@ -35,16 +40,51 @@ function PageTitle(props) {
 
 function Product(props) {
     let buttonText = "Add to Bookmarks"
-    const [bookmarkStatus, setBookmarkStatus] = useState(false);
+    const auth = getAuth();
+    let currentProduct = props.currentProduct[0];
+    const db = getDatabase();
+    const [bookmarkStatus, setBookmarkStatus] = useState(false)
+    const productRef = dbRef(db, "products/" + (currentProduct.id - 1));
+    useEffect(() => {
+        onValue(productRef, (snapshot) => {
+            if (auth.currentUser) {
+                const product = snapshot.val()
+                setBookmarkStatus(product.bookmarkUsers && (product.bookmarkUsers.includes(auth.currentUser.userId)))
+            }
+        });
+    }, []);
+    const productBookmarkUsersRef = dbRef(db, "products/" + (currentProduct.id - 1) + "/bookmarkUsers");
     const handleClick = (event) => {
-        setBookmarkStatus(!bookmarkStatus);
+        if (!auth.currentUser) {
+            window.alert("please sign in to bookmark")
+            return
+        }
+        runTransaction(productBookmarkUsersRef, (productBookmarkUsers) => {
+            let newBookmarkUsers = []
+            if (productBookmarkUsers) {
+                if (bookmarkStatus) {
+                    // remove current user from bookmark users
+                    newBookmarkUsers = productBookmarkUsers.filter(item => item != auth.currentUser.userId)
+                } else {
+                    // add current user to bookmark users
+                    newBookmarkUsers = productBookmarkUsers
+                    newBookmarkUsers.push(auth.currentUser.userId)
+                }
+            } else {
+                // if bookmarkUsers does not exist for product, make one with the user id
+                if (!bookmarkStatus) {
+                    newBookmarkUsers = [auth.currentUser.userId]
+                }
+            }
+            return newBookmarkUsers
+        });
+        setBookmarkStatus(!bookmarkStatus)
     }
 
     if (bookmarkStatus == true) {
         buttonText = "Bookmarked";
     }
 
-    let currentProduct = props.currentProduct[0];
     if (currentProduct.category == "brands") {
         return (
             <main>
@@ -110,16 +150,3 @@ function Map(props) {
         </div>
     )
 }
-
-/*function Map(props) {
-    let currentProduct = props.currentProduct[0];
-    return (
-        <div className="map-card">
-                <h3>Availability near me</h3>
-                <p><button>Show availibility on maps</button></p>
-                <img className="map-img" src={"../img/map.jpeg"} alt={currentProduct.imageAlt} />
-        </div>
-    )
-}
-*/
-
