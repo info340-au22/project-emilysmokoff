@@ -64,7 +64,7 @@ function PageTitle(props) {
 }
 
 function Product(props) {
-    const [topMsg, setTopMsg] = useState("");
+    const [topMsg, setTopMsg] = useState(""); //asks users to sign in if they are not signed in
     let buttonText = "Add to Bookmarks";
     const auth = getAuth();
     let currentProduct = props.currentProduct;
@@ -172,7 +172,7 @@ function Map(props) {
     }
     else {
     const currentAvailability = AVAILABILITY.filter((data) => (data.productId == urlParams.id));
-    const position = [37.7749, -122.4194];
+    const position = [37.7749, -122.4194]; //default current position of user
     const mappedCurrentAvailability = currentAvailability.map(location => (
         <Marker
             key={location.id}
