@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
+import { getDatabase, ref as dbRef, onValue  } from 'firebase/database';
 import { Link } from 'react-router-dom';
 
-import { ApproveProduct } from './ApproveProduct.js';
 
 export function AdminRequest(props) {
     const db = getDatabase();
     const productRef = dbRef(db, "products");
 
-    const productArray = [];
     const [productsToApprove, setProductsToApprove] = useState([]);
     const [ranProductList, setRanProductList] = useState(false);
     
 
     useEffect(() => {
         onValue(productRef, (snapshot) => {
+            const productArray = [];
             setRanProductList(true);
             snapshot.forEach((product) => {
                 const productData = product.val();
@@ -28,22 +27,22 @@ export function AdminRequest(props) {
             });
 
             setProductsToApprove(filteredArray.map((value) => {
-                    if(value.approval === "unapproved") {
-                        let returnRoute = "/ApproveProduct/" + (value.id - 1);
-                        return(
-                            <div className="card" key={value.image}>
-                                <img className="bookmark-search-img" src={value.image} />
-                                <p className="product-name">{value.product}</p>
-                                <p className="company">{value.company}</p>
-                                <Link to={returnRoute} ><p className="shop-now">Product Approval</p></Link>
-                            </div>
-                    )}
-                })
+                if(value.approval === "unapproved") {
+                    let returnRoute = "/ApproveProduct/" + (value.id - 1);
+                    return(
+                        <div className="card" key={value.product + value.company}>
+                            <img className="bookmark-search-img" src={value.image} alt={value.product} />
+                            <p className="product-name">{value.product}</p>
+                            <p className="company">{value.company}</p>
+                            <Link to={returnRoute} ><p className="shop-now">Product Approval</p></Link>
+                        </div>
+                )}
+            })
             );
         });
     }, []);
 
-    if(productsToApprove[0] == null && ranProductList == true){
+    if(productsToApprove[0] == null && ranProductList === true){
         return (
             <div className='no-results'>
                 <p className='card-container'>There are no new products to approve. </p>

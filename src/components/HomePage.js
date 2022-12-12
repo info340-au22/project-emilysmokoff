@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Header } from './Header.js';
 
 
-import { useNavigate, Link, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import PRODUCT_CATEGORIES from '../data/categories.json'
 

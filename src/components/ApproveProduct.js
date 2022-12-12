@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
+import { getDatabase, ref as dbRef, onValue, update as firebaseUpdate  } from 'firebase/database';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export function ApproveProduct (props) {
     //this code set adds products to the database when admin approves them
@@ -42,38 +42,43 @@ export function ApproveProduct (props) {
     //sets database keys with values so they can be displayed with other products
     const handleClick = async (event) => {
         event.preventDefault();
-        if (price == "" || imageAlt == "" || ratingJustification == "" || tags == "" || category == "" || link == "" || ratingImgAlt == "") {
+        if (price === "" || imageAlt === "" || ratingJustification === "" || tags === "" || category === "" || link === "" || ratingImgAlt === "") {
             setTopMsg("Please fill out all fields!");
         } else {
-            const approvalSetting = dbRef(db, "products/" + productKey.productId + "/approval");
-            const valueToAssign = "approved";
-            firebaseSet(approvalSetting, valueToAssign);
-            const priceSetting = dbRef(db, "products/" + productKey.productId + "/price");
-            firebaseSet(priceSetting, price);
-            const imageAltSetting = dbRef(db, "products/" + productKey.productId + "/imageAlt");
-            firebaseSet(imageAltSetting, imageAlt);
-            const ratingJustSetting = dbRef(db, "products/" + productKey.productId + "/ratingJustification");
-            firebaseSet(ratingJustSetting, ratingJustification);
-            const tagsSetting = dbRef(db, "products/" + productKey.productId + "/tags");
-            firebaseSet(tagsSetting, tags);
-            const categorySetting = dbRef(db, "products/" + productKey.productId + "/category");
-            firebaseSet(categorySetting, category);
-            const linkSetting = dbRef(db, "products/" + productKey.productId + "/link");
-            firebaseSet(linkSetting, link);
-            const ratingImgAltSetting = dbRef(db, "products/" + productKey.productId + "/ratingImgAlt")
-            firebaseSet(ratingImgAltSetting, ratingImgAlt);
+            firebaseUpdate(productRef, {
+                approval: "approved",
+                price: price,
+                imageAlt: imageAlt,
+                ratingJustification: ratingJustification,
+                tags: tags,
+                category: category,
+                link: link,
+                ratingImgAlt: ratingImgAlt
+            })
 
-            handleImageUpload(event);
-            navigate('/ApprovalScreen');
+            .then(() => {
+                handleImageUpload(event);
+                navigate('/ApprovalScreen');
+            })
+            .catch((error) =>{
+                <ErrorScreen error={error}/>
+            })
+
         }
     }
 
     const handleDelete = async (event) => {
         event.preventDefault();
-        const approvalSetting = dbRef(db, "products/" + productKey.productId + "/approval");
-            const valueToAssign = "denied";
-            firebaseSet(approvalSetting, valueToAssign);
-        navigate('/DenialScreen');
+        const approvalSetting = dbRef(db, "products/" + productKey.productId);
+            firebaseUpdate(approvalSetting, {approval: "denied"})
+
+            .then(() => {
+                navigate('/DenialScreen');
+            })
+
+            .catch((error) => {
+                <ErrorScreen error={error} />
+            })
     }
 
     const handleChange = (event) => {
@@ -114,17 +119,21 @@ export function ApproveProduct (props) {
 
     const handleImageUpload = async (event) => {
         const storage = getStorage();
-        const requestRef = dbRef(db, "products/" + productKey.productId + "/productRating");
-        firebaseSet(requestRef, productRating);
         const imgTitle = productRating + ".png"
         const imageRef = ref(storage, imgTitle);
         await uploadBytes(imageRef, prodImg);
         const downloadUrlString = await getDownloadURL(imageRef)
-        const ratingImage = dbRef(db, "products/" + productKey.productId + "/ratingImage");
-        firebaseSet(ratingImage, downloadUrlString);
+        firebaseUpdate(productRef, {
+            productRating: productRating,
+            ratingImage: downloadUrlString
+        })
+
+        .catch((error) => {
+            <ErrorScreen error={error} />
+        })
     }
 
-    if(loadedProduct == false) {
+    if(loadedProduct === false) {
         return (
             <div className='no-results'>
                 <p className='card-container'>Loading your product!</p>
@@ -137,7 +146,7 @@ export function ApproveProduct (props) {
                     <div className="product-card">
                         <p className="text-center mt-5">{topMsg}</p>
                         <h2>Approve the Product</h2>
-                        <img className="bookmark-search-img" src={productObject.image} />
+                        <img className="bookmark-search-img" src={productObject.image} alt={productObject.product} />
                         <p className="product-name">{productObject.product}</p>
                         <p className="company">{productObject.company}</p>
                         <form>
@@ -158,7 +167,7 @@ export function ApproveProduct (props) {
                             <label className="label-text" htmlFor="link">Link to Product Details: </label><br />
                             <input id="link" value={link} type="text" onChange={handleChange8} name="link" /><br /><br />
                             <input id="approve" type="submit" value="Approve" className="btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
-                            <input id="deny" type="submit" value="Deny" className="btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleDelete}/>
+                            <input id="deny" type="submit" value="Deny" className="deny btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleDelete}/>
                         </form>
                     </div>
                 </div>
@@ -176,5 +185,11 @@ export function ApprovalScreen(props) {
 export function DenialScreen(props) {
     return(
         <h2>You have denied this item! We have stored this item with an approval of denied, if you want to refer to it at a later date.</h2>
+    )
+}
+
+export function ErrorScreen(props) {
+    return(
+        <p>{props.error}</p>
     )
 }

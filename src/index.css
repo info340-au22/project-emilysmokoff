@@ -293,19 +293,19 @@ h2 .profile-header {
     border-color: rgb(26, 81, 56);
 }
 
-/*changes search icon on all pages*/
+/*changes search icon name instead of material icon*/
 #search-icon{
     color:rgb(26, 81, 56);
     
 }
 
 /*Nav search behavior*/
-#nav-search-form{
+.nav-search-form{
     text-align: left;
     margin-bottom: 14px;
 }
 
-#search-input{
+.search-input{
     margin-bottom: 10px;
 }
 
@@ -365,7 +365,7 @@ h2 .profile-header {
 }
 
 /*Defines map features*/
-#map-container {
+.map-container {
     margin: 100px;
 }
 
@@ -379,7 +379,7 @@ h2 .profile-header {
 }
 
 /*Defines the deny button on te approving a product page*/
-#deny {
+.deny {
     background-color: red;
     margin-left: 3em;
 }

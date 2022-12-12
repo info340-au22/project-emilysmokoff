@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-//import firebase from 'firebase/app';
-import { getDatabase, ref as dbRef, set as firebaseSet, onValue  } from 'firebase/database';
+import { getDatabase, ref as dbRef, set as firebaseSet, onValue, update as firebaseUpdate } from 'firebase/database';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
+import { ErrorScreen } from './ApproveProduct.js';
 import { AdminRequest } from './AdminRequest.js';
 
 export function RequestForm(props) {
@@ -16,8 +16,6 @@ export function RequestForm(props) {
 
         
     const db = getDatabase();
-
-    //let topMsg = "";
 
     const productRef = dbRef(db, "products");
 
@@ -46,34 +44,30 @@ export function RequestForm(props) {
     const handleClick = async (event) => {
         event.preventDefault();
 
-        if (prodName == "" || comName == "") {
+        if (prodName === "" || comName === "") {
             setTopMsg("Please fill out all fields!");
         } else {
             const newIdRef = dbRef(db, "products/" + key);
-            firebaseSet(newIdRef, key);
-            const prodRef = dbRef(db, "products/" + key + "/product");
-            firebaseSet(prodRef, prodName);
-            const comRef = dbRef(db, "products/" + key + "/company");
-            firebaseSet(comRef, comName);
-            const idRef = dbRef(db, "products/" + key + "/id");
-            firebaseSet(idRef, id);
-            const approvalRef = dbRef(db, "products/" + key + "/approval");
-            firebaseSet(approvalRef, "unapproved");
-            // const messageRef3 = ref(db, "prodImg");
-            // firebaseSet(messageRef3, prodImg);
-            // const imgRef = firebase.storage().storageRef();
-            // const file = document.querySelector("#filename").files[0];
-            // const name = file.name;
-            // const metadata = {
-            //     contentType:file.type
-            // }
-            // const task = imgRef.child("name").put(file,metadata);
+            firebaseSet(newIdRef, key)
+            .then(() => {
+                firebaseSet(newIdRef, {
+                    product: prodName,
+                    company: comName,
+                    id: id,
+                    approval: "unapproved",
+                })
+                .then(() => {
+                    handleImageUpload(event);
+                    navigate("/RequestProductReceipt/" + key);
+                })
+                .catch((error) => {
+                    <ErrorScreen error={error} />
+                })
+            })
 
-            // task.then(snapshot) {
-
-            // }
-            handleImageUpload(event);
-            navigate("/RequestProductReceipt/" + key);
+            .catch((error) => {
+                <ErrorScreen error={error} />
+            })
         } 
     }
 
@@ -95,22 +89,26 @@ export function RequestForm(props) {
 
     const handleImageUpload = async (event) => {
         const storage = getStorage();
-        const requestRef = dbRef(db, "products/" + key + "/imgUrl");
-        firebaseSet(requestRef, imgURL);
         const imgTitle = "requestImages/" + props.currentUser.userName + " - product: " + prodName + ", company: " + comName + ".png"
         const imageRef = ref(storage, imgTitle);
         await uploadBytes(imageRef, prodImg);
         const downloadUrlString = await getDownloadURL(imageRef);
-        const image = dbRef(db, "products/" + key + "/image");
-        firebaseSet(image, downloadUrlString);
-    }
+        const newIdRef = dbRef(db, "products/" + key);
+        firebaseUpdate(newIdRef, {
+            imgUrl: imgURL,
+            image: downloadUrlString
+        })
 
-    if(props.currentUser.userName == "Admin") {
+        .catch((error) => {
+            <ErrorScreen error={error} />
+        })
+    }
+    if(props.currentUser.userName === "Admin") {
         return (
             <AdminRequest />
         );
     }
-    else if (ranProductList == false) {
+    else if (ranProductList === false) {
         return (
             <div className='no-results'>
                 <p className='card-container'>Loading your page!</p>
@@ -129,8 +127,6 @@ export function RequestForm(props) {
                     <input id="product-name" value={prodName} type="text" onChange={handleChange} name="productName" /><br /><br />
                     <label className="label-text" htmlFor="company-name">Company Name:</label><br />
                     <input id="company-name" value={comName} type="text" onChange={handleChange2} name="companyName"/><br /><br />
-                    {/* <label className="label-text" for="ingredients">Ingredient Information:</label><br />
-                    <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea><br /> */}
                     <label className="label-text" htmlFor="filename">Upload Product Photo:</label><br />
                     <input type="file" id="filename" onChange={handleChange3} name="filename" className="btn btn-success label-text" /><br /><br />
                     <input id="submit" type="submit" value="Submit" className="btn btn-success label-text mb-4" to="/RequestProductReceipt" onClick={handleClick}/>
@@ -178,7 +174,8 @@ export function RequestReceipt (props) {
             <p>You just submitted this product for review:</p>
             <p>Product Name: {prodName} </p>
             <p>Company Name: {comName} </p>
-            <img src={imgRef} className="w-25 p-3" />
+            <p>If you do not see your image below yet, please WAIT for it to upload before navigating off the page. We are working on adding it to our database.</p>
+            <img src={imgRef} className="w-25 p-3" alt={prodName} />
             <p>Thanks for submitting!</p>
         </div>
     )
