@@ -46,12 +46,12 @@ export function NavigationBar (props) {
     }
 
     return (
-        <Navbar className="navbar navbar-expand-lg navbar-dark nav">
+        <Navbar collapseOnSelect expand="lg" className="navbar navbar-expand-lg navbar-dark nav">
             <Container>
                 <Link className="nav-link" to="/">
                     <h1>EC<img src="/img/logo.png" alt="logo representing letter o taken from freepik on Free Pik" />-LIFE</h1> </Link>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto mb-2 mb-lg-0">
                             {navPages}
                         </Nav>
